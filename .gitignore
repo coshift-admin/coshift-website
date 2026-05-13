@@ -39,3 +39,6 @@ next-env.d.ts
 .vscode/*
 !.vscode/extensions.json
 .idea
+
+# Playwright dev artifacts (screenshots, console logs from local validation)
+.playwright-mcp/
