@@ -3,6 +3,7 @@ import { Link } from "@/i18n/routing";
 import { CoshiftWordmark } from "@/components/icons/CoshiftWordmark";
 import { ShiftGlyph } from "@/components/icons/ShiftGlyph";
 import { site } from "@/lib/site";
+import { FooterBgGlyph } from "./FooterBgGlyph";
 
 export async function Footer() {
   const t = await getTranslations("footer");
@@ -10,8 +11,9 @@ export async function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative border-t border-white/10 bg-[var(--coshift-ink)]">
-      <div className="container-x mx-auto max-w-[1600px] py-16 md:py-24">
+    <footer className="relative overflow-hidden border-t border-white/10 bg-[var(--coshift-ink)]">
+      <FooterBgGlyph />
+      <div className="container-x relative z-10 mx-auto max-w-[1600px] py-16 md:py-24">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
             <Link href="/" aria-label="Coshift home">

@@ -2,6 +2,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import { caseStudies } from "@/content/work";
 import { CaseCover } from "@/components/work/CaseCover";
+import { Reveal, RevealWords } from "@/components/motion/Reveal";
+import { StaggerList } from "@/components/motion/StaggerList";
 
 export async function generateMetadata({
   params,
@@ -26,19 +28,23 @@ export default async function WorkIndex({
   return (
     <div className="container-x mx-auto max-w-[1600px] pt-32 md:pt-44">
       <header className="border-b border-white/10 pb-20 md:pb-28">
-        <div className="text-mono mb-6 flex items-center gap-3 text-[var(--coshift-bone)]/60">
-          <span aria-hidden className="h-px w-8 bg-[var(--coshift-cyan)]" />
-          {t("kicker")}
-        </div>
+        <Reveal>
+          <div className="text-mono mb-6 flex items-center gap-3 text-[var(--coshift-bone)]/60">
+            <span aria-hidden className="h-px w-8 bg-[var(--coshift-cyan)]" />
+            {t("kicker")}
+          </div>
+        </Reveal>
         <h1 className="max-w-[20ch] text-[length:var(--fs-h1)] font-extrabold leading-[0.95] tracking-[-0.02em]">
-          {t("heading")}
+          <RevealWords text={t("heading")} />
         </h1>
-        <p className="mt-8 max-w-[60ch] text-[length:var(--fs-lead)] text-[var(--coshift-bone)]/70">
-          {t("intro")}
-        </p>
+        <Reveal delay={0.2}>
+          <p className="mt-8 max-w-[60ch] text-[length:var(--fs-lead)] text-[var(--coshift-bone)]/70">
+            {t("intro")}
+          </p>
+        </Reveal>
       </header>
 
-      <ul className="divide-y divide-white/10">
+      <StaggerList className="divide-y divide-white/10" staggerChildren={0.18}>
         {caseStudies.map((c, i) => (
           <li key={c.slug}>
             <Link
@@ -65,7 +71,7 @@ export default async function WorkIndex({
             </Link>
           </li>
         ))}
-      </ul>
+      </StaggerList>
 
       <p className="text-mono py-12 text-[var(--coshift-bone)]/40">
         {/* TODO: replace with real engagements as new case studies are published */}

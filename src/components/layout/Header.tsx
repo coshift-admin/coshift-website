@@ -52,7 +52,7 @@ export function Header() {
         {t("skipToContent")}
       </a>
 
-      <div className="container-x mx-auto flex h-16 max-w-[1600px] items-center justify-between md:h-20">
+      <div className="container-x mx-auto flex h-20 max-w-[1600px] items-center justify-between md:h-24">
         <Link
           href="/"
           aria-label="Coshift home"
@@ -61,14 +61,14 @@ export function Header() {
           <Magnetic pull={6}>
             <CoshiftWordmark
               tone="mono-light"
-              className="h-6 w-auto md:h-7"
+              className="h-8 w-auto md:h-10"
             />
           </Magnetic>
         </Link>
 
         <nav
           aria-label="Primary"
-          className="hidden items-center gap-1 md:flex"
+          className="hidden items-center gap-2 md:flex"
         >
           {NAV.map(({ href, key }) => {
             const active = pathname === href || pathname.startsWith(href + "/");
@@ -77,7 +77,7 @@ export function Header() {
                 key={href}
                 href={href}
                 className={cn(
-                  "group relative px-3 py-2 text-sm transition-colors",
+                  "group relative px-4 py-2.5 text-base transition-colors",
                   active
                     ? "text-[var(--coshift-bone)]"
                     : "text-[var(--coshift-bone)]/70 hover:text-[var(--coshift-bone)]",
@@ -99,12 +99,12 @@ export function Header() {
           })}
         </nav>
 
-        <div className="flex items-center gap-2 md:gap-4">
-          <LanguageToggle className="hidden md:inline-flex" />
+        <div className="flex items-center gap-3 md:gap-5">
+          <LanguageToggle className="hidden text-sm md:inline-flex" />
           <Magnetic pull={6} className="hidden md:inline-block">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-[var(--coshift-cyan)] px-4 py-2 text-sm font-semibold text-[var(--coshift-ink)] transition-[transform,background] duration-300 hover:bg-[var(--coshift-glow)]"
+              className="inline-flex items-center gap-2 rounded-full bg-[var(--coshift-cyan)] px-5 py-2.5 text-base font-semibold text-[var(--coshift-ink)] transition-[transform,background] duration-300 hover:bg-[var(--coshift-glow)]"
             >
               {t("primaryCta")}
               <span aria-hidden>→</span>
@@ -112,12 +112,12 @@ export function Header() {
           </Magnetic>
           <button
             type="button"
-            className="grid h-10 w-10 place-items-center rounded-full border border-white/15 text-[var(--coshift-bone)] md:hidden"
+            className="grid h-11 w-11 place-items-center rounded-full border border-white/15 text-[var(--coshift-bone)] md:hidden"
             aria-label={open ? t("menuClose") : t("menuToggle")}
             aria-expanded={open}
             onClick={() => setOpen((o) => !o)}
           >
-            {open ? <X size={18} /> : <Menu size={18} />}
+            {open ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>

@@ -112,15 +112,36 @@ export function Hero() {
 
       <motion.div
         style={{ opacity: cueOpacity }}
-        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2"
+        className="absolute bottom-10 left-1/2 z-10 -translate-x-1/2"
       >
-        <div className="flex flex-col items-center gap-2 text-[var(--coshift-bone)]/60">
-          <ShiftGlyph
-            className="h-5 w-auto animate-pulse text-[var(--coshift-cyan)]"
-            style={{ animationDuration: "3s" }}
-          />
+        <motion.div
+          className="flex flex-col items-center gap-3 text-[var(--coshift-bone)]/70"
+          animate={{ y: [0, 8, 0] }}
+          transition={{
+            duration: 2.4,
+            repeat: Infinity,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+        >
+          {/* progress capsule with a "draining" cyan line */}
+          <span
+            aria-hidden
+            className="relative h-10 w-[2px] overflow-hidden rounded-full bg-white/15"
+          >
+            <motion.span
+              className="absolute inset-x-0 top-0 block w-full bg-[var(--coshift-cyan)]"
+              animate={{ y: ["-100%", "100%"] }}
+              transition={{
+                duration: 1.6,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+              style={{ height: "60%" }}
+            />
+          </span>
+          <ShiftGlyph className="h-4 w-auto text-[var(--coshift-cyan)]" />
           <span className="text-mono">{t("scrollCue")}</span>
-        </div>
+        </motion.div>
       </motion.div>
     </section>
   );

@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { Magnetic } from "@/components/motion/Magnetic";
 import { ShiftGlyph } from "@/components/icons/ShiftGlyph";
+import { Reveal, RevealWords } from "@/components/motion/Reveal";
 
 export function CtaBlock() {
   const t = useTranslations("home.cta");
@@ -17,12 +18,14 @@ export function CtaBlock() {
           <ShiftGlyph className="h-72 w-auto text-[var(--coshift-cyan)]" />
         </div>
         <h2 className="max-w-[18ch] text-[length:var(--fs-h2)] font-bold leading-[1] tracking-[-0.02em]">
-          {t("heading")}
+          <RevealWords text={t("heading")} />
         </h2>
-        <p className="mt-6 max-w-[52ch] text-[length:var(--fs-lead)] text-[var(--coshift-bone)]/70">
-          {t("body")}
-        </p>
-        <div className="mt-10 flex flex-wrap gap-4">
+        <Reveal delay={0.15}>
+          <p className="mt-6 max-w-[52ch] text-[length:var(--fs-lead)] text-[var(--coshift-bone)]/70">
+            {t("body")}
+          </p>
+        </Reveal>
+        <Reveal delay={0.3} className="mt-10 flex flex-wrap gap-4">
           <Magnetic pull={8}>
             <Link
               href="/contact"
@@ -45,7 +48,7 @@ export function CtaBlock() {
               {t("secondary")}
             </Link>
           </Magnetic>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

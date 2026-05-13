@@ -14,6 +14,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Preloader } from "@/components/layout/Preloader";
 import { KonamiEgg } from "@/components/layout/KonamiEgg";
+import { RouteTransition } from "@/components/layout/RouteTransition";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
@@ -105,7 +106,7 @@ export default async function LocaleLayout({
               <Cursor />
               <Header />
               <main id="main" className="relative">
-                {children}
+                <RouteTransition>{children}</RouteTransition>
               </main>
               <Footer />
               <KonamiEgg />

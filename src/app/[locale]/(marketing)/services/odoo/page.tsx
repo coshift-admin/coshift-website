@@ -2,6 +2,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import { Accordion } from "@/components/ui/Accordion";
 import { ShiftGlyph } from "@/components/icons/ShiftGlyph";
+import { Reveal, RevealWords } from "@/components/motion/Reveal";
+import { StaggerList } from "@/components/motion/StaggerList";
 
 export async function generateMetadata({
   params,
@@ -30,23 +32,27 @@ export default async function OdooPage({
   return (
     <div className="container-x mx-auto max-w-[1600px] pt-32 md:pt-44">
       <header className="border-b border-white/10 pb-20 md:pb-28">
-        <div className="text-mono mb-6 flex items-center gap-3 text-[var(--coshift-bone)]/60">
-          <ShiftGlyph className="h-3 w-auto text-[var(--coshift-cyan)]" />
-          {t("kicker")}
-        </div>
+        <Reveal>
+          <div className="text-mono mb-6 flex items-center gap-3 text-[var(--coshift-bone)]/60">
+            <ShiftGlyph className="h-3 w-auto text-[var(--coshift-cyan)]" />
+            {t("kicker")}
+          </div>
+        </Reveal>
         <h1 className="max-w-[20ch] text-[length:var(--fs-h1)] font-extrabold leading-[0.95] tracking-[-0.02em]">
-          {t("heading")}
+          <RevealWords text={t("heading")} />
         </h1>
-        <p className="mt-8 max-w-[60ch] text-[length:var(--fs-lead)] text-[var(--coshift-bone)]/70">
-          {t("intro")}
-        </p>
+        <Reveal delay={0.2}>
+          <p className="mt-8 max-w-[60ch] text-[length:var(--fs-lead)] text-[var(--coshift-bone)]/70">
+            {t("intro")}
+          </p>
+        </Reveal>
       </header>
 
       <section className="grid grid-cols-1 gap-12 py-20 md:grid-cols-12 md:gap-x-16 md:py-32">
         <h2 className="text-[length:var(--fs-h2)] font-bold leading-[1] tracking-[-0.02em] md:col-span-4">
-          {t("deliverables.heading")}
+          <RevealWords text={t("deliverables.heading")} />
         </h2>
-        <ul className="md:col-span-8 md:divide-y md:divide-white/10">
+        <StaggerList className="md:col-span-8 md:divide-y md:divide-white/10" staggerChildren={0.06}>
           {items.map((it, i) => (
             <li
               key={i}
@@ -60,32 +66,32 @@ export default async function OdooPage({
               </p>
             </li>
           ))}
-        </ul>
+        </StaggerList>
       </section>
 
       <section className="grid grid-cols-1 gap-12 border-t border-white/10 py-20 md:grid-cols-12 md:gap-x-16 md:py-32">
         <h2 className="text-[length:var(--fs-h2)] font-bold leading-[1] tracking-[-0.02em] md:col-span-4">
-          {t("modules.heading")}
+          <RevealWords text={t("modules.heading")} />
         </h2>
-        <ul className="flex flex-wrap gap-2 md:col-span-8">
+        <StaggerList className="flex flex-wrap gap-2 md:col-span-8" staggerChildren={0.03} y={12}>
           {modules.map((m) => (
             <li
               key={m}
-              className="rounded-full border border-white/15 px-4 py-2 text-sm text-[var(--coshift-bone)]/80 transition-colors hover:border-[var(--coshift-cyan)] hover:text-[var(--coshift-cyan)]"
+              className="rounded-full border border-white/15 px-4 py-2 text-sm text-[var(--coshift-bone)]/80 transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--coshift-cyan)] hover:bg-[var(--coshift-cyan)]/5 hover:text-[var(--coshift-cyan)]"
             >
               {m}
             </li>
           ))}
-        </ul>
+        </StaggerList>
       </section>
 
       <section className="grid grid-cols-1 gap-12 border-t border-white/10 py-20 md:grid-cols-12 md:gap-x-16 md:py-32">
         <h2 className="text-[length:var(--fs-h2)] font-bold leading-[1] tracking-[-0.02em] md:col-span-4">
-          {t("faq.heading")}
+          <RevealWords text={t("faq.heading")} />
         </h2>
-        <div className="md:col-span-8">
+        <Reveal className="md:col-span-8" delay={0.15}>
           <Accordion items={faq} />
-        </div>
+        </Reveal>
       </section>
 
       <section className="border-t border-white/10 py-20 md:py-32">

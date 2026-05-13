@@ -4,6 +4,7 @@ import { Link } from "@/i18n/routing";
 import { caseStudies, findCaseStudy } from "@/content/work";
 import { CaseCover } from "@/components/work/CaseCover";
 import { ShiftGlyph } from "@/components/icons/ShiftGlyph";
+import { Reveal, RevealWords } from "@/components/motion/Reveal";
 
 export async function generateStaticParams() {
   return caseStudies.map((c) => ({ slug: c.slug }));
@@ -50,7 +51,7 @@ export default async function CaseStudyPage({
             ← {t("client")} index
           </Link>
           <h1 className="mt-8 max-w-[24ch] text-[length:var(--fs-h1)] font-extrabold leading-[0.95] tracking-[-0.02em]">
-            {pick(c.title, c.titleFr)}
+            <RevealWords text={pick(c.title, c.titleFr)} />
           </h1>
           <dl className="text-mono mt-10 grid grid-cols-2 gap-x-8 gap-y-5 text-[var(--coshift-bone)]/70 sm:grid-cols-4">
             <div>
@@ -109,13 +110,13 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section className={className}>
+    <Reveal as="section" className={className}>
       <div className="text-mono mb-4 flex items-center gap-3 text-[var(--coshift-bone)]/60">
         <ShiftGlyph className="h-3 w-auto text-[var(--coshift-cyan)]" />
         {heading}
       </div>
       {children}
-    </section>
+    </Reveal>
   );
 }
 

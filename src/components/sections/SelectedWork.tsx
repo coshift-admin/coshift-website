@@ -4,6 +4,8 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { caseStudies } from "@/content/work";
 import { CaseCover } from "@/components/work/CaseCover";
+import { Reveal, RevealWords } from "@/components/motion/Reveal";
+import { StaggerList } from "@/components/motion/StaggerList";
 
 export function SelectedWork() {
   const t = useTranslations("home.work");
@@ -13,24 +15,26 @@ export function SelectedWork() {
       className="container-x mx-auto max-w-[1600px] section-y"
     >
       <header className="mb-12 flex items-end justify-between gap-6 md:mb-20">
-        <div>
+        <Reveal>
           <div className="text-mono mb-3 flex items-center gap-3 text-[var(--coshift-bone)]/60">
             <span aria-hidden className="h-px w-8 bg-[var(--coshift-cyan)]" />
             {t("kicker")}
           </div>
           <h2 className="text-[length:var(--fs-h2)] font-bold leading-[1] tracking-[-0.02em]">
-            {t("heading")}
+            <RevealWords text={t("heading")} />
           </h2>
-        </div>
-        <Link
-          href="/work"
-          className="text-mono hidden text-[var(--coshift-cyan)] underline-offset-4 hover:underline md:inline-flex"
-        >
-          {t("viewAll")} →
-        </Link>
+        </Reveal>
+        <Reveal delay={0.2}>
+          <Link
+            href="/work"
+            className="text-mono hidden text-[var(--coshift-cyan)] underline-offset-4 hover:underline md:inline-flex"
+          >
+            {t("viewAll")} →
+          </Link>
+        </Reveal>
       </header>
 
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+      <StaggerList as="div" className="grid grid-cols-1 gap-8 md:grid-cols-2" staggerChildren={0.15}>
         {caseStudies.slice(0, 2).map((c, i) => (
           <Link
             key={c.slug}
@@ -51,7 +55,7 @@ export function SelectedWork() {
             </div>
           </Link>
         ))}
-      </div>
+      </StaggerList>
     </section>
   );
 }

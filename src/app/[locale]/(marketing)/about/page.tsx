@@ -1,5 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ShiftGlyph } from "@/components/icons/ShiftGlyph";
+import { Reveal, RevealWords } from "@/components/motion/Reveal";
+import { StaggerList } from "@/components/motion/StaggerList";
 
 export async function generateMetadata({
   params,
@@ -28,24 +30,28 @@ export default async function AboutPage({
   return (
     <div className="container-x mx-auto max-w-[1600px] pt-32 md:pt-44">
       <header className="border-b border-white/10 pb-20 md:pb-28">
-        <div className="text-mono mb-6 flex items-center gap-3 text-[var(--coshift-bone)]/60">
-          <span aria-hidden className="h-px w-8 bg-[var(--coshift-cyan)]" />
-          {t("kicker")}
-        </div>
+        <Reveal>
+          <div className="text-mono mb-6 flex items-center gap-3 text-[var(--coshift-bone)]/60">
+            <span aria-hidden className="h-px w-8 bg-[var(--coshift-cyan)]" />
+            {t("kicker")}
+          </div>
+        </Reveal>
         <h1 className="max-w-[20ch] text-[length:var(--fs-h1)] font-extrabold leading-[0.95] tracking-[-0.02em]">
-          {t("heading")}
+          <RevealWords text={t("heading")} />
         </h1>
-        <p className="mt-8 max-w-[60ch] text-[length:var(--fs-lead)] text-[var(--coshift-bone)]/70">
-          {t("intro")}
-        </p>
+        <Reveal delay={0.2}>
+          <p className="mt-8 max-w-[60ch] text-[length:var(--fs-lead)] text-[var(--coshift-bone)]/70">
+            {t("intro")}
+          </p>
+        </Reveal>
       </header>
 
       <section className="grid grid-cols-1 gap-12 py-20 md:grid-cols-12 md:gap-x-16 md:py-32">
         <h2 className="text-[length:var(--fs-h2)] font-bold leading-[1] tracking-[-0.02em] md:col-span-4">
-          {t("principles.heading")}
+          <RevealWords text={t("principles.heading")} />
         </h2>
         <div className="md:col-span-8">
-          <ul className="space-y-12 md:space-y-16">
+          <StaggerList className="space-y-12 md:space-y-16" staggerChildren={0.12}>
             {principles.map((key, i) => (
               <li
                 key={key}
@@ -64,21 +70,23 @@ export default async function AboutPage({
                 </div>
               </li>
             ))}
-          </ul>
+          </StaggerList>
         </div>
       </section>
 
       <section className="grid grid-cols-1 items-end gap-10 border-t border-white/10 py-20 md:grid-cols-12 md:py-32">
-        <div className="md:col-span-4">
+        <Reveal className="md:col-span-4">
           <ShiftGlyph className="h-20 w-auto text-[var(--coshift-cyan)]" />
-        </div>
+        </Reveal>
         <div className="md:col-span-8">
           <h2 className="text-[length:var(--fs-h2)] font-bold leading-[1] tracking-[-0.02em]">
-            {t("location.heading")}
+            <RevealWords text={t("location.heading")} />
           </h2>
-          <p className="mt-6 max-w-[56ch] text-[length:var(--fs-lead)] text-[var(--coshift-bone)]/70">
-            {t("location.body")}
-          </p>
+          <Reveal delay={0.2}>
+            <p className="mt-6 max-w-[56ch] text-[length:var(--fs-lead)] text-[var(--coshift-bone)]/70">
+              {t("location.body")}
+            </p>
+          </Reveal>
           {/* <EditMe> — team photos placeholder: brief says skip until photos provided.
               Replace with a small editorial portrait grid when the user supplies images. */}
         </div>

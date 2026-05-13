@@ -24,7 +24,7 @@ export function LanguageToggle({ className }: { className?: string }) {
       onClick={onClick}
       disabled={isPending}
       className={cn(
-        "text-mono inline-flex items-center gap-1.5 px-2 py-1.5 transition-colors",
+        "text-mono inline-flex items-center gap-1.5 px-2 py-2 text-sm transition-colors",
         "hover:text-[var(--coshift-cyan)] disabled:opacity-50",
         className,
       )}

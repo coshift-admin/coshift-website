@@ -10,6 +10,8 @@ import {
   useTransform,
 } from "framer-motion";
 import { ShiftGlyph } from "@/components/icons/ShiftGlyph";
+import { Reveal, RevealWords } from "@/components/motion/Reveal";
+import { StaggerList } from "@/components/motion/StaggerList";
 
 // <EditMe> — user fills these in. Placeholders are intentionally round numbers
 // so the section looks intentional rather than empty.
@@ -31,11 +33,13 @@ export function Numbers() {
       aria-label="Numbers"
       className="container-x mx-auto max-w-[1600px] section-y"
     >
-      <div className="text-mono mb-12 flex items-center gap-3 text-[var(--coshift-bone)]/60">
-        <span aria-hidden className="h-px w-8 bg-[var(--coshift-cyan)]" />
-        {t("kicker")}
-      </div>
-      <div className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-4">
+      <Reveal>
+        <div className="text-mono mb-12 flex items-center gap-3 text-[var(--coshift-bone)]/60">
+          <span aria-hidden className="h-px w-8 bg-[var(--coshift-cyan)]" />
+          <RevealWords text={t("kicker")} />
+        </div>
+      </Reveal>
+      <StaggerList as="div" className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-4" staggerChildren={0.12}>
         {ITEMS.map((item, i) => (
           <div
             key={item.key}
@@ -53,7 +57,7 @@ export function Numbers() {
             </div>
           </div>
         ))}
-      </div>
+      </StaggerList>
       <p className="text-mono mt-12 text-[var(--coshift-bone)]/40">
         {/* TODO: replace with real figures */}
         Figures are pre-fill placeholders — confirmed numbers go in

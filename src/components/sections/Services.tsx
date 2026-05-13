@@ -5,6 +5,7 @@ import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
 import { useReducedMotionPref } from "@/hooks/useReducedMotion";
 import { ShiftGlyph } from "@/components/icons/ShiftGlyph";
+import { Reveal, RevealWords } from "@/components/motion/Reveal";
 import { useRef, useState } from "react";
 
 export function Services() {
@@ -16,15 +17,15 @@ export function Services() {
       className="container-x mx-auto max-w-[1600px] section-y"
     >
       <header className="mb-12 flex items-end justify-between gap-6 md:mb-20">
-        <div>
+        <Reveal>
           <div className="text-mono mb-4 flex items-center gap-3 text-[var(--coshift-bone)]/60">
             <span aria-hidden className="h-px w-8 bg-[var(--coshift-cyan)]" />
             {t("kicker")}
           </div>
           <h2 className="max-w-[20ch] text-[length:var(--fs-h2)] font-bold leading-[1] tracking-[-0.02em]">
-            {t("heading")}
+            <RevealWords text={t("heading")} />
           </h2>
-        </div>
+        </Reveal>
       </header>
 
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
