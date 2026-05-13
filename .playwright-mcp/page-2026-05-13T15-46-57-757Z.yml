@@ -1,0 +1,167 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "Skip to content" [ref=e3]:
+      - /url: "#main"
+    - generic [ref=e4]:
+      - link "Coshift home" [ref=e5]:
+        - /url: /en
+        - img "Coshift" [ref=e7]
+      - navigation "Primary" [ref=e17]:
+        - link "Work" [ref=e18]:
+          - /url: /en/work
+          - generic [ref=e20]: Work
+        - link "Odoo ERP" [ref=e21]:
+          - /url: /en/services/odoo
+          - generic [ref=e23]: Odoo ERP
+        - link "Web Development" [ref=e24]:
+          - /url: /en/services/web
+          - generic [ref=e26]: Web Development
+        - link "About" [ref=e27]:
+          - /url: /en/about
+          - generic [ref=e29]: About
+        - link "Lab" [ref=e30]:
+          - /url: /en/lab
+          - generic [ref=e32]: Lab
+      - generic [ref=e33]:
+        - button "Switch language to FR" [ref=e34]:
+          - generic [ref=e35]: EN
+          - generic [ref=e36]: /
+          - generic [ref=e37]: FR
+        - link "Plan your shift" [ref=e39]:
+          - /url: /en/contact
+          - text: Plan your shift
+          - generic [ref=e40]: →
+  - main [ref=e41]:
+    - generic [ref=e42]:
+      - generic [ref=e43]:
+        - generic [ref=e44]: Contact
+        - heading "Tell us about the shift." [level=1] [ref=e46]
+        - paragraph [ref=e47]: The clearer the problem, the faster the response. We reply to every enquiry within two business days.
+      - generic [ref=e48]:
+        - generic [ref=e50]:
+          - generic [ref=e51]:
+            - generic [ref=e52]: Your name
+            - textbox "Your name" [ref=e53]
+          - generic [ref=e54]:
+            - generic [ref=e55]: Company
+            - textbox "Company" [ref=e56]
+          - generic [ref=e57]:
+            - generic [ref=e58]: Email
+            - textbox "Email" [ref=e59]
+          - group "What's the project about?" [ref=e60]:
+            - generic [ref=e61]: What's the project about?
+            - generic [ref=e62]:
+              - generic [ref=e63]:
+                - radio "Odoo ERP" [checked] [ref=e64]
+                - generic [ref=e65]: Odoo ERP
+              - generic [ref=e66]:
+                - radio "Web development" [ref=e67]
+                - generic [ref=e68]: Web development
+              - generic [ref=e69]:
+                - radio "Both" [ref=e70]
+                - generic [ref=e71]: Both
+              - generic [ref=e72]:
+                - radio "Something else" [ref=e73]
+                - generic [ref=e74]: Something else
+          - group "Budget range" [ref=e75]:
+            - generic [ref=e76]: Budget range
+            - generic [ref=e77]:
+              - generic [ref=e78]:
+                - radio "Under €25k" [ref=e79]
+                - generic [ref=e80]: Under €25k
+              - generic [ref=e81]:
+                - radio "€25k – €75k" [ref=e82]
+                - generic [ref=e83]: €25k – €75k
+              - generic [ref=e84]:
+                - radio "€75k – €200k" [ref=e85]
+                - generic [ref=e86]: €75k – €200k
+              - generic [ref=e87]:
+                - radio "€200k+" [ref=e88]
+                - generic [ref=e89]: €200k+
+              - generic [ref=e90]:
+                - radio "Not sure yet" [checked] [ref=e91]
+                - generic [ref=e92]: Not sure yet
+          - generic [ref=e93]:
+            - generic [ref=e94]: Anything else we should know?
+            - textbox "Anything else we should know?" [ref=e95]
+          - button "Send brief →" [ref=e97]
+        - complementary [ref=e98]:
+          - heading "The details" [level=2] [ref=e99]
+          - list [ref=e100]:
+            - listitem [ref=e101]: M'Sila, Algeria
+            - listitem [ref=e102]:
+              - generic [ref=e103]: "Email:"
+              - link "hello@coshift.com" [ref=e104]:
+                - /url: mailto:hello@coshift.com
+            - listitem [ref=e105]:
+              - generic [ref=e106]: "Phone:"
+              - link "+213 000 000 000" [ref=e107]:
+                - /url: tel:+213000000000
+            - listitem [ref=e108]:
+              - generic [ref=e109]: "WhatsApp:"
+              - link "+213000000000" [ref=e110]:
+                - /url: https://wa.me/213000000000
+          - link "M'Sila ↗" [ref=e111]:
+            - /url: https://www.google.com/maps/place/M'Sila
+            - generic [ref=e113]: M'Sila ↗
+      - generic [ref=e114]:
+        - heading "Or pick a slot directly." [level=2] [ref=e115]
+        - paragraph [ref=e118]:
+          - text: Calendly embed disabled — set NEXT_PUBLIC_CALENDLY_URL in
+          - code [ref=e119]: .env.local
+  - contentinfo [ref=e120]:
+    - generic [ref=e121]:
+      - generic [ref=e122]:
+        - generic [ref=e123]:
+          - link "Coshift home" [ref=e124]:
+            - /url: /en
+            - img "Coshift" [ref=e125]
+          - paragraph [ref=e135]: An ERP & web studio out of Algeria, working worldwide.
+          - generic [ref=e136]:
+            - img [ref=e137]
+            - generic [ref=e140]: M'Sila, Algeria
+        - generic [ref=e141]:
+          - heading "Site" [level=3] [ref=e142]
+          - list [ref=e143]:
+            - listitem [ref=e144]:
+              - link "Work" [ref=e145]:
+                - /url: /en/work
+            - listitem [ref=e146]:
+              - link "Odoo ERP" [ref=e147]:
+                - /url: /en/services/odoo
+            - listitem [ref=e148]:
+              - link "Web Development" [ref=e149]:
+                - /url: /en/services/web
+            - listitem [ref=e150]:
+              - link "About" [ref=e151]:
+                - /url: /en/about
+            - listitem [ref=e152]:
+              - link "Lab" [ref=e153]:
+                - /url: /en/lab
+        - generic [ref=e154]:
+          - heading "Get in touch" [level=3] [ref=e155]
+          - list [ref=e156]:
+            - listitem [ref=e157]:
+              - link "hello@coshift.com" [ref=e158]:
+                - /url: mailto:hello@coshift.com
+            - listitem [ref=e159]:
+              - link "+213 000 000 000" [ref=e160]:
+                - /url: tel:+213000000000
+            - listitem [ref=e161]:
+              - link "WhatsApp" [ref=e162]:
+                - /url: https://wa.me/213000000000
+          - heading "Elsewhere" [level=3] [ref=e163]
+          - list [ref=e164]:
+            - listitem [ref=e165]:
+              - link "LinkedIn" [ref=e166]:
+                - /url: https://www.linkedin.com/company/coshift
+            - listitem [ref=e167]:
+              - link "GitHub" [ref=e168]:
+                - /url: https://github.com/coshift
+            - listitem [ref=e169]:
+              - link "Instagram" [ref=e170]:
+                - /url: https://www.instagram.com/coshift
+      - generic [ref=e171]:
+        - paragraph [ref=e172]: © 2026 Coshift. All rights reserved.
+        - paragraph [ref=e173]: v0.1.0 — built with shifts
+  - alert [ref=e174]

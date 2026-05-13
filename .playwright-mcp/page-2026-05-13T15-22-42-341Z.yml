@@ -1,0 +1,286 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "Aller au contenu" [ref=e3] [cursor=pointer]:
+      - /url: "#main"
+    - generic [ref=e4]:
+      - link "Coshift home" [ref=e5] [cursor=pointer]:
+        - /url: /fr
+        - img "Coshift" [ref=e7]
+      - navigation "Primary" [ref=e17]:
+        - link "Réalisations" [ref=e18] [cursor=pointer]:
+          - /url: /fr/work
+          - generic [ref=e20]: Réalisations
+        - link "Odoo ERP" [ref=e21] [cursor=pointer]:
+          - /url: /fr/services/odoo
+          - generic [ref=e23]: Odoo ERP
+        - link "Développement web" [ref=e24] [cursor=pointer]:
+          - /url: /fr/services/web
+          - generic [ref=e26]: Développement web
+        - link "Studio" [ref=e27] [cursor=pointer]:
+          - /url: /fr/about
+          - generic [ref=e29]: Studio
+        - link "Lab" [ref=e30] [cursor=pointer]:
+          - /url: /fr/lab
+          - generic [ref=e32]: Lab
+      - generic [ref=e33]:
+        - button "Switch language to EN" [ref=e34]:
+          - generic [ref=e35]: FR
+          - generic [ref=e36]: /
+          - generic [ref=e37]: EN
+        - link "Planifier votre shift" [ref=e39] [cursor=pointer]:
+          - /url: /fr/contact
+          - text: Planifier votre shift
+          - generic [ref=e40]: →
+  - main [ref=e41]:
+    - region "Coshift" [ref=e42]:
+      - img [ref=e48]
+      - generic [ref=e51]:
+        - generic [ref=e52]: Coshift — studio ERP & web
+        - heading "Votre entreprise n'a pas besoin de plus de logiciels. Elle a besoin d'un shift." [level=1] [ref=e54]:
+          - generic [ref=e55]: Votre entreprise n'a pas besoin de plus de logiciels.
+          - generic [ref=e56]: Elle a besoin d'un shift.
+        - paragraph [ref=e57]: Studio Odoo ERP et développement web pour les entreprises qui en ont assez des outils bricolés et des sites sous template.
+        - generic [ref=e58]:
+          - link "Planifier votre shift" [ref=e60] [cursor=pointer]:
+            - /url: /fr/contact
+            - text: Planifier votre shift
+            - generic [ref=e61]: →
+          - link "Voir nos réalisations" [ref=e63] [cursor=pointer]:
+            - /url: /fr/work
+      - generic [ref=e65]:
+        - img [ref=e66]
+        - generic [ref=e69]: défiler
+    - region "Manifesto" [ref=e70]:
+      - generic [ref=e71]:
+        - generic [ref=e72]:
+          - img [ref=e73]
+          - text: MANIFESTO
+        - heading "Nous ne vendons pas de logiciels. Nous reconstruisons la façon dont le travail circule." [level=2] [ref=e76]:
+          - generic [ref=e77]:
+            - generic [ref=e79]: Nous
+            - generic [ref=e81]: ne
+            - generic [ref=e83]: vendons
+            - generic [ref=e85]: pas
+            - generic [ref=e87]: de
+            - generic [ref=e89]: logiciels.
+          - generic [ref=e91]:
+            - generic [ref=e93]: Nous
+            - generic [ref=e95]: reconstruisons
+            - generic [ref=e97]: la
+            - generic [ref=e99]: façon
+            - generic [ref=e101]: dont
+            - generic [ref=e103]: le
+            - generic [ref=e105]: travail
+            - generic [ref=e107]: circule.
+    - region "Services" [ref=e108]:
+      - generic [ref=e110]:
+        - generic [ref=e111]: Ce que nous faisons
+        - heading "Deux disciplines. Un seul studio." [level=2] [ref=e113]
+      - generic [ref=e114]:
+        - generic [ref=e115]:
+          - generic:
+            - img
+          - generic [ref=e116]: Odoo ERP
+          - heading "Un seul système pour piloter toute l'entreprise." [level=3] [ref=e117]
+          - paragraph [ref=e118]: Nous implémentons, personnalisons, et assumons le résultat. De la découverte au go-live à la feuille de route an 2 — votre ERP est notre métier, pas un projet annexe.
+          - link "Explorer Odoo" [ref=e119] [cursor=pointer]:
+            - /url: /fr/services/odoo
+            - generic [ref=e120]: Explorer Odoo
+            - generic [ref=e121]: →
+        - generic [ref=e122]:
+          - generic:
+            - img
+          - generic [ref=e123]: Développement web
+          - heading "Des sites et plateformes faits sur mesure — parce qu'ils le sont." [level=3] [ref=e124]
+          - paragraph [ref=e125]: Sites vitrines, outils internes, portails clients. Conçus et développés ensemble, jamais sous template, jamais sous-traités.
+          - link "Explorer le web" [ref=e126] [cursor=pointer]:
+            - /url: /fr/services/web
+            - generic [ref=e127]: Explorer le web
+            - generic [ref=e128]: →
+    - region "Process" [ref=e129]:
+      - generic [ref=e130]:
+        - generic [ref=e131]:
+          - generic [ref=e132]:
+            - generic [ref=e133]:
+              - img [ref=e134]
+              - text: Comment un shift se déroule
+            - heading "Quatre phases. Pas de mauvaises surprises." [level=2] [ref=e137]
+          - generic [ref=e138]: 01 / 04
+        - generic [ref=e139]:
+          - article [ref=e140]:
+            - generic [ref=e141]:
+              - generic [ref=e142]: "01"
+              - img [ref=e143]
+            - generic [ref=e146]:
+              - heading "Diagnostiquer" [level=3] [ref=e147]
+              - paragraph [ref=e148]: Nous cartographions le flux de travail réel avant de toucher au moindre outil.
+          - article [ref=e149]:
+            - generic [ref=e150]:
+              - generic [ref=e151]: "02"
+              - img [ref=e152]
+            - generic [ref=e155]:
+              - heading "Concevoir" [level=3] [ref=e156]
+              - paragraph [ref=e157]: Architecture, modèle de données, interface — conçus ensemble.
+          - article [ref=e158]:
+            - generic [ref=e159]:
+              - generic [ref=e160]: "03"
+              - img [ref=e161]
+            - generic [ref=e164]:
+              - heading "Construire" [level=3] [ref=e165]
+              - paragraph [ref=e166]: Nous le construisons. Pas un pool de freelances. Nous.
+          - article [ref=e167]:
+            - generic [ref=e168]:
+              - generic [ref=e169]: "04"
+              - img [ref=e170]
+            - generic [ref=e173]:
+              - heading "Basculer" [level=3] [ref=e174]
+              - paragraph [ref=e175]: Migration, formation, transfert. Le shift est complet.
+    - region "Selected work" [ref=e176]:
+      - generic [ref=e177]:
+        - generic [ref=e178]:
+          - generic [ref=e179]: Réalisations choisies
+          - heading "Shifts récents." [level=2] [ref=e181]
+        - link "Toutes les études de cas →" [ref=e182] [cursor=pointer]:
+          - /url: /fr/work
+      - generic [ref=e183]:
+        - link "01 — Atlas Textiles Atlas Textiles — One Odoo, six factories." [ref=e184] [cursor=pointer]:
+          - /url: /fr/work/atlas-textiles
+          - generic [ref=e185]:
+            - img [ref=e187]
+            - generic [ref=e191]:
+              - generic [ref=e192]: 01 — Atlas Textiles
+              - heading "Atlas Textiles — One Odoo, six factories." [level=3] [ref=e193]:
+                - generic [ref=e194]:
+                  - generic [ref=e195]: Atlas Textiles — One Odoo, six factories.
+                  - generic [ref=e196]: Atlas Textiles — One Odoo, six factories.
+        - link "02 — Neon Coastal Bank Neon Coastal Bank — A customer portal that the bank actually trusts." [ref=e197] [cursor=pointer]:
+          - /url: /fr/work/neon-coastal-bank
+          - generic [ref=e198]:
+            - img [ref=e200]
+            - generic [ref=e204]:
+              - generic [ref=e205]: 02 — Neon Coastal Bank
+              - heading "Neon Coastal Bank — A customer portal that the bank actually trusts." [level=3] [ref=e206]:
+                - generic [ref=e207]:
+                  - generic [ref=e208]: Neon Coastal Bank — A customer portal that the bank actually trusts.
+                  - generic [ref=e209]: Neon Coastal Bank — A customer portal that the bank actually trusts.
+    - region "Numbers" [ref=e210]:
+      - generic [ref=e211]: En chiffres
+      - generic [ref=e213]:
+        - generic [ref=e214]:
+          - generic [ref=e215]: "01"
+          - generic [ref=e216]: "0"
+          - generic [ref=e217]:
+            - text: Ans d'activité
+            - img [ref=e219]
+        - generic [ref=e222]:
+          - generic [ref=e223]: "02"
+          - generic [ref=e224]: "0"
+          - generic [ref=e225]:
+            - text: Implémentations Odoo livrées
+            - img [ref=e227]
+        - generic [ref=e230]:
+          - generic [ref=e231]: "03"
+          - generic [ref=e232]: "0"
+          - generic [ref=e233]:
+            - text: Sites et plateformes livrés
+            - img [ref=e235]
+        - generic [ref=e238]:
+          - generic [ref=e239]: "04"
+          - generic [ref=e240]: 0k+
+          - generic [ref=e241]:
+            - text: Heures de travail manuel éliminées
+            - img [ref=e243]
+      - paragraph [ref=e246]:
+        - text: Figures are pre-fill placeholders — confirmed numbers go in
+        - code [ref=e247]: src/components/sections/Numbers.tsx
+    - region "Trusted by" [ref=e248]:
+      - generic [ref=e249]: Équipes qui ont fait le shift
+      - generic [ref=e251]:
+        - generic [ref=e252]: Atlas Textiles
+        - generic [ref=e253]: Neon Coastal Bank
+        - generic [ref=e254]: Maghreb Logistics
+        - generic [ref=e255]: Hadar Foods
+        - generic [ref=e256]: Sahara Cement
+        - generic [ref=e257]: Sirocco Studio
+        - generic [ref=e258]: Karim & Fils
+        - generic [ref=e259]: Berkane Mining
+        - generic [ref=e260]: Riviera Hotels
+        - generic [ref=e261]: Vivo Tools
+        - generic [ref=e262]: Atlas Textiles
+        - generic [ref=e263]: Neon Coastal Bank
+        - generic [ref=e264]: Maghreb Logistics
+        - generic [ref=e265]: Hadar Foods
+        - generic [ref=e266]: Sahara Cement
+        - generic [ref=e267]: Sirocco Studio
+        - generic [ref=e268]: Karim & Fils
+        - generic [ref=e269]: Berkane Mining
+        - generic [ref=e270]: Riviera Hotels
+        - generic [ref=e271]: Vivo Tools
+    - region "Plan your shift" [ref=e272]:
+      - generic [ref=e273]:
+        - generic:
+          - img
+        - heading "Prêts quand vous l'êtes." [level=2] [ref=e274]
+        - paragraph [ref=e275]: Dites-nous où ça frotte. Nous reviendrons avec la forme du shift.
+        - generic [ref=e276]:
+          - link "Planifier votre shift" [ref=e278] [cursor=pointer]:
+            - /url: /fr/contact
+            - text: Planifier votre shift
+            - generic [ref=e279]: →
+          - link "Envoyer un brief" [ref=e281] [cursor=pointer]:
+            - /url: /fr/contact
+  - contentinfo [ref=e282]:
+    - generic [ref=e283]:
+      - generic [ref=e284]:
+        - generic [ref=e285]:
+          - link "Coshift home" [ref=e286] [cursor=pointer]:
+            - /url: /fr
+            - img "Coshift" [ref=e287]
+          - paragraph [ref=e297]: Studio ERP & web basé en Algérie, au service du monde.
+          - generic [ref=e298]:
+            - img [ref=e299]
+            - generic [ref=e302]: M'Sila, Algeria
+        - generic [ref=e303]:
+          - heading "Site" [level=3] [ref=e304]
+          - list [ref=e305]:
+            - listitem [ref=e306]:
+              - link "Réalisations" [ref=e307] [cursor=pointer]:
+                - /url: /fr/work
+            - listitem [ref=e308]:
+              - link "Odoo ERP" [ref=e309] [cursor=pointer]:
+                - /url: /fr/services/odoo
+            - listitem [ref=e310]:
+              - link "Développement web" [ref=e311] [cursor=pointer]:
+                - /url: /fr/services/web
+            - listitem [ref=e312]:
+              - link "Studio" [ref=e313] [cursor=pointer]:
+                - /url: /fr/about
+            - listitem [ref=e314]:
+              - link "Lab" [ref=e315] [cursor=pointer]:
+                - /url: /fr/lab
+        - generic [ref=e316]:
+          - heading "Nous contacter" [level=3] [ref=e317]
+          - list [ref=e318]:
+            - listitem [ref=e319]:
+              - link "hello@coshift.com" [ref=e320] [cursor=pointer]:
+                - /url: mailto:hello@coshift.com
+            - listitem [ref=e321]:
+              - link "+213 000 000 000" [ref=e322] [cursor=pointer]:
+                - /url: tel:+213000000000
+            - listitem [ref=e323]:
+              - link "WhatsApp" [ref=e324] [cursor=pointer]:
+                - /url: https://wa.me/213000000000
+          - heading "Ailleurs" [level=3] [ref=e325]
+          - list [ref=e326]:
+            - listitem [ref=e327]:
+              - link "LinkedIn" [ref=e328] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/coshift
+            - listitem [ref=e329]:
+              - link "GitHub" [ref=e330] [cursor=pointer]:
+                - /url: https://github.com/coshift
+            - listitem [ref=e331]:
+              - link "Instagram" [ref=e332] [cursor=pointer]:
+                - /url: https://www.instagram.com/coshift
+      - generic [ref=e333]:
+        - paragraph [ref=e334]: © 2026 Coshift. Tous droits réservés.
+        - paragraph [ref=e335]: v0.1.0 — built with shifts

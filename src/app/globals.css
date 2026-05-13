@@ -1,0 +1,264 @@
+@import "tailwindcss";
+
+/* ---------- Design tokens ---------- */
+:root {
+  /* palette */
+  --coshift-cyan: #1fb6f0;
+  --coshift-indigo: #1a1b5c;
+  --coshift-ink: #050614;
+  --coshift-bone: #f4f2ec;
+  --coshift-haze: #0b0d2a;
+  --coshift-glow: #4dd0ff;
+  --coshift-mist: rgba(244, 242, 236, 0.6);
+
+  /* motion */
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out-expo: cubic-bezier(0.87, 0, 0.13, 1);
+  --dur-fast: 200ms;
+  --dur-hover: 300ms;
+  --dur-base: 600ms;
+  --dur-slow: 1200ms;
+
+  /* typography scale (clamp for fluid type) */
+  --fs-display: clamp(4rem, 12vw, 12rem);
+  --fs-h1: clamp(2.75rem, 7vw, 6.5rem);
+  --fs-h2: clamp(2rem, 4.5vw, 4rem);
+  --fs-h3: clamp(1.5rem, 2.5vw, 2.25rem);
+  --fs-lead: clamp(1.125rem, 1.4vw, 1.5rem);
+  --fs-body: 1rem;
+  --fs-mono: 0.78rem;
+
+  /* spacing rhythm */
+  --section-y: clamp(5rem, 10vw, 9rem);
+  --gutter: clamp(1.25rem, 3vw, 2.5rem);
+
+  /* layers */
+  --z-cursor: 1000;
+  --z-nav: 100;
+  --z-overlay: 200;
+  --z-preloader: 300;
+
+  color-scheme: dark;
+}
+
+/* ---------- Tailwind v4 theme bridge ---------- */
+@theme {
+  --color-coshift-cyan: var(--coshift-cyan);
+  --color-coshift-indigo: var(--coshift-indigo);
+  --color-coshift-ink: var(--coshift-ink);
+  --color-coshift-bone: var(--coshift-bone);
+  --color-coshift-haze: var(--coshift-haze);
+  --color-coshift-glow: var(--coshift-glow);
+  --color-coshift-mist: var(--coshift-mist);
+
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: var(--font-mono-jetbrains), ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+}
+
+/* ---------- Base ---------- */
+html,
+body {
+  background: var(--coshift-ink);
+  color: var(--coshift-bone);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "ss02", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: auto; /* Lenis handles it */
+}
+
+body {
+  min-height: 100svh;
+  position: relative;
+}
+
+::selection {
+  background: var(--coshift-cyan);
+  color: var(--coshift-ink);
+}
+
+/* ---------- Focus rings (a11y) ---------- */
+:focus-visible {
+  outline: 2px solid var(--coshift-cyan);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Hide native cursor when our custom cursor is active and we have a fine pointer */
+@media (pointer: fine) {
+  html.has-custom-cursor,
+  html.has-custom-cursor * {
+    cursor: none !important;
+  }
+}
+
+/* ---------- Smooth scroll wrapper (Lenis) ---------- */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* ---------- Utility classes ---------- */
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 144, "SOFT" 100, "WONK" 1;
+  font-style: italic;
+}
+
+.text-mono {
+  font-family: var(--font-mono);
+  font-size: var(--fs-mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.container-x {
+  padding-inline: var(--gutter);
+}
+
+.section-y {
+  padding-block: var(--section-y);
+}
+
+/* Hairline divider */
+.hairline {
+  border-color: rgba(244, 242, 236, 0.12);
+}
+
+.hairline-dark {
+  border-color: rgba(5, 6, 20, 0.12);
+}
+
+/* Magnetic anchor — children animate from JS */
+.magnetic {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* Marquee */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  display: inline-flex;
+  gap: 4rem;
+  animation: marquee 38s linear infinite;
+  will-change: transform;
+}
+
+/* Shimmer placeholder (replacing spinners) */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(244, 242, 236, 0.04) 0%,
+    rgba(244, 242, 236, 0.12) 50%,
+    rgba(244, 242, 236, 0.04) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
+/* Bone (light) section — flip palette without touching root */
+[data-palette="bone"] {
+  background: var(--coshift-bone);
+  color: var(--coshift-ink);
+}
+
+[data-palette="bone"] ::selection {
+  background: var(--coshift-indigo);
+  color: var(--coshift-bone);
+}
+
+/* View Transitions API — page swaps */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 480ms;
+  animation-timing-function: var(--ease-out-expo);
+}
+
+::view-transition-old(root) {
+  animation-name: vt-out;
+}
+
+::view-transition-new(root) {
+  animation-name: vt-in;
+}
+
+@keyframes vt-out {
+  to {
+    opacity: 0;
+    transform: scale(0.985) translateY(-12px);
+    filter: blur(6px);
+  }
+}
+
+@keyframes vt-in {
+  from {
+    opacity: 0;
+    transform: scale(1.015) translateY(12px);
+    filter: blur(6px);
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .marquee-track {
+    animation: none;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
+
+/* ---------- Print ---------- */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+}

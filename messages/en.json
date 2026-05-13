@@ -1,0 +1,291 @@
+{
+  "meta": {
+    "siteName": "Coshift",
+    "siteTagline": "An Odoo ERP & web studio out of Algeria, working worldwide.",
+    "ogDefault": "Coshift — ERP & web studio. Plan your shift."
+  },
+  "nav": {
+    "work": "Work",
+    "services": "Services",
+    "servicesOdoo": "Odoo ERP",
+    "servicesWeb": "Web Development",
+    "about": "About",
+    "lab": "Lab",
+    "contact": "Contact",
+    "primaryCta": "Plan your shift",
+    "menuToggle": "Open menu",
+    "menuClose": "Close menu",
+    "skipToContent": "Skip to content",
+    "languageToggle": "FR"
+  },
+  "home": {
+    "hero": {
+      "kicker": "Coshift — ERP & web studio",
+      "headlinePre": "Your business doesn't need more software.",
+      "headlinePost": "It needs a",
+      "headlineWord": "shift.",
+      "subhead": "An Odoo ERP and web development studio for companies that are done with patchwork tools and templated websites.",
+      "ctaPrimary": "Plan your shift",
+      "ctaSecondary": "See our work",
+      "scrollCue": "scroll"
+    },
+    "manifesto": {
+      "linePre": "We don't sell software.",
+      "linePost": "We rebuild how work flows."
+    },
+    "services": {
+      "kicker": "What we do",
+      "heading": "Two disciplines. One studio.",
+      "odoo": {
+        "tag": "Odoo ERP",
+        "title": "One system to run the whole business.",
+        "body": "We implement, customise, and own the result. From discovery to go-live to the year-two roadmap — your ERP is our craft, not a side project.",
+        "cta": "Explore Odoo"
+      },
+      "web": {
+        "tag": "Web Development",
+        "title": "Sites and platforms built for one company — because they were.",
+        "body": "Bespoke marketing sites, internal tools, customer portals. Designed and engineered together, never templated, never outsourced.",
+        "cta": "Explore Web"
+      }
+    },
+    "process": {
+      "kicker": "How a shift lands",
+      "heading": "Four phases. No surprises.",
+      "steps": {
+        "diagnose": {
+          "title": "Diagnose",
+          "body": "We map the actual workflow before we touch a single tool."
+        },
+        "design": {
+          "title": "Design",
+          "body": "Architecture, data model, interface — designed together."
+        },
+        "build": {
+          "title": "Build",
+          "body": "We build it. Not a freelancer pool. Us."
+        },
+        "shift": {
+          "title": "Shift",
+          "body": "Migration, training, handover. The shift lands."
+        }
+      }
+    },
+    "work": {
+      "kicker": "Selected work",
+      "heading": "Recent shifts.",
+      "viewAll": "All case studies"
+    },
+    "numbers": {
+      "kicker": "By the numbers",
+      "items": {
+        "years": "Years in business",
+        "implementations": "Odoo implementations delivered",
+        "websites": "Websites and platforms shipped",
+        "hours": "Hours of manual work eliminated"
+      }
+    },
+    "trust": {
+      "kicker": "Teams we've shifted"
+    },
+    "cta": {
+      "heading": "Ready when you are.",
+      "body": "Tell us where the friction is. We'll come back with the shape of the shift.",
+      "primary": "Plan your shift",
+      "secondary": "Send a brief"
+    }
+  },
+  "about": {
+    "kicker": "Studio",
+    "heading": "We work on systems, not just screens.",
+    "intro": "Coshift was started in M'Sila, Algeria, by people who've been on both sides of a bad ERP rollout — and the good kind. The studio exists to make the second kind the default.",
+    "principles": {
+      "heading": "Three principles, no exceptions.",
+      "items": {
+        "ownership": {
+          "title": "We own the result.",
+          "body": "From the first workshop to the second-year roadmap, the same team stays on the line."
+        },
+        "craft": {
+          "title": "Craft over throughput.",
+          "body": "We do fewer engagements than we could. The ones we take, we ship at studio quality."
+        },
+        "fluency": {
+          "title": "Bilingual, fluent in business.",
+          "body": "We speak French, English, and the language of margins, lead times, and inventory turns."
+        }
+      }
+    },
+    "location": {
+      "heading": "Where we are.",
+      "body": "Based in M'Sila, Algeria. Working with teams across the Maghreb, Francophone Africa, Europe, and the Gulf."
+    }
+  },
+  "services": {
+    "odoo": {
+      "kicker": "Odoo ERP",
+      "heading": "One system. The whole business.",
+      "intro": "We design, build, and operate Odoo ERPs for companies that are done duct-taping spreadsheets, legacy systems, and SaaS tools that don't talk to each other.",
+      "deliverables": {
+        "heading": "What you get",
+        "items": [
+          "Discovery and workflow mapping (no demo decks)",
+          "Module selection, configuration, and custom development",
+          "Data migration from legacy systems",
+          "User training in French, English, or Arabic",
+          "Go-live support and a 90-day stabilisation window",
+          "A 12-month roadmap and an SLA you can hold us to"
+        ]
+      },
+      "modules": {
+        "heading": "Modules we implement",
+        "items": ["Sales", "Inventory", "Manufacturing", "Accounting", "HR & Payroll", "CRM", "Project", "Field Service", "Subscriptions", "POS", "eCommerce", "Custom modules"]
+      },
+      "faq": {
+        "heading": "Frequently asked",
+        "items": [
+          {
+            "q": "Odoo Community or Enterprise?",
+            "a": "Both. We recommend based on your modules and scale. Enterprise pays for itself fast above a certain headcount; Community is right for many lean operations. We say which on day one."
+          },
+          {
+            "q": "How long does an implementation take?",
+            "a": "A focused mid-size implementation lands in 8 to 16 weeks. Multi-entity, multi-country rollouts run longer. We give you a hard timeline after Discover, not before."
+          },
+          {
+            "q": "Can you migrate us from another ERP?",
+            "a": "Yes. SAP Business One, Sage, Dolibarr, and home-grown systems are routine. The data work is the unglamorous part of the job — we own it."
+          },
+          {
+            "q": "What about hosting?",
+            "a": "Odoo.sh, OVH, AWS, on-premise — your call. We have an opinion and we'll share it."
+          }
+        ]
+      }
+    },
+    "web": {
+      "kicker": "Web Development",
+      "heading": "Bespoke web. Not templates with paint.",
+      "intro": "Marketing sites, internal tools, customer portals, and product surfaces. Engineered like software, designed like editorial.",
+      "deliverables": {
+        "heading": "What you get",
+        "items": [
+          "Brand-aligned design system, not a Figma kit graveyard",
+          "Performance-budgeted front-end (LCP < 2.5s, INP < 200ms)",
+          "Headless CMS or MDX content layer, whichever fits",
+          "Bilingual content support from day one",
+          "Analytics, A/B-test scaffolding, and a launch playbook",
+          "Six-month post-launch retainer if you want one"
+        ]
+      },
+      "stack": {
+        "heading": "Stack we reach for",
+        "items": ["Next.js", "React", "TypeScript", "Tailwind", "GSAP & R3F", "Sanity / Payload", "Vercel & Cloudflare", "Postgres", "Resend / Sendgrid", "Stripe"]
+      },
+      "faq": {
+        "heading": "Frequently asked",
+        "items": [
+          {
+            "q": "Do you do design and engineering, or just one?",
+            "a": "Both, in the same room. We don't accept hand-offs we didn't shape; we don't ship designs we can't build."
+          },
+          {
+            "q": "Will the site we get look like this one?",
+            "a": "No. Your site looks like your company. This one looks like ours."
+          },
+          {
+            "q": "Can you work with our existing brand?",
+            "a": "Yes. We've taken brand systems from polished guideline PDFs to functional component libraries dozens of times."
+          },
+          {
+            "q": "Do you support after launch?",
+            "a": "A 90-day stabilisation is standard. Retainers from there are optional and scoped to actual needs."
+          }
+        ]
+      }
+    }
+  },
+  "work": {
+    "kicker": "Case studies",
+    "heading": "The shifts we've shipped.",
+    "intro": "A small, opinionated selection. Each one is the version of itself we'd be happy to defend.",
+    "labels": {
+      "client": "Client",
+      "year": "Year",
+      "services": "Services",
+      "summary": "Summary",
+      "problem": "Problem",
+      "approach": "Approach",
+      "result": "Result"
+    }
+  },
+  "lab": {
+    "kicker": "Lab",
+    "heading": "Things we build to stay sharp.",
+    "intro": "Quick experiments, motion studies, and tooling we publish so the team — and you — can see the workshop floor.",
+    "viewSource": "View source"
+  },
+  "contact": {
+    "kicker": "Contact",
+    "heading": "Tell us about the shift.",
+    "intro": "The clearer the problem, the faster the response. We reply to every enquiry within two business days.",
+    "form": {
+      "name": "Your name",
+      "company": "Company",
+      "email": "Email",
+      "projectType": "What's the project about?",
+      "projectTypes": {
+        "odoo": "Odoo ERP",
+        "web": "Web development",
+        "both": "Both",
+        "other": "Something else"
+      },
+      "budget": "Budget range",
+      "budgets": {
+        "small": "Under €25k",
+        "mid": "€25k – €75k",
+        "large": "€75k – €200k",
+        "enterprise": "€200k+",
+        "unsure": "Not sure yet"
+      },
+      "message": "Anything else we should know?",
+      "submit": "Send brief",
+      "submitting": "Sending…",
+      "success": "Got it. We'll be in touch within two business days.",
+      "error": "Something went wrong. Email us directly at hello@coshift.com.",
+      "validation": {
+        "required": "Required",
+        "email": "Enter a valid email"
+      }
+    },
+    "calendly": "Or pick a slot directly.",
+    "details": {
+      "heading": "The details",
+      "address": "M'Sila, Algeria",
+      "emailLabel": "Email",
+      "phoneLabel": "Phone",
+      "whatsappLabel": "WhatsApp"
+    }
+  },
+  "notFound": {
+    "headline": "You took a wrong shift.",
+    "body": "The page you're after isn't here. Drag the block, or head back to where the work lives.",
+    "ctaHome": "Back home",
+    "ctaWork": "See the work"
+  },
+  "footer": {
+    "tagline": "An ERP & web studio out of Algeria, working worldwide.",
+    "navLabel": "Site",
+    "contactLabel": "Get in touch",
+    "social": "Elsewhere",
+    "legal": "© {year} Coshift. All rights reserved.",
+    "languageHeading": "Language"
+  },
+  "common": {
+    "scrollHint": "scroll",
+    "loading": "Loading",
+    "readMore": "Read more",
+    "next": "Next",
+    "previous": "Previous"
+  }
+}

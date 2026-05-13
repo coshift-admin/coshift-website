@@ -1,0 +1,132 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "Skip to content" [ref=e3] [cursor=pointer]:
+      - /url: "#main"
+    - generic [ref=e4]:
+      - link "Coshift home" [ref=e5] [cursor=pointer]:
+        - /url: /en
+        - img "Coshift" [ref=e7]
+      - navigation "Primary" [ref=e17]:
+        - link "Work" [ref=e18] [cursor=pointer]:
+          - /url: /en/work
+          - generic [ref=e20]: Work
+        - link "Odoo ERP" [ref=e22] [cursor=pointer]:
+          - /url: /en/services/odoo
+          - generic [ref=e24]: Odoo ERP
+        - link "Web Development" [ref=e25] [cursor=pointer]:
+          - /url: /en/services/web
+          - generic [ref=e27]: Web Development
+        - link "About" [ref=e28] [cursor=pointer]:
+          - /url: /en/about
+          - generic [ref=e30]: About
+        - link "Lab" [ref=e31] [cursor=pointer]:
+          - /url: /en/lab
+          - generic [ref=e33]: Lab
+      - generic [ref=e34]:
+        - button "Switch language to FR" [ref=e35]:
+          - generic [ref=e36]: EN
+          - generic [ref=e37]: /
+          - generic [ref=e38]: FR
+        - link "Plan your shift" [ref=e40] [cursor=pointer]:
+          - /url: /en/contact
+          - text: Plan your shift
+          - generic [ref=e41]: →
+  - main [ref=e42]:
+    - article [ref=e43]:
+      - generic [ref=e44]:
+        - img [ref=e47]
+        - generic [ref=e51]:
+          - link "← Client index" [ref=e52] [cursor=pointer]:
+            - /url: /en/work
+          - heading "Atlas Textiles — One Odoo, six factories." [level=1] [ref=e53]
+          - generic [ref=e54]:
+            - generic [ref=e55]:
+              - term [ref=e56]: Client
+              - definition [ref=e57]: Atlas Textiles
+            - generic [ref=e58]:
+              - term [ref=e59]: Year
+              - definition [ref=e60]: "2025"
+            - generic [ref=e61]:
+              - term [ref=e62]: Services
+              - definition [ref=e63]: Odoo ERP · Custom modules · Data migration
+      - generic [ref=e64]:
+        - generic [ref=e65]:
+          - generic [ref=e66]:
+            - img [ref=e67]
+            - text: Summary
+          - paragraph [ref=e70]: A 240-employee textile manufacturer running six plants on three different stock systems. We unified them on a single Odoo Enterprise instance in 14 weeks.
+        - generic [ref=e71]:
+          - generic [ref=e72]:
+            - img [ref=e73]
+            - text: Problem
+          - paragraph [ref=e76]: Stock numbers never agreed across plants; month-end took ten days of spreadsheet reconciliation; production planning ran on whiteboards and WhatsApp.
+        - generic [ref=e77]:
+          - generic [ref=e78]:
+            - img [ref=e79]
+            - text: Approach
+          - paragraph [ref=e82]: "Six-week Discovery: process maps for every workflow that touched stock or production. Then a phased Odoo rollout — Inventory + Manufacturing first, Accounting in wave two — with custom modules for fabric batch traceability and a multi-plant transfer dashboard."
+        - generic [ref=e83]:
+          - generic [ref=e84]:
+            - img [ref=e85]
+            - text: Result
+          - paragraph [ref=e88]: Month-end now runs in two days. Stock accuracy went from ~78% to 99.4% across all plants. Eight FTEs reclaimed from manual reporting.
+      - link "Next case Neon Coastal Bank — A customer portal that the bank actually trusts." [ref=e89] [cursor=pointer]:
+        - /url: /en/work/neon-coastal-bank
+        - generic [ref=e90]:
+          - generic [ref=e91]: Next case
+          - heading "Neon Coastal Bank — A customer portal that the bank actually trusts." [level=3] [ref=e92]
+  - contentinfo [ref=e93]:
+    - generic [ref=e94]:
+      - generic [ref=e95]:
+        - generic [ref=e96]:
+          - link "Coshift home" [ref=e97] [cursor=pointer]:
+            - /url: /en
+            - img "Coshift" [ref=e98]
+          - paragraph [ref=e108]: An ERP & web studio out of Algeria, working worldwide.
+          - generic [ref=e109]:
+            - img [ref=e110]
+            - generic [ref=e113]: M'Sila, Algeria
+        - generic [ref=e114]:
+          - heading "Site" [level=3] [ref=e115]
+          - list [ref=e116]:
+            - listitem [ref=e117]:
+              - link "Work" [ref=e118] [cursor=pointer]:
+                - /url: /en/work
+            - listitem [ref=e119]:
+              - link "Odoo ERP" [ref=e120] [cursor=pointer]:
+                - /url: /en/services/odoo
+            - listitem [ref=e121]:
+              - link "Web Development" [ref=e122] [cursor=pointer]:
+                - /url: /en/services/web
+            - listitem [ref=e123]:
+              - link "About" [ref=e124] [cursor=pointer]:
+                - /url: /en/about
+            - listitem [ref=e125]:
+              - link "Lab" [ref=e126] [cursor=pointer]:
+                - /url: /en/lab
+        - generic [ref=e127]:
+          - heading "Get in touch" [level=3] [ref=e128]
+          - list [ref=e129]:
+            - listitem [ref=e130]:
+              - link "hello@coshift.com" [ref=e131] [cursor=pointer]:
+                - /url: mailto:hello@coshift.com
+            - listitem [ref=e132]:
+              - link "+213 000 000 000" [ref=e133] [cursor=pointer]:
+                - /url: tel:+213000000000
+            - listitem [ref=e134]:
+              - link "WhatsApp" [ref=e135] [cursor=pointer]:
+                - /url: https://wa.me/213000000000
+          - heading "Elsewhere" [level=3] [ref=e136]
+          - list [ref=e137]:
+            - listitem [ref=e138]:
+              - link "LinkedIn" [ref=e139] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/coshift
+            - listitem [ref=e140]:
+              - link "GitHub" [ref=e141] [cursor=pointer]:
+                - /url: https://github.com/coshift
+            - listitem [ref=e142]:
+              - link "Instagram" [ref=e143] [cursor=pointer]:
+                - /url: https://www.instagram.com/coshift
+      - generic [ref=e144]:
+        - paragraph [ref=e145]: © 2026 Coshift. All rights reserved.
+        - paragraph [ref=e146]: v0.1.0 — built with shifts
