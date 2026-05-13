@@ -1,11 +1,19 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useTranslations } from "next-intl";
-import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useMotionValueEvent,
+  type MotionValue,
+} from "framer-motion";
 import { ShiftGlyph } from "@/components/icons/ShiftGlyph";
+import { ProcessCardArt } from "./ProcessCardArt";
 
 const STEPS = ["diagnose", "design", "build", "shift"] as const;
+type StepKey = (typeof STEPS)[number];
 
 /**
  * Desktop: horizontal-scroll-on-vertical-scroll. Mobile (< md): plain vertical
@@ -14,11 +22,16 @@ const STEPS = ["diagnose", "design", "build", "shift"] as const;
  * Geometry: 4 cards × 56vw wide + 3 × 1.5rem gaps. We translate the track from
  * x=0 to x = -(trackWidth - viewportWidth - leftPadding). Using viewport units
  * means we don't need to measure on resize.
+ *
+ * Per-card animation: each card receives a `cardProgress` MotionValue. We split
+ * the total scroll into 4 equal segments; within each segment, the matching
+ * card's progress runs 0→1 (with a small overlap so animations begin slightly
+ * before the card is fully centered).
  */
-const CARD_VW = 56; // card width on desktop, in vw
-const GAP_REM = 1.5; // tailwind gap-6 = 1.5rem
-const LEFT_PAD_VW = 4; // leading padding so the first card doesn't kiss the edge
-const RIGHT_PAD_VW = 4; // and the last card has room
+const CARD_VW = 56;
+const GAP_REM = 1.5;
+const LEFT_PAD_VW = 4;
+const RIGHT_PAD_VW = 4;
 
 export function Process() {
   const t = useTranslations("home.process");
@@ -30,14 +43,9 @@ export function Process() {
     offset: ["start start", "end end"],
   });
 
-  // Total track width in vw = 4 * 56 + 3 * gap-as-vw + left+right pad
-  // We treat the small rem gap as ~1.5vw worth (close enough at 1440px).
-  // Actual translation: from 0vw to -(trackWidth - 100vw)vw.
-  const trackVw = STEPS.length * CARD_VW + (STEPS.length - 1) * GAP_REM * 1; // gap in rem -> kept literal in markup
+  const trackVw = STEPS.length * CARD_VW + (STEPS.length - 1) * GAP_REM;
   const distanceVw = trackVw + LEFT_PAD_VW + RIGHT_PAD_VW - 100;
 
-  // Lead-in: don't start sliding until the section is fully pinned. End-out: stop
-  // a bit before the very end so the last card sits comfortably.
   const x = useTransform(
     scrollYProgress,
     [0.05, 0.95],
@@ -45,7 +53,6 @@ export function Process() {
   );
   const railWidth = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
-  // Active-step indicator updates as the user scrolls through.
   useMotionValueEvent(scrollYProgress, "change", (p) => {
     const segment = Math.min(STEPS.length, Math.floor(p * STEPS.length) + 1);
     if (segment !== active) setActive(segment);
@@ -53,7 +60,8 @@ export function Process() {
 
   return (
     <>
-      {/* Mobile: simple vertical stack */}
+      {/* Mobile: simple vertical stack — each card gets its animation driven by
+          its own in-view scroll so the artwork still plays on phones. */}
       <section
         aria-label="Process"
         className="md:hidden container-x mx-auto max-w-[1600px] section-y"
@@ -61,12 +69,12 @@ export function Process() {
         <SectionHeader t={t} active={1} mobile />
         <ol className="mt-12 space-y-6">
           {STEPS.map((key, i) => (
-            <ProcessCard
+            <MobileCard
               key={key}
+              variant={key}
               index={i}
               title={t(`steps.${key}.title`)}
               body={t(`steps.${key}.body`)}
-              mobile
             />
           ))}
         </ol>
@@ -89,22 +97,30 @@ export function Process() {
 
           <motion.div
             style={{ x }}
-            className="mt-auto flex h-[62vh] items-stretch gap-6 pb-16"
+            className="mt-auto flex h-[64vh] min-h-[520px] items-stretch gap-6 pb-12"
           >
-            {/* left lead-in spacer */}
-            <div aria-hidden style={{ width: `${LEFT_PAD_VW}vw` }} className="shrink-0" />
+            <div
+              aria-hidden
+              style={{ width: `${LEFT_PAD_VW}vw` }}
+              className="shrink-0"
+            />
             {STEPS.map((key, i) => (
-              <ProcessCard
+              <DesktopCard
                 key={key}
+                variant={key}
                 index={i}
                 title={t(`steps.${key}.title`)}
                 body={t(`steps.${key}.body`)}
+                scrollYProgress={scrollYProgress}
               />
             ))}
-            <div aria-hidden style={{ width: `${RIGHT_PAD_VW}vw` }} className="shrink-0" />
+            <div
+              aria-hidden
+              style={{ width: `${RIGHT_PAD_VW}vw` }}
+              className="shrink-0"
+            />
           </motion.div>
 
-          {/* progress rail */}
           <div className="container-x mx-auto w-full max-w-[1600px] pb-6">
             <div className="relative h-px w-full bg-white/10">
               <motion.div
@@ -134,41 +150,120 @@ function SectionHeader({
         <ShiftGlyph className="h-3 w-auto text-[var(--coshift-cyan)]" />
         {t("kicker")}
       </div>
-      <h2 className={`text-[length:var(--fs-h2)] font-bold leading-[1] tracking-[-0.02em] ${mobile ? "max-w-[18ch]" : ""}`}>
+      <h2
+        className={`text-[length:var(--fs-h2)] font-bold leading-[1] tracking-[-0.02em] ${mobile ? "max-w-[18ch]" : ""}`}
+      >
         {t("heading")}
       </h2>
     </div>
   );
 }
 
-function ProcessCard({
+/* ───────────── Desktop card ─────────────
+   Carves a per-card sub-progress from the parent scroll. Card N's animation
+   runs across the parent range [N/4 - lead, (N+1)/4 + lead], clamped to 0–1. */
+function DesktopCard({
+  variant,
   index,
   title,
   body,
-  mobile,
+  scrollYProgress,
 }: {
+  variant: StepKey;
   index: number;
   title: string;
   body: string;
-  mobile?: boolean;
+  scrollYProgress: MotionValue<number>;
 }) {
-  const desktopWidth = `${CARD_VW}vw`;
+  const slice = 1 / STEPS.length;
+  const lead = 0.04;
+  const start = Math.max(0, index * slice - lead);
+  const end = Math.min(1, (index + 1) * slice + lead);
+
+  const cardProgress = useTransform(scrollYProgress, [start, end], [0, 1], {
+    clamp: true,
+  });
+
   return (
     <article
-      style={mobile ? undefined : { width: desktopWidth }}
-      className="relative flex shrink-0 flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-[var(--coshift-haze)] p-10 md:p-14"
+      style={{ width: `${CARD_VW}vw` }}
+      className="relative flex shrink-0 flex-col overflow-hidden rounded-3xl border border-white/10 bg-[var(--coshift-haze)] p-8 md:p-10"
     >
       <div className="flex items-start justify-between gap-6">
-        <div className="font-display leading-[0.85] text-[var(--coshift-cyan)]" style={{ fontSize: mobile ? "5.5rem" : "clamp(7rem,12vw,14rem)" }}>
+        <div
+          className="font-display leading-[0.85] text-[var(--coshift-cyan)]"
+          style={{ fontSize: "clamp(5rem,9vw,9.5rem)" }}
+        >
           0{index + 1}
         </div>
-        <ShiftGlyph className="h-12 w-auto text-[var(--coshift-cyan)]/70 md:h-20" />
+        <ShiftGlyph className="h-10 w-auto text-[var(--coshift-cyan)]/70 md:h-14" />
       </div>
-      <div className={`mt-12 max-w-[44ch] ${mobile ? "" : "md:mt-auto"}`}>
+
+      {/* artwork: takes remaining space between number and title block,
+          but its SVG is capped so the title is guaranteed visible */}
+      <div className="my-4 flex grow items-center text-[var(--coshift-cyan)]">
+        <ProcessCardArt variant={variant} progress={cardProgress} />
+      </div>
+
+      <div className="max-w-[44ch]">
         <h3 className="text-[length:var(--fs-h3)] font-semibold leading-[1.1] tracking-[-0.01em]">
           {title}
         </h3>
-        <p className="mt-4 text-[length:var(--fs-lead)] text-[var(--coshift-bone)]/70">
+        <p className="mt-3 text-[length:var(--fs-lead)] text-[var(--coshift-bone)]/70">
+          {body}
+        </p>
+      </div>
+    </article>
+  );
+}
+
+/* ───────────── Mobile card ─────────────
+   Plain vertical layout. The artwork's progress is driven by the card's own
+   scroll position relative to the viewport so the animation still plays on
+   phones — falling back to a finished state if scroll is unavailable. */
+function MobileCard({
+  variant,
+  index,
+  title,
+  body,
+}: {
+  variant: StepKey;
+  index: number;
+  title: string;
+  body: string;
+}) {
+  const cardRef = useRef<HTMLElement | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: cardRef,
+    offset: ["start end", "end start"],
+  });
+  // Card art plays across the central 50% of its visible scroll
+  const cardProgress = useTransform(scrollYProgress, [0.25, 0.75], [0, 1], {
+    clamp: true,
+  });
+
+  return (
+    <article
+      ref={cardRef}
+      className="relative flex flex-col gap-6 overflow-hidden rounded-3xl border border-white/10 bg-[var(--coshift-haze)] p-8"
+    >
+      <div className="flex items-start justify-between">
+        <div
+          className="font-display leading-[0.85] text-[var(--coshift-cyan)]"
+          style={{ fontSize: "5rem" }}
+        >
+          0{index + 1}
+        </div>
+        <ShiftGlyph className="h-12 w-auto text-[var(--coshift-cyan)]/70" />
+      </div>
+      <div className="text-[var(--coshift-cyan)]">
+        <ProcessCardArt variant={variant} progress={cardProgress} />
+      </div>
+      <div>
+        <h3 className="text-[length:var(--fs-h3)] font-semibold leading-[1.1] tracking-[-0.01em]">
+          {title}
+        </h3>
+        <p className="mt-3 text-[length:var(--fs-lead)] text-[var(--coshift-bone)]/70">
           {body}
         </p>
       </div>
