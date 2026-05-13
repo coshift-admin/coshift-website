@@ -32,16 +32,16 @@ export default async function AboutPage({
           <span aria-hidden className="h-px w-8 bg-[var(--coshift-cyan)]" />
           {t("kicker")}
         </div>
-        <h1 className="max-w-[20ch] text-[var(--fs-h1)] font-extrabold leading-[0.95] tracking-[-0.02em]">
+        <h1 className="max-w-[20ch] text-[length:var(--fs-h1)] font-extrabold leading-[0.95] tracking-[-0.02em]">
           {t("heading")}
         </h1>
-        <p className="mt-8 max-w-[60ch] text-[var(--fs-lead)] text-[var(--coshift-bone)]/70">
+        <p className="mt-8 max-w-[60ch] text-[length:var(--fs-lead)] text-[var(--coshift-bone)]/70">
           {t("intro")}
         </p>
       </header>
 
       <section className="grid grid-cols-1 gap-12 py-20 md:grid-cols-12 md:gap-x-16 md:py-32">
-        <h2 className="text-[var(--fs-h2)] font-bold leading-[1] tracking-[-0.02em] md:col-span-4">
+        <h2 className="text-[length:var(--fs-h2)] font-bold leading-[1] tracking-[-0.02em] md:col-span-4">
           {t("principles.heading")}
         </h2>
         <div className="md:col-span-8">
@@ -55,7 +55,7 @@ export default async function AboutPage({
                   0{i + 1}
                 </div>
                 <div>
-                  <h3 className="text-[var(--fs-h3)] font-semibold leading-[1.15] tracking-[-0.01em]">
+                  <h3 className="text-[length:var(--fs-h3)] font-semibold leading-[1.15] tracking-[-0.01em]">
                     {t(`principles.items.${key}.title`)}
                   </h3>
                   <p className="mt-3 max-w-[56ch] text-base text-[var(--coshift-bone)]/70">
@@ -73,10 +73,10 @@ export default async function AboutPage({
           <ShiftGlyph className="h-20 w-auto text-[var(--coshift-cyan)]" />
         </div>
         <div className="md:col-span-8">
-          <h2 className="text-[var(--fs-h2)] font-bold leading-[1] tracking-[-0.02em]">
+          <h2 className="text-[length:var(--fs-h2)] font-bold leading-[1] tracking-[-0.02em]">
             {t("location.heading")}
           </h2>
-          <p className="mt-6 max-w-[56ch] text-[var(--fs-lead)] text-[var(--coshift-bone)]/70">
+          <p className="mt-6 max-w-[56ch] text-[length:var(--fs-lead)] text-[var(--coshift-bone)]/70">
             {t("location.body")}
           </p>
           {/* <EditMe> — team photos placeholder: brief says skip until photos provided.

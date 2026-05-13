@@ -46,7 +46,7 @@ function AccordionItem({
       >
         <span
           className={cn(
-            "text-[var(--fs-h3)] font-semibold leading-[1.15] tracking-[-0.01em] transition-colors",
+            "text-[length:var(--fs-h3)] font-semibold leading-[1.15] tracking-[-0.01em] transition-colors",
             open
               ? "text-[var(--coshift-cyan)]"
               : "text-[var(--coshift-bone)] group-hover:text-[var(--coshift-cyan)]",

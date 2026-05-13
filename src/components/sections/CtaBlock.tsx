@@ -16,10 +16,10 @@ export function CtaBlock() {
         >
           <ShiftGlyph className="h-72 w-auto text-[var(--coshift-cyan)]" />
         </div>
-        <h2 className="max-w-[18ch] text-[var(--fs-h2)] font-bold leading-[1] tracking-[-0.02em]">
+        <h2 className="max-w-[18ch] text-[length:var(--fs-h2)] font-bold leading-[1] tracking-[-0.02em]">
           {t("heading")}
         </h2>
-        <p className="mt-6 max-w-[52ch] text-[var(--fs-lead)] text-[var(--coshift-bone)]/70">
+        <p className="mt-6 max-w-[52ch] text-[length:var(--fs-lead)] text-[var(--coshift-bone)]/70">
           {t("body")}
         </p>
         <div className="mt-10 flex flex-wrap gap-4">

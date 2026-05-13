@@ -29,10 +29,10 @@ export default async function ContactPage({
           <span aria-hidden className="h-px w-8 bg-[var(--coshift-cyan)]" />
           {t("kicker")}
         </div>
-        <h1 className="max-w-[20ch] text-[var(--fs-h1)] font-extrabold leading-[0.95] tracking-[-0.02em]">
+        <h1 className="max-w-[20ch] text-[length:var(--fs-h1)] font-extrabold leading-[0.95] tracking-[-0.02em]">
           {t("heading")}
         </h1>
-        <p className="mt-8 max-w-[60ch] text-[var(--fs-lead)] text-[var(--coshift-bone)]/70">
+        <p className="mt-8 max-w-[60ch] text-[length:var(--fs-lead)] text-[var(--coshift-bone)]/70">
           {t("intro")}
         </p>
       </header>

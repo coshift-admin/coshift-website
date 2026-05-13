@@ -70,7 +70,7 @@ export function Hero() {
           {t("kicker")}
         </div>
 
-        <h1 className="max-w-[18ch] text-[var(--fs-h1)] font-extrabold leading-[0.95] tracking-[-0.02em] text-[var(--coshift-bone)]">
+        <h1 className="max-w-[18ch] text-[length:var(--fs-h1)] font-extrabold leading-[0.95] tracking-[-0.02em] text-[var(--coshift-bone)]">
           <span className="block">{t("headlinePre")}</span>
           <span className="mt-2 block">
             {t("headlinePost")}{" "}
@@ -80,7 +80,7 @@ export function Hero() {
           </span>
         </h1>
 
-        <p className="mt-8 max-w-[52ch] text-[var(--fs-lead)] text-[var(--coshift-bone)]/70">
+        <p className="mt-8 max-w-[52ch] text-[length:var(--fs-lead)] text-[var(--coshift-bone)]/70">
           {t("subhead")}
         </p>
 

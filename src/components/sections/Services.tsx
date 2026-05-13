@@ -21,7 +21,7 @@ export function Services() {
             <span aria-hidden className="h-px w-8 bg-[var(--coshift-cyan)]" />
             {t("kicker")}
           </div>
-          <h2 className="max-w-[20ch] text-[var(--fs-h2)] font-bold leading-[1] tracking-[-0.02em]">
+          <h2 className="max-w-[20ch] text-[length:var(--fs-h2)] font-bold leading-[1] tracking-[-0.02em]">
             {t("heading")}
           </h2>
         </div>
@@ -88,7 +88,7 @@ function ServiceCard({
 
       <div className="text-mono text-[var(--coshift-cyan)]">{tag}</div>
 
-      <h3 className="mt-6 max-w-[18ch] text-[var(--fs-h3)] font-semibold leading-[1.1] tracking-[-0.01em]">
+      <h3 className="mt-6 max-w-[18ch] text-[length:var(--fs-h3)] font-semibold leading-[1.1] tracking-[-0.01em]">
         {title}
       </h3>
 

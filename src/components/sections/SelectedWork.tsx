@@ -18,7 +18,7 @@ export function SelectedWork() {
             <span aria-hidden className="h-px w-8 bg-[var(--coshift-cyan)]" />
             {t("kicker")}
           </div>
-          <h2 className="text-[var(--fs-h2)] font-bold leading-[1] tracking-[-0.02em]">
+          <h2 className="text-[length:var(--fs-h2)] font-bold leading-[1] tracking-[-0.02em]">
             {t("heading")}
           </h2>
         </div>
@@ -44,7 +44,7 @@ export function SelectedWork() {
                 <div className="text-mono text-[var(--coshift-cyan)]">
                   0{i + 1} — {c.client}
                 </div>
-                <h3 className="mt-2 max-w-[24ch] text-[var(--fs-h3)] font-semibold leading-[1.15] tracking-[-0.01em] text-[var(--coshift-bone)]">
+                <h3 className="mt-2 max-w-[24ch] text-[length:var(--fs-h3)] font-semibold leading-[1.15] tracking-[-0.01em] text-[var(--coshift-bone)]">
                   <ShiftIn>{c.title}</ShiftIn>
                 </h3>
               </div>

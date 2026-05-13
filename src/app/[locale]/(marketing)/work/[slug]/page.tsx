@@ -49,7 +49,7 @@ export default async function CaseStudyPage({
           >
             ← {t("client")} index
           </Link>
-          <h1 className="mt-8 max-w-[24ch] text-[var(--fs-h1)] font-extrabold leading-[0.95] tracking-[-0.02em]">
+          <h1 className="mt-8 max-w-[24ch] text-[length:var(--fs-h1)] font-extrabold leading-[0.95] tracking-[-0.02em]">
             {pick(c.title, c.titleFr)}
           </h1>
           <dl className="text-mono mt-10 grid grid-cols-2 gap-x-8 gap-y-5 text-[var(--coshift-bone)]/70 sm:grid-cols-4">
@@ -73,7 +73,7 @@ export default async function CaseStudyPage({
 
       <div className="container-x mx-auto grid max-w-[1600px] grid-cols-1 gap-y-16 py-20 md:grid-cols-12 md:gap-x-16 md:py-32">
         <Section heading={t("summary")} className="md:col-span-12">
-          <p className="max-w-[60ch] text-[var(--fs-lead)] text-[var(--coshift-bone)]/80">
+          <p className="max-w-[60ch] text-[length:var(--fs-lead)] text-[var(--coshift-bone)]/80">
             {pick(c.summary, c.summaryFr)}
           </p>
         </Section>
@@ -88,7 +88,7 @@ export default async function CaseStudyPage({
           </p>
         </Section>
         <Section heading={t("result")} className="md:col-span-12">
-          <p className="max-w-[60ch] text-[var(--fs-lead)] text-[var(--coshift-bone)]/85">
+          <p className="max-w-[60ch] text-[length:var(--fs-lead)] text-[var(--coshift-bone)]/85">
             {pick(c.result, c.resultFr)}
           </p>
         </Section>
@@ -139,7 +139,7 @@ function NextCase({
         <div className="text-mono text-[var(--coshift-bone)]/60">
           Next case
         </div>
-        <h3 className="mt-4 max-w-[28ch] text-[var(--fs-h2)] font-bold leading-[1.05] tracking-[-0.02em] transition-colors group-hover:text-[var(--coshift-cyan)]">
+        <h3 className="mt-4 max-w-[28ch] text-[length:var(--fs-h2)] font-bold leading-[1.05] tracking-[-0.02em] transition-colors group-hover:text-[var(--coshift-cyan)]">
           {isFr ? next.titleFr ?? next.title : next.title}
         </h3>
       </div>

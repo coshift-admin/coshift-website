@@ -20,12 +20,12 @@
   --dur-slow: 1200ms;
 
   /* typography scale (clamp for fluid type) */
-  --fs-display: clamp(4rem, 12vw, 12rem);
-  --fs-h1: clamp(2.75rem, 7vw, 6.5rem);
-  --fs-h2: clamp(2rem, 4.5vw, 4rem);
-  --fs-h3: clamp(1.5rem, 2.5vw, 2.25rem);
-  --fs-lead: clamp(1.125rem, 1.4vw, 1.5rem);
-  --fs-body: 1rem;
+  --fs-display: clamp(4.5rem, 13vw, 14rem);
+  --fs-h1: clamp(3rem, 7.6vw, 8rem);
+  --fs-h2: clamp(2.25rem, 5vw, 5rem);
+  --fs-h3: clamp(1.625rem, 2.6vw, 2.5rem);
+  --fs-lead: clamp(1.1875rem, 1.4vw, 1.625rem);
+  --fs-body: 1.0625rem;
   --fs-mono: 0.78rem;
 
   /* spacing rhythm */
@@ -63,10 +63,17 @@ body {
   color: var(--coshift-bone);
   font-family: var(--font-sans);
   font-feature-settings: "ss01", "ss02", "cv11";
+  font-size: var(--fs-body);
+  line-height: 1.55;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  /* `clip` instead of `hidden` so the element does NOT become a scroll
+     container — `overflow-x: hidden` on <body> silently breaks every
+     `position: sticky` descendant (the sticky pins to a non-scrolling
+     ancestor and never engages). `clip` clips overflow without creating
+     a scrollport. */
+  overflow-x: clip;
 }
 
 html {
@@ -148,10 +155,15 @@ html.lenis body {
   border-color: rgba(5, 6, 20, 0.12);
 }
 
-/* Magnetic anchor — children animate from JS */
-.magnetic {
-  display: inline-block;
-  will-change: transform;
+/* Magnetic anchor — children animate from JS.
+   Placed in @layer components so Tailwind utilities like `.hidden` (which
+   live in @layer utilities) win — without layering, an unlayered rule
+   silently beats every utility class. */
+@layer components {
+  .magnetic {
+    display: inline-block;
+    will-change: transform;
+  }
 }
 
 /* Marquee */

@@ -18,10 +18,10 @@ export default function NotFound() {
       </div>
       <div className="container-x relative z-10 mx-auto max-w-[1600px] text-center">
         <p className="text-mono text-[var(--coshift-cyan)]">404</p>
-        <h1 className="mx-auto mt-6 max-w-[20ch] text-[var(--fs-h1)] font-extrabold leading-[0.95] tracking-[-0.02em]">
+        <h1 className="mx-auto mt-6 max-w-[20ch] text-[length:var(--fs-h1)] font-extrabold leading-[0.95] tracking-[-0.02em]">
           {t("headline")}
         </h1>
-        <p className="mx-auto mt-6 max-w-[52ch] text-[var(--fs-lead)] text-[var(--coshift-bone)]/70">
+        <p className="mx-auto mt-6 max-w-[52ch] text-[length:var(--fs-lead)] text-[var(--coshift-bone)]/70">
           {t("body")}
         </p>
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
