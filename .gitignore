@@ -42,3 +42,9 @@ next-env.d.ts
 # Local tooling
 .playwright-mcp/
 .local/
+
+# Don't commit secrets or backups
+.env
+.env.local
+docker-compose.yml.backup-*
+next.config.ts.backup
