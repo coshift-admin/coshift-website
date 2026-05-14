@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { CalendlyEmbed } from "@/components/contact/CalendlyEmbed";
+import { LocationMap } from "@/components/contact/LocationMap";
 import { site } from "@/lib/site";
 import { Reveal, RevealWords } from "@/components/motion/Reveal";
 
@@ -82,19 +83,14 @@ export default async function ContactPage({
               </a>
             </li>
           </ul>
-          {/* Simple map placeholder — opens Google Maps in a new tab.
-              Replace with an embedded vector map when the studio is ready to publish exact address. */}
+          <LocationMap />
           <a
-            href="https://www.google.com/maps/place/M'Sila"
+            href={site.address.mapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 block aspect-[4/3] overflow-hidden rounded-2xl border border-white/10"
+            className="text-mono mt-3 inline-flex items-center gap-2 text-[var(--coshift-bone)]/60 hover:text-[var(--coshift-cyan)]"
           >
-            <div className="grid h-full place-items-center bg-[radial-gradient(ellipse_at_50%_50%,rgba(31,182,240,0.18),transparent_55%)]">
-              <span className="text-mono text-[var(--coshift-bone)]/60">
-                M'Sila ↗
-              </span>
-            </div>
+            {site.address.district}, {site.address.city} ↗
           </a>
         </aside>
       </section>

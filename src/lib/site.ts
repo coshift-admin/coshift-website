@@ -1,15 +1,18 @@
 export const site = {
   name: "Coshift",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://coshift.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://coshift.agency",
   defaultLocale: "fr" as const,
-  // <EditMe> — final business address & contact
   address: {
-    city: "M'Sila",
+    district: "Lido",
+    city: "Alger",
     country: "Algeria",
+    countryFr: "Algérie",
+    geo: { lat: 36.7441033, lng: 3.1778598 },
+    mapsUrl: "https://maps.app.goo.gl/HzoA5EtZRutCmnbX8",
   },
-  email: "hello@coshift.com",
-  phone: "+213 000 000 000",
-  whatsapp: "+213000000000",
+  email: "contact@coshift.agency",
+  phone: "+213 560 50 18 45",
+  whatsapp: "+213560501845",
   social: {
     linkedin: "https://www.linkedin.com/company/coshift",
     github: "https://github.com/coshift",

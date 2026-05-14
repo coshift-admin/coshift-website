@@ -52,10 +52,11 @@ The first install will prompt about `sharp` and `unrs-resolver` build scripts. R
 Copy `.env.example` to `.env.local` and fill in:
 
 ```env
-RESEND_API_KEY=re_xxxxxxxxxxxxxxxx          # contact form delivery
-CONTACT_EMAIL_TO=hello@coshift.com          # where briefs land
-NEXT_PUBLIC_CALENDLY_URL=                   # Calendly inline embed (optional)
-NEXT_PUBLIC_SITE_URL=https://coshift.com    # canonical URL, OG, sitemap
+RESEND_API_KEY=re_xxxxxxxxxxxxxxxx              # contact form delivery
+CONTACT_EMAIL_TO=contact@coshift.agency         # where briefs land
+CONTACT_EMAIL_FROM=Coshift <noreply@coshift.agency>  # must be on a verified Resend domain
+NEXT_PUBLIC_CALENDLY_URL=                       # Calendly inline embed (optional)
+NEXT_PUBLIC_SITE_URL=https://coshift.agency     # canonical URL, OG, sitemap
 ```
 
 When `RESEND_API_KEY` is missing, the `/api/contact` route logs the brief to the server console and returns success — useful for local dev.
@@ -70,6 +71,7 @@ vercel login
 vercel link                                    # connect / create project
 vercel env add RESEND_API_KEY production
 vercel env add CONTACT_EMAIL_TO production
+vercel env add CONTACT_EMAIL_FROM production
 vercel env add NEXT_PUBLIC_CALENDLY_URL production
 vercel env add NEXT_PUBLIC_SITE_URL production
 vercel --prod                                  # ship
@@ -79,7 +81,7 @@ Once the project is linked, every `git push` triggers a preview deployment; Verc
 
 ### Custom domain
 
-1. Vercel dashboard → project → **Settings → Domains** → add `coshift.com`.
+1. Vercel dashboard → project → **Settings → Domains** → add `coshift.agency`.
 2. Update the DNS at your registrar:
    - `@` → `76.76.21.21` (A) or `cname.vercel-dns.com` (CNAME)
    - `www` → `cname.vercel-dns.com`

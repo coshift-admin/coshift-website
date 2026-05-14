@@ -28,7 +28,8 @@ export async function POST(req: Request) {
   const data = parsed.data;
 
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_EMAIL_TO ?? "hello@coshift.com";
+  const to = process.env.CONTACT_EMAIL_TO ?? "contact@coshift.agency";
+  const from = process.env.CONTACT_EMAIL_FROM ?? "Coshift <noreply@coshift.agency>";
 
   // No key in this environment → log and return success so the user gets
   // immediate feedback in local dev. Production must have RESEND_API_KEY set.
@@ -55,7 +56,7 @@ export async function POST(req: Request) {
     ].join("\n");
 
     await resend.emails.send({
-      from: "Coshift <noreply@coshift.com>",
+      from,
       to: [to],
       replyTo: data.email,
       subject,

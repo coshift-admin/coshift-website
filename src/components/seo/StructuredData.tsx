@@ -18,6 +18,7 @@ export function StructuredData({ locale }: { locale: string }) {
         sameAs: [site.social.linkedin, site.social.github, site.social.instagram],
         address: {
           "@type": "PostalAddress",
+          streetAddress: site.address.district,
           addressLocality: site.address.city,
           addressCountry: "DZ",
         },
@@ -31,10 +32,15 @@ export function StructuredData({ locale }: { locale: string }) {
         telephone: site.phone,
         address: {
           "@type": "PostalAddress",
+          streetAddress: site.address.district,
           addressLocality: site.address.city,
           addressCountry: "DZ",
         },
-        geo: { "@type": "GeoCoordinates", latitude: 35.7058, longitude: 4.5419 },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: site.address.geo.lat,
+          longitude: site.address.geo.lng,
+        },
         priceRange: "$$$",
       },
       {

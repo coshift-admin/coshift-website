@@ -3,20 +3,14 @@
 import { useTranslations } from "next-intl";
 import { Reveal } from "@/components/motion/Reveal";
 
-// <!-- TODO: replace with real client logos -->
-// Placeholder client names rendered as a simple wordmark each. The visual
-// uniformity matters more than logo fidelity at this stage.
+// Real client wordmarks — Odoo clients followed by web clients. Add to either
+// group as new engagements close.
 const CLIENTS = [
-  "Atlas Textiles",
-  "Neon Coastal Bank",
-  "Maghreb Logistics",
-  "Hadar Foods",
-  "Sahara Cement",
-  "Sirocco Studio",
-  "Karim & Fils",
-  "Berkane Mining",
-  "Riviera Hotels",
-  "Vivo Tools",
+  "ISTA",
+  "Broderie Royale",
+  "Formex",
+  "Renoh",
+  "Ozea",
 ];
 
 export function TrustStrip() {

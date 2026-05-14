@@ -98,7 +98,7 @@
   "about": {
     "kicker": "Studio",
     "heading": "Nous travaillons sur des systèmes, pas seulement des écrans.",
-    "intro": "Coshift a démarré à M'Sila, en Algérie, fondé par des personnes qui ont vécu les deux côtés d'un déploiement ERP — le bon et le mauvais. Le studio existe pour rendre le bon par défaut.",
+    "intro": "Coshift a démarré au Lido, à Alger, fondé par des personnes qui ont vécu les deux côtés d'un déploiement ERP — le bon et le mauvais. Le studio existe pour rendre le bon par défaut.",
     "principles": {
       "heading": "Trois principes, aucune exception.",
       "items": {
@@ -118,7 +118,7 @@
     },
     "location": {
       "heading": "Où nous sommes.",
-      "body": "Basés à M'Sila, en Algérie. Au service d'équipes au Maghreb, en Afrique francophone, en Europe et dans le Golfe."
+      "body": "Basés au Lido, à Alger. Au service d'équipes au Maghreb, en Afrique francophone, en Europe et dans le Golfe."
     }
   },
   "services": {
@@ -252,7 +252,7 @@
       "submit": "Envoyer le brief",
       "submitting": "Envoi en cours…",
       "success": "Reçu. Nous revenons vers vous sous deux jours ouvrés.",
-      "error": "Quelque chose a échoué. Écrivez-nous directement à hello@coshift.com.",
+      "error": "Quelque chose a échoué. Écrivez-nous directement à contact@coshift.agency.",
       "validation": {
         "required": "Requis",
         "email": "Email invalide"
@@ -261,7 +261,7 @@
     "calendly": "Ou prenez un créneau directement.",
     "details": {
       "heading": "Les détails",
-      "address": "M'Sila, Algérie",
+      "address": "Lido, Alger — Algérie",
       "emailLabel": "Email",
       "phoneLabel": "Téléphone",
       "whatsappLabel": "WhatsApp"

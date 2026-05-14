@@ -98,7 +98,7 @@
   "about": {
     "kicker": "Studio",
     "heading": "We work on systems, not just screens.",
-    "intro": "Coshift was started in M'Sila, Algeria, by people who've been on both sides of a bad ERP rollout — and the good kind. The studio exists to make the second kind the default.",
+    "intro": "Coshift was started in Lido, Alger, by people who've been on both sides of a bad ERP rollout — and the good kind. The studio exists to make the second kind the default.",
     "principles": {
       "heading": "Three principles, no exceptions.",
       "items": {
@@ -118,7 +118,7 @@
     },
     "location": {
       "heading": "Where we are.",
-      "body": "Based in M'Sila, Algeria. Working with teams across the Maghreb, Francophone Africa, Europe, and the Gulf."
+      "body": "Based in Lido, Alger. Working with teams across the Maghreb, Francophone Africa, Europe, and the Gulf."
     }
   },
   "services": {
@@ -252,7 +252,7 @@
       "submit": "Send brief",
       "submitting": "Sending…",
       "success": "Got it. We'll be in touch within two business days.",
-      "error": "Something went wrong. Email us directly at hello@coshift.com.",
+      "error": "Something went wrong. Email us directly at contact@coshift.agency.",
       "validation": {
         "required": "Required",
         "email": "Enter a valid email"
@@ -261,7 +261,7 @@
     "calendly": "Or pick a slot directly.",
     "details": {
       "heading": "The details",
-      "address": "M'Sila, Algeria",
+      "address": "Lido, Alger — Algeria",
       "emailLabel": "Email",
       "phoneLabel": "Phone",
       "whatsappLabel": "WhatsApp"

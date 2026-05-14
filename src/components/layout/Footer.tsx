@@ -25,7 +25,7 @@ export async function Footer() {
             <div className="mt-8 flex items-center gap-3">
               <ShiftGlyph className="h-6 w-auto text-[var(--coshift-cyan)]" />
               <span className="text-mono text-[var(--coshift-bone)]/60">
-                {site.address.city}, {site.address.country}
+                {site.address.district}, {site.address.city} — {site.address.country}
               </span>
             </div>
           </div>

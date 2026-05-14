@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm exec *)",
+      "WebFetch(domain:maps.app.goo.gl)",
+      "Bash(docker compose *)",
+      "Bash(pnpm dev *)"
+    ]
+  }
+}

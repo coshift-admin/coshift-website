@@ -67,8 +67,8 @@ export async function GET(req: Request) {
             letterSpacing: 0.5,
           }}
         >
-          <span>ERP & web studio · M'Sila → worldwide</span>
-          <span style={{ color: "#1FB6F0" }}>coshift.com</span>
+          <span>ERP & web studio · Alger → worldwide</span>
+          <span style={{ color: "#1FB6F0" }}>coshift.agency</span>
         </div>
       </div>
     ),
