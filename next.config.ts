@@ -10,6 +10,10 @@ const withMDX = createMDX({
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   pageExtensions: ["ts", "tsx", "mdx"],
+  // `standalone` produces a self-contained .next/standalone folder that runs
+  // with just `node server.js` — no node_modules needed at deploy time. This
+  // is what we copy to the OVH VPS (Vercel builds know to honor it too).
+  output: "standalone",
   images: {
     formats: ["image/avif", "image/webp"],
   },
