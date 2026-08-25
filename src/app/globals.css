@@ -105,6 +105,39 @@ body {
   }
 }
 
+/* Sitewide filmic grain overlay (static) */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+}
+
+/* Contextual cursor label — a small pill that names the action (View / Drag …) */
+.cursor-label {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--coshift-ink);
+  background: var(--coshift-cyan);
+  padding: 0.28rem 0.6rem;
+  border-radius: 9999px;
+  white-space: nowrap;
+  opacity: 0;
+  transform-origin: top left;
+  transition: opacity 200ms var(--ease-out-expo), scale 200ms var(--ease-out-expo);
+  scale: 0.7;
+}
+.cursor-label[data-show="true"] {
+  opacity: 1;
+  scale: 1;
+}
+
 /* ---------- Smooth scroll wrapper (Lenis) ---------- */
 html.lenis,
 html.lenis body {

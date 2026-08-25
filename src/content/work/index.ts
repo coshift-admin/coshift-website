@@ -15,6 +15,16 @@ export type CaseStudy = {
   resultFr?: string;
   cover: { hue: number; tone: "cyan" | "indigo" | "mixed" };
   gallery?: string[];
+  /**
+   * Optional client testimonial. Leave undefined unless you have the client's
+   * ACTUAL words in writing — never invent a quote (brand brief §11). Written
+   * attestations exist for AVZ and Formex; paste their real quote here when
+   * cleared for public use.
+   */
+  quote?: string;
+  quoteFr?: string;
+  quoteAuthor?: string;
+  quoteRole?: string;
 };
 
 /**

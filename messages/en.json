@@ -72,6 +72,24 @@
         { "title": "AI inside a client's ERP", "body": "We've built and deployed a self-hosted AI assistant connected to a live Odoo instance — the model runs on our own infrastructure, so the data never leaves it. (Deployed on a demo database, not yet day-to-day production.)" }
       ]
     },
+    "demo": {
+      "kicker": "See it, don't read about it",
+      "heading": "A working demo in two minutes.",
+      "body": "We don't send slides. We stand up a real, fully working ERP on its own secure address — you log in and click around. Here's the idea, in miniature.",
+      "command": "coshift demo --new",
+      "steps": [
+        "allocating instance",
+        "installing Odoo 18",
+        "configuring HTTPS & DNS",
+        "seeding demo data",
+        "demo ready"
+      ],
+      "cta": "Provision a demo",
+      "running": "Provisioning…",
+      "again": "Run it again",
+      "realCta": "Ask for a real demo",
+      "note": "Illustration — not a live instance"
+    },
     "process": {
       "kicker": "How a shift lands",
       "heading": "Four phases. No surprises.",
@@ -126,6 +144,12 @@
         "Gaming retail",
         "Audiovisual equipment"
       ]
+    },
+    "emailOffer": {
+      "kicker": "Start small, start cheap",
+      "heading": "Professional email on your domain — at about a fifth of the price.",
+      "body": "Mailboxes on your own domain, deliverability configured (SPF, DKIM, DMARC), and free migration from Gmail or Microsoft 365. The easiest first step into one connected system.",
+      "cta": "Get email pricing"
     },
     "trust": {
       "kicker": "Selected clients"
@@ -297,7 +321,7 @@
     "calendly": "Or pick a slot directly.",
     "details": {
       "heading": "The details",
-      "address": "Lido, Mohammadia, Alger — Algeria",
+      "address": "113 Rue Saidi Ahmed, Lot N7 Étage 4, Bordj El Kiffane, Alger 16031 — Algeria",
       "emailLabel": "Email",
       "phoneLabel": "Phone",
       "whatsappLabel": "WhatsApp"

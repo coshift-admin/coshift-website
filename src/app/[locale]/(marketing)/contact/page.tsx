@@ -90,7 +90,7 @@ export default async function ContactPage({
             rel="noopener noreferrer"
             className="text-mono mt-3 inline-flex items-center gap-2 text-[var(--coshift-bone)]/60 hover:text-[var(--coshift-cyan)]"
           >
-            {site.address.district}, {site.address.city} ↗
+            {site.address.municipality}, {site.address.city} ↗
           </a>
         </aside>
       </section>

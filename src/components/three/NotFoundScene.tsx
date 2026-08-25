@@ -15,7 +15,7 @@ export default function NotFoundScene() {
   const reduced = useReducedMotionPref();
   if (reduced) {
     return (
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_40%,rgba(31,182,240,0.18),transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_40%,rgba(51,197,243,0.18),transparent_60%)]" />
     );
   }
   return (
@@ -24,6 +24,7 @@ export default function NotFoundScene() {
       dpr={[1, 1.5]}
       camera={{ fov: 32, position: [0, 0, 7] }}
       gl={{ alpha: true, antialias: true }}
+      data-cursor-label="Drag"
       className="!absolute inset-0"
     >
       <Suspense fallback={null}>

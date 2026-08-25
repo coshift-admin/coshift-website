@@ -49,6 +49,7 @@ export default async function WorkIndex({
           <li key={c.slug}>
             <Link
               href={`/work/${c.slug}`}
+              data-cursor-label="Open"
               className="group grid grid-cols-1 items-center gap-8 py-10 md:grid-cols-12 md:gap-12 md:py-16"
             >
               <div className="md:col-span-1 text-mono text-[var(--coshift-cyan)]">

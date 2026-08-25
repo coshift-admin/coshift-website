@@ -6,12 +6,15 @@ export const site = {
   tagline: "Powering Your Next Shift",
   defaultLocale: "fr" as const,
   address: {
-    district: "Lido",
-    municipality: "Mohammadia",
+    street: "113 Rue Saidi Ahmed, Lot N7 Étage 4",
+    municipality: "Bordj El Kiffane",
     city: "Alger",
+    postalCode: "16031",
     country: "Algeria",
     countryFr: "Algérie",
-    geo: { lat: 36.7441033, lng: 3.1778598 },
+    // Approximate Bordj El Kiffane coordinates. 🔴 Update mapsUrl/geo with the
+    // exact pin before publishing the contact map.
+    geo: { lat: 36.7539, lng: 3.1936 },
     mapsUrl: "https://maps.app.goo.gl/HzoA5EtZRutCmnbX8",
   },
   email: "contact@coshift.agency",

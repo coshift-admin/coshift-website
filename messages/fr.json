@@ -72,6 +72,24 @@
         { "title": "De l'IA dans l'ERP d'un client", "body": "Nous avons construit et déployé un assistant IA auto-hébergé relié à une instance Odoo — le modèle tourne sur notre propre infrastructure, les données ne la quittent jamais. (Déployé sur une base de démonstration, pas encore en production quotidienne.)" }
       ]
     },
+    "demo": {
+      "kicker": "Voyez-le, ne le lisez pas",
+      "heading": "Une démo qui fonctionne en deux minutes.",
+      "body": "Nous n'envoyons pas de slides. Nous montons un vrai ERP pleinement fonctionnel sur sa propre adresse sécurisée — vous vous connectez et vous cliquez. Voici l'idée, en miniature.",
+      "command": "coshift demo --new",
+      "steps": [
+        "allocation de l'instance",
+        "installation d'Odoo 18",
+        "configuration HTTPS & DNS",
+        "injection des données de démo",
+        "démo prête"
+      ],
+      "cta": "Lancer une démo",
+      "running": "Provisionnement…",
+      "again": "Relancer",
+      "realCta": "Demander une vraie démo",
+      "note": "Illustration — pas une instance réelle"
+    },
     "process": {
       "kicker": "Comment un shift se déroule",
       "heading": "Quatre phases. Pas de mauvaises surprises.",
@@ -126,6 +144,12 @@
         "Retail gaming",
         "Matériel audiovisuel"
       ]
+    },
+    "emailOffer": {
+      "kicker": "Commencez petit, commencez malin",
+      "heading": "Email professionnel sur votre domaine — à environ un cinquième du prix.",
+      "body": "Des boîtes sur votre propre domaine, la délivrabilité configurée (SPF, DKIM, DMARC) et la migration offerte depuis Gmail ou Microsoft 365. Le premier pas le plus simple vers un système connecté.",
+      "cta": "Obtenir les tarifs email"
     },
     "trust": {
       "kicker": "Clients choisis"
@@ -297,7 +321,7 @@
     "calendly": "Ou prenez un créneau directement.",
     "details": {
       "heading": "Les détails",
-      "address": "Lido, Mohammadia, Alger — Algérie",
+      "address": "113 Rue Saidi Ahmed, Lot N7 Étage 4, Bordj El Kiffane, Alger 16031 — Algérie",
       "emailLabel": "Email",
       "phoneLabel": "Téléphone",
       "whatsappLabel": "WhatsApp"

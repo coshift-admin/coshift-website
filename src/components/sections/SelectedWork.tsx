@@ -39,6 +39,7 @@ export function SelectedWork() {
           <Link
             key={c.slug}
             href={`/work/${c.slug}`}
+            data-cursor-label="View"
             className="group block"
           >
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 md:aspect-[5/4]">

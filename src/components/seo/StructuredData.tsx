@@ -18,8 +18,9 @@ export function StructuredData({ locale }: { locale: string }) {
         sameAs: [site.social.linkedin, site.social.facebook, site.social.instagram],
         address: {
           "@type": "PostalAddress",
-          streetAddress: `${site.address.district}, ${site.address.municipality}`,
-          addressLocality: site.address.city,
+          streetAddress: site.address.street,
+          addressLocality: `${site.address.municipality}, ${site.address.city}`,
+          postalCode: site.address.postalCode,
           addressCountry: "DZ",
         },
       },
@@ -32,8 +33,9 @@ export function StructuredData({ locale }: { locale: string }) {
         telephone: site.phone,
         address: {
           "@type": "PostalAddress",
-          streetAddress: `${site.address.district}, ${site.address.municipality}`,
-          addressLocality: site.address.city,
+          streetAddress: site.address.street,
+          addressLocality: `${site.address.municipality}, ${site.address.city}`,
+          postalCode: site.address.postalCode,
           addressCountry: "DZ",
         },
         geo: {

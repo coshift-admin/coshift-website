@@ -1,14 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import { useTranslations } from "next-intl";
-import {
-  motion,
-  useInView,
-  useMotionValue,
-  useSpring,
-  useTransform,
-} from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useReducedMotionPref } from "@/hooks/useReducedMotion";
 import { ShiftGlyph } from "@/components/icons/ShiftGlyph";
 import { Reveal, RevealWords } from "@/components/motion/Reveal";
 import { StaggerList } from "@/components/motion/StaggerList";
@@ -50,7 +45,7 @@ export function Numbers() {
             <div className="text-mono text-[var(--coshift-bone)]/50">
               0{i + 1}
             </div>
-            <Counter value={item.value} suffix={item.suffix} run={inView} />
+            <DigitRoll value={item.value} suffix={item.suffix} run={inView} />
             <div className="text-base text-[var(--coshift-bone)]/70">
               {t(`items.${item.key}`)}{" "}
               <span className="ml-1 inline-block align-middle">
@@ -67,7 +62,9 @@ export function Numbers() {
   );
 }
 
-function Counter({
+/* Slot-machine digit roll: each digit is a 0–9 reel that spins up to its target
+   on viewport entry, staggered left→right. Reduced-motion shows the final value. */
+function DigitRoll({
   value,
   suffix,
   run,
@@ -76,24 +73,55 @@ function Counter({
   suffix: string;
   run: boolean;
 }) {
-  const mv = useMotionValue(0);
-  const spring = useSpring(mv, { stiffness: 60, damping: 18 });
-  const rounded = useTransform(spring, (latest) => Math.floor(latest));
-  const [display, setDisplay] = useState(0);
-
-  useEffect(() => {
-    if (run) mv.set(value);
-  }, [run, value, mv]);
-
-  useEffect(() => {
-    const unsub = rounded.on("change", (v) => setDisplay(v));
-    return () => unsub();
-  }, [rounded]);
+  const reduced = useReducedMotionPref();
+  const digits = String(value).split("");
 
   return (
-    <motion.div className="font-display text-[clamp(3rem,8vw,7rem)] leading-none text-[var(--coshift-bone)]">
-      {display}
+    <div className="font-display flex text-[clamp(3rem,8vw,7rem)] leading-none text-[var(--coshift-bone)]">
+      {digits.map((d, i) => (
+        <Reel key={i} digit={Number(d)} index={i} run={run} reduced={reduced} />
+      ))}
       <span className="text-[var(--coshift-cyan)]">{suffix}</span>
-    </motion.div>
+    </div>
+  );
+}
+
+function Reel({
+  digit,
+  index,
+  run,
+  reduced,
+}: {
+  digit: number;
+  index: number;
+  run: boolean;
+  reduced: boolean;
+}) {
+  if (reduced) {
+    return <span aria-hidden>{digit}</span>;
+  }
+  return (
+    <span
+      aria-hidden
+      className="relative inline-block overflow-hidden"
+      style={{ height: "1em", width: "0.62em" }}
+    >
+      <motion.span
+        className="absolute left-0 top-0 flex flex-col"
+        initial={{ y: "0em" }}
+        animate={run ? { y: `-${digit}em` } : { y: "0em" }}
+        transition={{
+          duration: 1.1,
+          ease: [0.22, 1, 0.36, 1],
+          delay: 0.12 * index,
+        }}
+      >
+        {Array.from({ length: 10 }, (_, n) => (
+          <span key={n} className="flex h-[1em] items-start justify-center">
+            {n}
+          </span>
+        ))}
+      </motion.span>
+    </span>
   );
 }

@@ -52,3 +52,7 @@ next.config.ts.backup
 # Internal-only: contains unsigned prospect names + infra notes (brief §11 says
 # never publish these). Keep it local; never push to a hosted repo.
 Coshift_Brand_Identity_Brief.md
+
+# Raw logo dropbox (source assets incl. non-client marks). Processed, cleared
+# client logos that the site actually uses live in public/logos/.
+/logos/

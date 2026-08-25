@@ -14,6 +14,8 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Preloader } from "@/components/layout/Preloader";
 import { KonamiEgg } from "@/components/layout/KonamiEgg";
+import { GrainOverlay } from "@/components/layout/GrainOverlay";
+import { WhatsAppFab } from "@/components/layout/WhatsAppFab";
 import { RouteTransition } from "@/components/layout/RouteTransition";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { site } from "@/lib/site";
@@ -110,7 +112,9 @@ export default async function LocaleLayout({
               </main>
               <Footer />
               <KonamiEgg />
+              <WhatsAppFab />
             </SmoothScroll>
+            <GrainOverlay />
           </ReducedMotionProvider>
         </NextIntlClientProvider>
         <Analytics />

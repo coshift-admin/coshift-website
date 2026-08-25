@@ -10,7 +10,7 @@ export function LocationMap() {
   return (
     <div className="mt-8 aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-[var(--coshift-haze)]">
       <iframe
-        title={`Map — ${site.address.district}, ${site.address.city}`}
+        title={`Map — ${site.address.municipality}, ${site.address.city}`}
         src={src}
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"

@@ -3,22 +3,30 @@
 import { useTranslations } from "next-intl";
 import { Reveal } from "@/components/motion/Reveal";
 
-// Cleared client wordmarks only — every name here is ticked ✅ in the brand
-// brief §4.1 (public-use approved). Never add a name that isn't cleared, and
-// never add a prospect from §4.2.
-// TODO: swap these text wordmarks for real client logos once per-client logo
-// permission is confirmed (written attestations already exist for AVZ & Formex).
-const CLIENTS = [
-  "AVZ",
-  "Renoh",
-  "OSCAR PRO",
-  "FastPlast",
-  "Formex",
-  "Savoir",
-  "Broderie Royale",
-  "Kompen",
-  "ISTA",
-  "3JoyGames",
+/**
+ * Cleared clients only — every entry is ticked ✅ in the brand brief §4.1.
+ * Never add a name that isn't cleared, and never a prospect from §4.2.
+ *
+ * `logo` points to a file in /public/logos. Logos are rendered as uniform
+ * white silhouettes (brightness(0) invert(1)) so the strip reads as one system
+ * regardless of each source logo's colours. Clients without a usable
+ * transparent asset fall back to a styled wordmark — visually consistent.
+ * TODO: add OSCAR PRO + 3JoyGames logos (currently text) when supplied.
+ */
+type Client = { name: string; logo?: string; w?: number; h?: number };
+
+const CLIENTS: Client[] = [
+  { name: "Audiovisual Zone", logo: "/logos/avz.svg" },
+  { name: "Renoh", logo: "/logos/renoh.png" },
+  { name: "OSCAR PRO" },
+  { name: "FastPlast", logo: "/logos/fastplast.webp" },
+  { name: "Formex", logo: "/logos/formex.svg" },
+  { name: "Savoir", logo: "/logos/savoir.png" },
+  { name: "Broderie Royale", logo: "/logos/broderie-royale.png" },
+  { name: "Kompen" },
+  { name: "ISTA", logo: "/logos/ista.png" },
+  { name: "Moustex", logo: "/logos/moustex.svg" },
+  { name: "3JoyGames" },
 ];
 
 export function TrustStrip() {
@@ -30,12 +38,11 @@ export function TrustStrip() {
       className="group/marquee border-y border-white/10 bg-[color-mix(in_oklab,var(--coshift-ink)_92%,white)] py-10"
     >
       <Reveal>
-        <div className="text-mono container-x mx-auto mb-6 max-w-[1600px] text-[var(--coshift-bone)]/50">
+        <div className="text-mono container-x mx-auto mb-8 max-w-[1600px] text-[var(--coshift-bone)]/50">
           {t("kicker")}
         </div>
       </Reveal>
       <div className="relative overflow-hidden">
-        {/* fade-out edges so logos appear/disappear instead of cutting */}
         <div
           aria-hidden
           className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-[linear-gradient(90deg,var(--coshift-ink),transparent)]"
@@ -44,17 +51,37 @@ export function TrustStrip() {
           aria-hidden
           className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-[linear-gradient(270deg,var(--coshift-ink),transparent)]"
         />
-        <div className="marquee-track group-hover/marquee:[animation-play-state:paused]">
+        <ul className="marquee-track list-none items-center group-hover/marquee:[animation-play-state:paused]">
           {[...CLIENTS, ...CLIENTS].map((c, i) => (
-            <span
-              key={`${c}-${i}`}
-              className="shrink-0 cursor-default whitespace-nowrap text-[clamp(1.5rem,3vw,2.5rem)] font-semibold tracking-[-0.02em] text-[var(--coshift-bone)]/40 transition-all duration-300 hover:scale-[1.04] hover:text-[var(--coshift-cyan)]"
-            >
-              {c}
-            </span>
+            <li key={`${c.name}-${i}`} className="flex shrink-0 items-center">
+              <ClientLogo client={c} />
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
+  );
+}
+
+function ClientLogo({ client }: { client: Client }) {
+  if (client.logo) {
+    // Plain <img>: next/image blocks SVG sources and we intentionally apply CSS
+    // filters to these tiny decorative marquee logos.
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src={client.logo}
+        alt={client.name}
+        loading="lazy"
+        decoding="async"
+        className="h-7 w-auto max-w-[180px] object-contain opacity-55 transition-all duration-500 ease-[var(--ease-out-expo)] [filter:brightness(0)_invert(1)] hover:scale-[1.04] hover:opacity-100 md:h-9"
+      />
+    );
+  }
+  // Wordmark fallback — same tone/behaviour as the silhouettes.
+  return (
+    <span className="cursor-default whitespace-nowrap text-[clamp(1.25rem,2.4vw,2rem)] font-semibold tracking-[-0.02em] text-[var(--coshift-bone)]/50 transition-all duration-500 ease-[var(--ease-out-expo)] hover:scale-[1.04] hover:text-[var(--coshift-bone)]">
+      {client.name}
+    </span>
   );
 }

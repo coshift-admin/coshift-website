@@ -3,8 +3,9 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import { caseStudies, findCaseStudy } from "@/content/work";
 import { CaseCover } from "@/components/work/CaseCover";
-import { ShiftGlyph } from "@/components/icons/ShiftGlyph";
-import { Reveal, RevealWords } from "@/components/motion/Reveal";
+import { CaseNarrative, type Panel } from "@/components/work/CaseNarrative";
+import { Testimonial } from "@/components/work/Testimonial";
+import { RevealWords } from "@/components/motion/Reveal";
 
 export async function generateStaticParams() {
   return caseStudies.map((c) => ({ slug: c.slug }));
@@ -72,51 +73,25 @@ export default async function CaseStudyPage({
         </div>
       </header>
 
-      <div className="container-x mx-auto grid max-w-[1600px] grid-cols-1 gap-y-16 py-20 md:grid-cols-12 md:gap-x-16 md:py-32">
-        <Section heading={t("summary")} className="md:col-span-12">
-          <p className="max-w-[60ch] text-[length:var(--fs-lead)] text-[var(--coshift-bone)]/80">
-            {pick(c.summary, c.summaryFr)}
-          </p>
-        </Section>
-        <Section heading={t("problem")} className="md:col-span-6">
-          <p className="text-base text-[var(--coshift-bone)]/75">
-            {pick(c.problem, c.problemFr)}
-          </p>
-        </Section>
-        <Section heading={t("approach")} className="md:col-span-6">
-          <p className="text-base text-[var(--coshift-bone)]/75">
-            {pick(c.approach, c.approachFr)}
-          </p>
-        </Section>
-        <Section heading={t("result")} className="md:col-span-12">
-          <p className="max-w-[60ch] text-[length:var(--fs-lead)] text-[var(--coshift-bone)]/85">
-            {pick(c.result, c.resultFr)}
-          </p>
-        </Section>
-      </div>
+      <CaseNarrative
+        panels={
+          [
+            { label: t("summary"), body: pick(c.summary, c.summaryFr), lead: true },
+            { label: t("problem"), body: pick(c.problem, c.problemFr) },
+            { label: t("approach"), body: pick(c.approach, c.approachFr) },
+            { label: t("result"), body: pick(c.result, c.resultFr), lead: true },
+          ] satisfies Panel[]
+        }
+      />
+
+      <Testimonial
+        quote={pick(c.quote, c.quoteFr)}
+        author={c.quoteAuthor}
+        role={c.quoteRole}
+      />
 
       <NextCase currentSlug={c.slug} locale={locale} />
     </article>
-  );
-}
-
-function Section({
-  heading,
-  className,
-  children,
-}: {
-  heading: string;
-  className?: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <Reveal as="section" className={className}>
-      <div className="text-mono mb-4 flex items-center gap-3 text-[var(--coshift-bone)]/60">
-        <ShiftGlyph className="h-3 w-auto text-[var(--coshift-cyan)]" />
-        {heading}
-      </div>
-      {children}
-    </Reveal>
   );
 }
 
