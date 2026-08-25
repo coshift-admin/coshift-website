@@ -18,7 +18,7 @@ export async function GET(req: Request) {
           padding: 64,
           backgroundColor: "#050614",
           backgroundImage:
-            "radial-gradient(ellipse at 70% 30%, #1FB6F033 0%, #050614 55%)",
+            "radial-gradient(ellipse at 70% 30%, #33C5F333 0%, #050614 55%)",
           color: "#F4F2EC",
           fontFamily: "Inter, system-ui, sans-serif",
         }}
@@ -28,7 +28,7 @@ export async function GET(req: Request) {
             display: "flex",
             alignItems: "center",
             gap: 14,
-            color: "#1FB6F0",
+            color: "#33C5F3",
             fontSize: 22,
             letterSpacing: 4,
             textTransform: "uppercase",
@@ -37,7 +37,7 @@ export async function GET(req: Request) {
         >
           {/* small mark */}
           <svg width="40" height="64" viewBox="0 0 64 96">
-            <rect x="14" y="0" width="36" height="20" fill="#1FB6F0" />
+            <rect x="14" y="0" width="36" height="20" fill="#33C5F3" />
             <path
               fill="#4DD0FF"
               d="M14 26 H 50 C 50 26, 50 38, 42 42 C 36 45, 28 47, 22 52 C 14 58, 14 70, 22 74 C 28 77, 36 79, 42 82 C 50 86, 50 96, 50 96 H 14 C 14 96, 14 86, 22 82 C 28 79, 36 77, 42 74 C 50 70, 50 58, 42 52 C 36 47, 28 45, 22 42 C 14 38, 14 26, 14 26 Z"
@@ -67,8 +67,8 @@ export async function GET(req: Request) {
             letterSpacing: 0.5,
           }}
         >
-          <span>ERP & web studio · Alger → worldwide</span>
-          <span style={{ color: "#1FB6F0" }}>coshift.agency</span>
+          <span>One team for your whole digital system · Algeria</span>
+          <span style={{ color: "#33C5F3" }}>coshift.agency</span>
         </div>
       </div>
     ),

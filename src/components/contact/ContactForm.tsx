@@ -10,8 +10,7 @@ const schema = z.object({
   name: z.string().min(2),
   company: z.string().optional(),
   email: z.string().email(),
-  projectType: z.enum(["odoo", "web", "both", "other"]),
-  budget: z.enum(["small", "mid", "large", "enterprise", "unsure"]),
+  projectType: z.enum(["erp", "web", "email", "other"]),
   message: z.string().optional(),
 });
 type FormData = z.infer<typeof schema>;
@@ -27,7 +26,7 @@ export function ContactForm() {
     formState: { errors },
     reset,
   } = useForm<FormData>({
-    defaultValues: { projectType: "odoo", budget: "unsure" },
+    defaultValues: { projectType: "erp" },
   });
 
   const onSubmit = async (data: FormData) => {
@@ -91,7 +90,7 @@ export function ContactForm() {
           {t("projectType")}
         </legend>
         <div className="flex flex-wrap gap-2">
-          {(["odoo", "web", "both", "other"] as const).map((opt) => (
+          {(["erp", "web", "email", "other"] as const).map((opt) => (
             <label key={opt} className="cursor-pointer">
               <input
                 type="radio"
@@ -101,27 +100,6 @@ export function ContactForm() {
               />
               <span className="inline-flex rounded-full border border-white/20 px-4 py-2 text-sm peer-checked:border-[var(--coshift-cyan)] peer-checked:bg-[var(--coshift-cyan)] peer-checked:text-[var(--coshift-ink)]">
                 {t(`projectTypes.${opt}`)}
-              </span>
-            </label>
-          ))}
-        </div>
-      </fieldset>
-
-      <fieldset className="space-y-3">
-        <legend className="text-mono mb-2 text-[var(--coshift-bone)]/60">
-          {t("budget")}
-        </legend>
-        <div className="flex flex-wrap gap-2">
-          {(["small", "mid", "large", "enterprise", "unsure"] as const).map((opt) => (
-            <label key={opt} className="cursor-pointer">
-              <input
-                type="radio"
-                value={opt}
-                className="peer sr-only"
-                {...register("budget")}
-              />
-              <span className="inline-flex rounded-full border border-white/20 px-4 py-2 text-sm peer-checked:border-[var(--coshift-cyan)] peer-checked:bg-[var(--coshift-cyan)] peer-checked:text-[var(--coshift-ink)]">
-                {t(`budgets.${opt}`)}
               </span>
             </label>
           ))}

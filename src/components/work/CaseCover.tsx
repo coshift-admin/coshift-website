@@ -58,10 +58,10 @@ export function CaseCover({
     let t = 0;
     const palette =
       tone === "cyan"
-        ? ["#1FB6F0", "#0B5C8B", "#050614"]
+        ? ["#33C5F3", "#0B5C8B", "#050614"]
         : tone === "indigo"
-          ? ["#4DD0FF", "#1A1B5C", "#050614"]
-          : ["#1FB6F0", "#1A1B5C", "#050614"];
+          ? ["#4DD0FF", "#211852", "#050614"]
+          : ["#33C5F3", "#211852", "#050614"];
 
     const draw = () => {
       const w = canvas.clientWidth;

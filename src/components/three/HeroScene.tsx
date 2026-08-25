@@ -120,13 +120,13 @@ function GlyphInstance({
       </mesh>
       <mesh geometry={dotGeo} position={[0, 2.4, 0]}>
         <meshPhysicalMaterial
-          color="#1FB6F0"
+          color="#33C5F3"
           metalness={1}
           roughness={0.2}
           clearcoat={1}
           clearcoatRoughness={0.15}
           envMapIntensity={1.6}
-          emissive="#1FB6F0"
+          emissive="#33C5F3"
           emissiveIntensity={0.18}
         />
       </mesh>
@@ -217,13 +217,13 @@ function HeroComposition({ morph }: { morph: React.RefObject<number> }) {
         />
         <Lightformer
           intensity={1.4}
-          color="#1FB6F0"
+          color="#33C5F3"
           position={[-7, 2, -2]}
           scale={[8, 4, 1]}
         />
         <Lightformer
           intensity={0.9}
-          color="#1A1B5C"
+          color="#211852"
           position={[0, -6, 2]}
           scale={[10, 6, 1]}
         />
@@ -237,8 +237,8 @@ function HeroComposition({ morph }: { morph: React.RefObject<number> }) {
       {/* Direct lights add definition the envMap alone can't give */}
       <ambientLight intensity={0.18} />
       <directionalLight position={[6, 8, 6]} intensity={0.9} color="#ffffff" />
-      <directionalLight position={[-6, -4, 4]} intensity={0.4} color="#1A1B5C" />
-      <directionalLight position={[0, -2, -8]} intensity={1.4} color="#1FB6F0" />
+      <directionalLight position={[-6, -4, 4]} intensity={0.4} color="#211852" />
+      <directionalLight position={[0, -2, -8]} intensity={1.4} color="#33C5F3" />
 
       <group>
         {instances.map((inst) => (

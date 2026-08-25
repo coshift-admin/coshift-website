@@ -16,15 +16,20 @@ export function Services() {
       aria-label="Services"
       className="container-x mx-auto max-w-[1600px] section-y"
     >
-      <header className="mb-12 flex items-end justify-between gap-6 md:mb-20">
+      <header className="mb-12 flex flex-col gap-8 md:mb-20 md:flex-row md:items-end md:justify-between">
         <Reveal>
           <div className="text-mono mb-4 flex items-center gap-3 text-[var(--coshift-bone)]/60">
             <span aria-hidden className="h-px w-8 bg-[var(--coshift-cyan)]" />
             {t("kicker")}
           </div>
-          <h2 className="max-w-[20ch] text-[length:var(--fs-h2)] font-bold leading-[1] tracking-[-0.02em]">
+          <h2 className="max-w-[22ch] text-[length:var(--fs-h2)] font-bold leading-[1] tracking-[-0.02em]">
             <RevealWords text={t("heading")} />
           </h2>
+        </Reveal>
+        <Reveal delay={0.15}>
+          <p className="max-w-[46ch] text-base text-[var(--coshift-bone)]/70">
+            {t("intro")}
+          </p>
         </Reveal>
       </header>
 
@@ -46,7 +51,49 @@ export function Services() {
           variant="web"
         />
       </div>
+
+      <ServiceLines heading={t("linesHeading")} lines={t.raw("lines") as ServiceLine[]} />
     </section>
+  );
+}
+
+type ServiceLine = { title: string; body: string; highlight?: boolean };
+
+function ServiceLines({ heading, lines }: { heading: string; lines: ServiceLine[] }) {
+  return (
+    <div className="mt-16 md:mt-24">
+      <Reveal>
+        <div className="text-mono mb-8 flex items-center gap-3 text-[var(--coshift-bone)]/50">
+          <ShiftGlyph className="h-3 w-auto text-[var(--coshift-cyan)]" />
+          {heading}
+        </div>
+      </Reveal>
+      <div className="grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
+        {lines.map((line) => (
+          <div
+            key={line.title}
+            className={
+              "border-t pt-5 " +
+              (line.highlight
+                ? "border-[var(--coshift-cyan)]/60"
+                : "border-white/10")
+            }
+          >
+            <h3 className="flex items-center gap-2 text-base font-semibold text-[var(--coshift-bone)]">
+              {line.title}
+              {line.highlight ? (
+                <span className="text-mono rounded-full bg-[var(--coshift-cyan)]/15 px-2 py-0.5 text-[var(--coshift-cyan)]">
+                  entry point
+                </span>
+              ) : null}
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-[var(--coshift-bone)]/60">
+              {line.body}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }
 
@@ -177,7 +224,7 @@ function WireframeMotif({ hover }: { hover: boolean }) {
         rx="6"
         stroke="var(--coshift-cyan)"
         strokeWidth="1"
-        fill={hover ? "rgba(31,182,240,0.07)" : "transparent"}
+        fill={hover ? "rgba(51,197,243,0.07)" : "transparent"}
         style={{ transition: "fill 400ms" }}
       />
       <rect x="14" y="14" width="40" height="6" rx="1" fill="var(--coshift-cyan)" opacity="0.6" />

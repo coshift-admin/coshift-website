@@ -25,7 +25,7 @@ export default async function AboutPage({
   setRequestLocale(locale);
   const t = await getTranslations("about");
 
-  const principles = ["ownership", "craft", "fluency"] as const;
+  const principles = ["scope", "ownership", "engineering"] as const;
 
   return (
     <div className="container-x mx-auto max-w-[1600px] pt-32 md:pt-44">

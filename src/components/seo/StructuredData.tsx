@@ -15,10 +15,10 @@ export function StructuredData({ locale }: { locale: string }) {
         name: site.name,
         url: site.url,
         email: site.email,
-        sameAs: [site.social.linkedin, site.social.github, site.social.instagram],
+        sameAs: [site.social.linkedin, site.social.facebook, site.social.instagram],
         address: {
           "@type": "PostalAddress",
-          streetAddress: site.address.district,
+          streetAddress: `${site.address.district}, ${site.address.municipality}`,
           addressLocality: site.address.city,
           addressCountry: "DZ",
         },
@@ -32,7 +32,7 @@ export function StructuredData({ locale }: { locale: string }) {
         telephone: site.phone,
         address: {
           "@type": "PostalAddress",
-          streetAddress: site.address.district,
+          streetAddress: `${site.address.district}, ${site.address.municipality}`,
           addressLocality: site.address.city,
           addressCountry: "DZ",
         },

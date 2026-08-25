@@ -1,7 +1,7 @@
 {
   "name": "Coshift",
   "short_name": "Coshift",
-  "description": "Odoo ERP & web studio out of Algeria.",
+  "description": "Coshift builds and runs your whole digital system — website, ERP, apps, email, servers. One team.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#050614",

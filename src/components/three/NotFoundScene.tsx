@@ -30,8 +30,8 @@ export default function NotFoundScene() {
         <DragCube />
         <Environment frames={1} resolution={128} background={false}>
           <Lightformer intensity={2} color="#ffffff" position={[5, 5, 5]} scale={[5, 5, 1]} />
-          <Lightformer intensity={1.2} color="#1FB6F0" position={[-5, 0, 0]} scale={[5, 5, 1]} />
-          <Lightformer intensity={1.2} color="#1A1B5C" position={[0, -5, -2]} scale={[5, 5, 1]} />
+          <Lightformer intensity={1.2} color="#33C5F3" position={[-5, 0, 0]} scale={[5, 5, 1]} />
+          <Lightformer intensity={1.2} color="#211852" position={[0, -5, -2]} scale={[5, 5, 1]} />
         </Environment>
       </Suspense>
       <ambientLight intensity={0.3} />

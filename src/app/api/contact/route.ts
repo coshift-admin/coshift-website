@@ -6,8 +6,7 @@ const schema = z.object({
   name: z.string().min(2).max(120),
   company: z.string().max(120).optional(),
   email: z.string().email().max(200),
-  projectType: z.enum(["odoo", "web", "both", "other"]),
-  budget: z.enum(["small", "mid", "large", "enterprise", "unsure"]),
+  projectType: z.enum(["erp", "web", "email", "other"]),
   message: z.string().max(8000).optional(),
 });
 
@@ -49,7 +48,6 @@ export async function POST(req: Request) {
       `<p><strong>Email:</strong> ${escape(data.email)}</p>`,
       data.company ? `<p><strong>Company:</strong> ${escape(data.company)}</p>` : "",
       `<p><strong>Project type:</strong> ${escape(data.projectType)}</p>`,
-      `<p><strong>Budget:</strong> ${escape(data.budget)}</p>`,
       data.message
         ? `<p><strong>Message:</strong></p><pre style="white-space:pre-wrap;font-family:inherit">${escape(data.message)}</pre>`
         : "",

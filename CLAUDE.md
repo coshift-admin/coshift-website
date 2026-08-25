@@ -62,6 +62,31 @@ Color palette and motion variables exactly per BRIEF Section 3. All in `:root` i
 | 4. Remaining sections + inner pages | ✅ done | about, services pages, work index + detail, lab, contact, 404 |
 | 5. Polish, i18n, perf, a11y, SEO | ✅ done | OG route, sitemap, robots, JSON-LD, View Transitions CSS, type-check clean |
 | 6. Deploy | ✅ ready | git committed; `vercel --prod` is a user step (needs auth) |
+| 7. Brand realignment | ✅ done | Rebuilt against `Coshift_Brand_Identity_Brief.md`; typecheck + build clean |
+
+### Phase 7 log — realignment to the Brand Identity Brief
+The site was originally built from `BRIEF.md` (a "premium creative studio" framing). The
+newer `Coshift_Brand_Identity_Brief.md` is now the source of truth for **content, positioning,
+colours and hard publishing rules**. Changes made:
+- **Colours:** cyan `#1FB6F0`→`#33C5F3`, indigo `#1A1B5C`→`#211852` across `globals.css`,
+  all hardcoded component hex, favicon, OG route, manifest. `--coshift-glow` (`#4DD0FF`) kept.
+- **Positioning:** shifted from "Odoo + Web studio" to **"one connected system, one team — we run
+  what we build"** (tagline *Powering Your Next Shift*). New hero (four-providers pain), manifesto
+  ("We don't just build your systems. We run them."), and expanded Services with 8 service-line
+  cards + email lead-magnet highlight.
+- **New home sections:** `ProofPoints.tsx` (own infra / working demo / bespoke modules / self-hosted
+  AI — honesty-noted) and `Sectors.tsx` (12-sector coverage band). Order: Hero → Manifesto →
+  Services → ProofPoints → Process → SelectedWork → Numbers → Sectors → Trust → CTA.
+- **Hard-rule fixes (brief §11):** deleted fabricated case studies (Atlas Textiles, Neon Coastal
+  Bank) and rebuilt `content/work/index.ts` with 6 cleared ✅ clients (AVZ, Renoh, OSCAR PRO,
+  Savoir/Glow, FastPlast, Kompen) — no invented metrics, no client business data, no infra detail,
+  honesty notes inline. Removed fabricated "Ozea" from Trust strip. Reframed Numbers to brief-only
+  defensible facts (14 clients / 10 email domains / 12 sectors / 3 languages). Scrubbed cloud-provider
+  names (SAP/Sage/Dolibarr/Odoo.sh/OVH/AWS) from service FAQs. Contact budget ranges removed;
+  project types → ERP / Web / Email & hosting / Other. Footer social GitHub→Facebook.
+- **Contact facts confirmed by founder (2026-08-25):** address *Lido, Mohammadia, Alger — Algeria*,
+  phone *+213 560 50 18 45*, email *contact@coshift.agency* — now shown in footer/contact/JSON-LD.
+  Still to confirm: social handles (`src/lib/site.ts`) before launching accounts.
 
 ### Phase 1 log
 - Next.js 15.1.3 scaffolded by hand (no `create-next-app` interactive). React 19, TypeScript strict, Tailwind v4 with `@theme` token bridge.

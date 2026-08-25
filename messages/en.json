@@ -1,8 +1,8 @@
 {
   "meta": {
     "siteName": "Coshift",
-    "siteTagline": "An Odoo ERP & web studio out of Algeria, working worldwide.",
-    "ogDefault": "Coshift — ERP & web studio. Plan your shift."
+    "siteTagline": "One team for your whole digital system — website, ERP, apps, email, servers. Powering Your Next Shift.",
+    "ogDefault": "Coshift — one connected system: website, ERP, apps, email, infrastructure."
   },
   "nav": {
     "work": "Work",
@@ -20,34 +20,57 @@
   },
   "home": {
     "hero": {
-      "kicker": "Coshift — ERP & web studio",
-      "headlinePre": "Your business doesn't need more software.",
-      "headlinePost": "It needs a",
+      "kicker": "Powering Your Next Shift",
+      "headlinePre": "Four providers, four systems,",
+      "headlinePost": "and you in the middle. Time for a",
       "headlineWord": "shift.",
-      "subhead": "An Odoo ERP and web development studio for companies that are done with patchwork tools and templated websites.",
+      "subhead": "Coshift builds and runs your company's entire digital system — website, ERP, apps, email and the infrastructure underneath — as one connected whole, from one team.",
       "ctaPrimary": "Plan your shift",
       "ctaSecondary": "See our work",
       "scrollCue": "scroll"
     },
     "manifesto": {
-      "linePre": "We don't sell software.",
-      "linePost": "We rebuild how work flows."
+      "linePre": "We don't just build your systems.",
+      "linePost": "We run them."
     },
     "services": {
       "kicker": "What we do",
-      "heading": "Two disciplines. One studio.",
+      "heading": "One connected system. Not four bills from four providers.",
+      "intro": "Website, ERP, apps, email, hosting — most companies buy these from four different people and spend years paying for the gaps between them. We deliver the whole chain as one system, and keep running it after launch.",
       "odoo": {
-        "tag": "Odoo ERP",
+        "tag": "Odoo & ERPNext",
         "title": "One system to run the whole business.",
-        "body": "We implement, customise, and own the result. From discovery to go-live to the year-two roadmap — your ERP is our craft, not a side project.",
-        "cta": "Explore Odoo"
+        "body": "Odoo 18 — CRM, sales, stock, purchasing, accounting, HR, POS — configured to how you actually work, with custom modules where standard software stops. ERPNext when it fits better.",
+        "cta": "Explore ERP"
       },
       "web": {
-        "tag": "Web Development",
-        "title": "Sites and platforms built for one company — because they were.",
-        "body": "Bespoke marketing sites, internal tools, customer portals. Designed and engineered together, never templated, never outsourced.",
+        "tag": "Web & e-commerce",
+        "title": "Sites and stores built for one company — because they were.",
+        "body": "Custom Next.js and React storefronts and showcase sites, plus WordPress + WooCommerce. Multilingual FR / AR / EN. Wired into the ERP so stock and orders stay in sync.",
         "cta": "Explore Web"
-      }
+      },
+      "linesHeading": "And everything the chain needs to hold together",
+      "lines": [
+        { "title": "Custom modules & plugins", "body": "We write code, not just configure — loyalty, anti-fraud, affiliate and attendance logic standard software can't do." },
+        { "title": "Mobile & web apps", "body": "Client portals, field-team apps and manager dashboards, wired into the ERP by API." },
+        { "title": "Hosting & server management", "body": "Our own dedicated infrastructure — deployment, SSL, backups and uptime monitoring." },
+        { "title": "Professional email", "body": "Mailboxes on your own domain, deliverability configured, free migration — around 4–5× cheaper than Microsoft 365 or Google Workspace.", "highlight": true },
+        { "title": "Domains & DNS", "body": "DZ and international domain registration and management, done properly." },
+        { "title": "Integration & automation", "body": "Making systems that were never designed to talk to each other talk — no double data entry." },
+        { "title": "3D & visual production", "body": "Product configurators, 3D models, animated visuals and full brand identity systems." },
+        { "title": "Maintenance & monitoring", "body": "Ongoing uptime monitoring, backups, updates and security response after launch." }
+      ]
+    },
+    "proof": {
+      "kicker": "Why Coshift",
+      "heading": "We run what we build.",
+      "intro": "Most agencies match one slice of this or price out the rest. We sit in the gap, deliberately.",
+      "items": [
+        { "title": "Our own infrastructure", "body": "We host and run our clients' systems on our own dedicated infrastructure — not resold shared hosting. It's the backbone of 'we run what we build.'" },
+        { "title": "A working demo, not a slide deck", "body": "We can stand up a fully working ERP demo on its own secure address in about two minutes. You log in to a real system, not a presentation." },
+        { "title": "When standard software isn't enough", "body": "Biometric attendance wired into payroll, an anti-fraud checkout module, an affiliate program that tracks commissions through cash-on-delivery, ad tracking that recovers sales the browser loses." },
+        { "title": "AI inside a client's ERP", "body": "We've built and deployed a self-hosted AI assistant connected to a live Odoo instance — the model runs on our own infrastructure, so the data never leaves it. (Deployed on a demo database, not yet day-to-day production.)" }
+      ]
     },
     "process": {
       "kicker": "How a shift lands",
@@ -77,16 +100,35 @@
       "viewAll": "All case studies"
     },
     "numbers": {
-      "kicker": "By the numbers",
+      "kicker": "Where we are today",
       "items": {
-        "years": "Years in business",
-        "implementations": "Odoo implementations delivered",
-        "websites": "Websites and platforms shipped",
-        "hours": "Hours of manual work eliminated"
-      }
+        "clients": "Clients delivered & running",
+        "domains": "Client email domains live",
+        "sectors": "Sectors served",
+        "languages": "Languages we deliver in"
+      },
+      "note": "Figures reflect delivered and in-delivery work. We only publish counts we can stand behind — never estimated team size, revenue or client business data."
+    },
+    "sectors": {
+      "kicker": "Across sectors",
+      "heading": "We've built the back office for a construction firm, a pharmacy distributor and a cosmetics brand — and the same principle held every time.",
+      "items": [
+        "E-commerce & retail",
+        "Construction & fit-out",
+        "Industrial manufacturing",
+        "Pharmaceutical distribution",
+        "Plastics",
+        "Textiles & embroidery",
+        "Cosmetics",
+        "Real estate",
+        "E-learning",
+        "Plumbing & trades",
+        "Gaming retail",
+        "Audiovisual equipment"
+      ]
     },
     "trust": {
-      "kicker": "Teams we've shifted"
+      "kicker": "Selected clients"
     },
     "cta": {
       "heading": "Ready when you are.",
@@ -96,45 +138,46 @@
     }
   },
   "about": {
-    "kicker": "Studio",
-    "heading": "We work on systems, not just screens.",
-    "intro": "Coshift was started in Lido, Alger, by people who've been on both sides of a bad ERP rollout — and the good kind. The studio exists to make the second kind the default.",
+    "kicker": "Who we are",
+    "heading": "We work on the whole system, not one slice of it.",
+    "intro": "Most companies don't buy one system. They buy four — a website from a freelancer, an ERP from another provider, email from a third, hosting from wherever the domain landed — and then spend years paying for the gaps between them. Coshift is a technical agency in Algeria that closes that gap: we build the whole chain and run it on our own infrastructure, as one connected system.",
     "principles": {
       "heading": "Three principles, no exceptions.",
       "items": {
+        "scope": {
+          "title": "The whole chain, not one slice.",
+          "body": "Website, ERP, apps, email, servers — we cover the whole system, so there's no seam left for you to own. Large integrators price this out of reach; freelancers only cover a slice. We sit in the gap, deliberately."
+        },
         "ownership": {
-          "title": "We own the result.",
-          "body": "From the first workshop to the second-year roadmap, the same team stays on the line."
+          "title": "We run what we build.",
+          "body": "Our own dedicated infrastructure, our own monitoring, our own backups. The project doesn't end at handover — we keep operating and improving it."
         },
-        "craft": {
-          "title": "Craft over throughput.",
-          "body": "We do fewer engagements than we could. The ones we take, we ship at studio quality."
-        },
-        "fluency": {
-          "title": "Bilingual, fluent in business.",
-          "body": "We speak French, English, and the language of margins, lead times, and inventory turns."
+        "engineering": {
+          "title": "We write code, not just configure.",
+          "body": "When standard software isn't enough, we build the module — loyalty logic, anti-fraud, integrations. That's the difference between an integrator and an engineer. We work in French, Arabic and English."
         }
       }
     },
     "location": {
       "heading": "Where we are.",
-      "body": "Based in Lido, Alger. Working with teams across the Maghreb, Francophone Africa, Europe, and the Gulf."
+      "body": "Based in Algeria, serving Algerian SMEs and industrial companies — the owners and general managers who've outgrown spreadsheets and WhatsApp but can't justify a large integrator."
     }
   },
   "services": {
     "odoo": {
-      "kicker": "Odoo ERP",
+      "kicker": "Odoo & ERPNext",
       "heading": "One system. The whole business.",
-      "intro": "We design, build, and operate Odoo ERPs for companies that are done duct-taping spreadsheets, legacy systems, and SaaS tools that don't talk to each other.",
+      "intro": "We design, build, and operate Odoo 18 ERPs — CRM, sales, stock, purchasing, accounting, HR and POS — for companies done duct-taping spreadsheets and tools that don't talk to each other. We write custom modules where standard Odoo won't do, and we keep running the system after launch.",
       "deliverables": {
         "heading": "What you get",
         "items": [
-          "Discovery and workflow mapping (no demo decks)",
+          "Discovery and workflow mapping — a working demo to log into, not a slide deck",
           "Module selection, configuration, and custom development",
-          "Data migration from legacy systems",
-          "User training in French, English, or Arabic",
-          "Go-live support and a 90-day stabilisation window",
-          "A 12-month roadmap and an SLA you can hold us to"
+          "Data migration from spreadsheets and legacy systems (clients, suppliers, employees, products)",
+          "Integration with what you already run — biometric attendance, e-commerce, mobile apps",
+          "User training and documentation in French, English, or Arabic",
+          "Hosting, backups and monitoring on our own infrastructure — or yours",
+          "Ongoing support after go-live — we run what we build"
         ]
       },
       "modules": {
@@ -145,42 +188,43 @@
         "heading": "Frequently asked",
         "items": [
           {
+            "q": "Odoo or ERPNext?",
+            "a": "Usually Odoo — it's where most of our delivered work lives. ERPNext is a real option when it fits your case better, and we'll compare the two honestly rather than pushing one. (We're an independent studio, not a reseller.)"
+          },
+          {
             "q": "Odoo Community or Enterprise?",
             "a": "Both. We recommend based on your modules and scale. Enterprise pays for itself fast above a certain headcount; Community is right for many lean operations. We say which on day one."
           },
           {
-            "q": "How long does an implementation take?",
-            "a": "A focused mid-size implementation lands in 8 to 16 weeks. Multi-entity, multi-country rollouts run longer. We give you a hard timeline after Discover, not before."
+            "q": "Can you migrate us from another system?",
+            "a": "Yes — from spreadsheets, legacy ERPs, and home-grown systems. Full data migration of clients, suppliers, employees and products is routine. The data work is the unglamorous part of the job; we own it."
           },
           {
-            "q": "Can you migrate us from another ERP?",
-            "a": "Yes. SAP Business One, Sage, Dolibarr, and home-grown systems are routine. The data work is the unglamorous part of the job — we own it."
-          },
-          {
-            "q": "What about hosting?",
-            "a": "Odoo.sh, OVH, AWS, on-premise — your call. We have an opinion and we'll share it."
+            "q": "What about hosting and support?",
+            "a": "We run it on our own dedicated infrastructure with backups and monitoring included — or on yours if you prefer. Either way, the project doesn't end at handover; we keep operating and improving it."
           }
         ]
       }
     },
     "web": {
-      "kicker": "Web Development",
+      "kicker": "Web & e-commerce",
       "heading": "Bespoke web. Not templates with paint.",
-      "intro": "Marketing sites, internal tools, customer portals, and product surfaces. Engineered like software, designed like editorial.",
+      "intro": "Custom storefronts, showcase sites, internal tools and customer portals — engineered like software, designed like editorial. Multilingual FR / AR / EN from day one, and wired into your ERP so stock, orders and customers stay in sync.",
       "deliverables": {
         "heading": "What you get",
         "items": [
+          "Custom Next.js / React build, or WordPress + WooCommerce where it fits",
           "Brand-aligned design system, not a Figma kit graveyard",
           "Performance-budgeted front-end (LCP < 2.5s, INP < 200ms)",
-          "Headless CMS or MDX content layer, whichever fits",
-          "Bilingual content support from day one",
-          "Analytics, A/B-test scaffolding, and a launch playbook",
-          "Six-month post-launch retainer if you want one"
+          "Multilingual content — French, Arabic, English — from day one",
+          "Integration with your ERP, payments and delivery — no double data entry",
+          "Server-side ad-conversion tracking that recovers sales the browser pixel loses",
+          "Hosting, deployment and monitoring on our own infrastructure"
         ]
       },
       "stack": {
         "heading": "Stack we reach for",
-        "items": ["Next.js", "React", "TypeScript", "Tailwind", "GSAP & R3F", "Sanity / Payload", "Vercel & Cloudflare", "Postgres", "Resend / Sendgrid", "Stripe"]
+        "items": ["Next.js", "React", "TypeScript", "Tailwind", "GSAP & R3F", "WordPress & WooCommerce", "NestJS", "Postgres", "Meta Conversions API", "3D / WebGL"]
       },
       "faq": {
         "heading": "Frequently asked",
@@ -235,18 +279,10 @@
       "email": "Email",
       "projectType": "What's the project about?",
       "projectTypes": {
-        "odoo": "Odoo ERP",
-        "web": "Web development",
-        "both": "Both",
+        "erp": "ERP (Odoo / ERPNext)",
+        "web": "Web & e-commerce",
+        "email": "Email & hosting",
         "other": "Something else"
-      },
-      "budget": "Budget range",
-      "budgets": {
-        "small": "Under €25k",
-        "mid": "€25k – €75k",
-        "large": "€75k – €200k",
-        "enterprise": "€200k+",
-        "unsure": "Not sure yet"
       },
       "message": "Anything else we should know?",
       "submit": "Send brief",
@@ -261,7 +297,7 @@
     "calendly": "Or pick a slot directly.",
     "details": {
       "heading": "The details",
-      "address": "Lido, Alger — Algeria",
+      "address": "Lido, Mohammadia, Alger — Algeria",
       "emailLabel": "Email",
       "phoneLabel": "Phone",
       "whatsappLabel": "WhatsApp"
@@ -274,7 +310,7 @@
     "ctaWork": "See the work"
   },
   "footer": {
-    "tagline": "An ERP & web studio out of Algeria, working worldwide.",
+    "tagline": "One team for your whole digital system — website, ERP, apps, email, servers. Powering Your Next Shift.",
     "navLabel": "Site",
     "contactLabel": "Get in touch",
     "social": "Elsewhere",

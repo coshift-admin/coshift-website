@@ -3,14 +3,22 @@
 import { useTranslations } from "next-intl";
 import { Reveal } from "@/components/motion/Reveal";
 
-// Real client wordmarks — Odoo clients followed by web clients. Add to either
-// group as new engagements close.
+// Cleared client wordmarks only — every name here is ticked ✅ in the brand
+// brief §4.1 (public-use approved). Never add a name that isn't cleared, and
+// never add a prospect from §4.2.
+// TODO: swap these text wordmarks for real client logos once per-client logo
+// permission is confirmed (written attestations already exist for AVZ & Formex).
 const CLIENTS = [
-  "ISTA",
-  "Broderie Royale",
-  "Formex",
+  "AVZ",
   "Renoh",
-  "Ozea",
+  "OSCAR PRO",
+  "FastPlast",
+  "Formex",
+  "Savoir",
+  "Broderie Royale",
+  "Kompen",
+  "ISTA",
+  "3JoyGames",
 ];
 
 export function TrustStrip() {

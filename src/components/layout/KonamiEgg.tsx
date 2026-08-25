@@ -17,7 +17,7 @@ const SEQUENCE = [
   "a",
 ];
 
-const PALETTE = ["#1FB6F0", "#1A1B5C", "#4DD0FF", "#F4F2EC", "#050614"];
+const PALETTE = ["#33C5F3", "#211852", "#4DD0FF", "#F4F2EC", "#050614"];
 
 /**
  * Konami easter egg: a 3s matrix-rain takeover with Coshift hex codes

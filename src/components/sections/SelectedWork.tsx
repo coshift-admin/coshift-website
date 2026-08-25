@@ -34,8 +34,8 @@ export function SelectedWork() {
         </Reveal>
       </header>
 
-      <StaggerList as="div" className="grid grid-cols-1 gap-8 md:grid-cols-2" staggerChildren={0.15}>
-        {caseStudies.slice(0, 2).map((c, i) => (
+      <StaggerList as="div" className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3" staggerChildren={0.15}>
+        {caseStudies.slice(0, 3).map((c, i) => (
           <Link
             key={c.slug}
             href={`/work/${c.slug}`}

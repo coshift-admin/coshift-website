@@ -13,13 +13,15 @@ import { ShiftGlyph } from "@/components/icons/ShiftGlyph";
 import { Reveal, RevealWords } from "@/components/motion/Reveal";
 import { StaggerList } from "@/components/motion/StaggerList";
 
-// <EditMe> — user fills these in. Placeholders are intentionally round numbers
-// so the section looks intentional rather than empty.
+// Figures are drawn ONLY from the brand brief (§3–§5) — every one is
+// founder-cleared and defensible. Do NOT add invented counts (years in
+// business, hours saved, revenue) unless the founder supplies them in writing.
+// <EditMe> — update these as new work closes; keep each one truthful.
 const ITEMS = [
-  { key: "years", value: 7, suffix: "" },
-  { key: "implementations", value: 24, suffix: "" },
-  { key: "websites", value: 38, suffix: "" },
-  { key: "hours", value: 120, suffix: "k+" },
+  { key: "clients", value: 14, suffix: "" },
+  { key: "domains", value: 10, suffix: "" },
+  { key: "sectors", value: 12, suffix: "" },
+  { key: "languages", value: 3, suffix: "" },
 ] as const;
 
 export function Numbers() {
@@ -58,12 +60,8 @@ export function Numbers() {
           </div>
         ))}
       </StaggerList>
-      <p className="text-mono mt-12 text-[var(--coshift-bone)]/40">
-        {/* TODO: replace with real figures */}
-        Figures are pre-fill placeholders — confirmed numbers go in
-        <code className="mx-1 text-[var(--coshift-cyan)]">
-          src/components/sections/Numbers.tsx
-        </code>
+      <p className="text-mono mt-12 max-w-2xl text-[var(--coshift-bone)]/40">
+        {t("note")}
       </p>
     </section>
   );

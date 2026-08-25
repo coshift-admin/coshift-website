@@ -25,7 +25,7 @@ export async function Footer() {
             <div className="mt-8 flex items-center gap-3">
               <ShiftGlyph className="h-6 w-auto text-[var(--coshift-cyan)]" />
               <span className="text-mono text-[var(--coshift-bone)]/60">
-                {site.address.district}, {site.address.city} — {site.address.country}
+                {site.address.district}, {site.address.municipality}, {site.address.city} — {site.address.country}
               </span>
             </div>
           </div>
@@ -118,11 +118,11 @@ export async function Footer() {
               <li>
                 <a
                   className="hover:text-[var(--coshift-cyan)]"
-                  href={site.social.github}
+                  href={site.social.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  GitHub
+                  Facebook
                 </a>
               </li>
               <li>
