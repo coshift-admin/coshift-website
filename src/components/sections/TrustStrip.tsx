@@ -11,7 +11,7 @@ import { Reveal } from "@/components/motion/Reveal";
  * white silhouettes (brightness(0) invert(1)) so the strip reads as one system
  * regardless of each source logo's colours. Clients without a usable
  * transparent asset fall back to a styled wordmark — visually consistent.
- * TODO: add OSCAR PRO + 3JoyGames logos (currently text) when supplied.
+ * TODO: add an OSCAR PRO logo (currently text) when supplied.
  */
 type Client = { name: string; logo?: string; w?: number; h?: number };
 
@@ -23,10 +23,10 @@ const CLIENTS: Client[] = [
   { name: "Formex", logo: "/logos/formex.svg" },
   { name: "Savoir", logo: "/logos/savoir.png" },
   { name: "Broderie Royale", logo: "/logos/broderie-royale.png" },
-  { name: "Kompen" },
+  { name: "Kompen", logo: "/logos/kompen.png" },
   { name: "ISTA", logo: "/logos/ista.png" },
   { name: "Moustex", logo: "/logos/moustex.svg" },
-  { name: "3JoyGames" },
+  { name: "3JoyGames", logo: "/logos/3joygames.png" },
 ];
 
 export function TrustStrip() {
