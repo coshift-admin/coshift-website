@@ -12,10 +12,10 @@ export const site = {
     postalCode: "16031",
     country: "Algeria",
     countryFr: "Algérie",
-    // Approximate Bordj El Kiffane coordinates. 🔴 Update mapsUrl/geo with the
-    // exact pin before publishing the contact map.
-    geo: { lat: 36.7539, lng: 3.1936 },
-    mapsUrl: "https://maps.app.goo.gl/HzoA5EtZRutCmnbX8",
+    // Exact pin — decoded from the founder-supplied Plus Code P5VH+J4X, Bordj El Kiffan.
+    plusCode: "P5VH+J4X Bordj El Kiffan",
+    geo: { lat: 36.744112, lng: 3.177859 },
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=P5VH%2BJ4X%20Bordj%20El%20Kiffan",
   },
   email: "contact@coshift.agency",
   phone: "+213 560 50 18 45",
