@@ -1,18 +1,27 @@
 {
   "meta": {
     "siteName": "Coshift",
-    "siteTagline": "Une seule équipe pour tout votre système digital — site, ERP, apps, email, serveurs. Powering Your Next Shift.",
-    "ogDefault": "Coshift — un système connecté : site, ERP, apps, email, infrastructure."
+    "siteTagline": "Nous alimentons votre prochain shift : site web, ERP, applications et email, connectés et gérés par une seule équipe.",
+    "ogDefault": "Coshift — un seul système connecté : site web, ERP, applications, email."
   },
   "nav": {
+    "home": "Accueil Coshift",
+    "primaryLabel": "Navigation principale",
+    "solutions": "Solutions",
+    "solutionItems": {
+      "erp": { "title": "ERP & gestion", "desc": "Ventes, stock, compta et RH dans un seul logiciel." },
+      "web": { "title": "Sites & e-commerce", "desc": "Site ou boutique relié à votre stock, paiement et livraison." },
+      "apps": { "title": "Apps & intégrations", "desc": "Modules sur mesure, apps mobiles, outils connectés." },
+      "automation": { "title": "Automatisation & IA", "desc": "WhatsApp, relances, assistant IA : le répétitif se fait seul." },
+      "email": { "title": "Email pro & hébergement", "desc": "Des emails à votre nom, l'hébergement, la maintenance." }
+    },
+    "menuHelp": "Pas sûr par où commencer ?",
     "work": "Réalisations",
-    "services": "Services",
-    "servicesOdoo": "Odoo ERP",
-    "servicesWeb": "Développement web",
-    "about": "Studio",
+    "method": "Méthode",
+    "about": "À propos",
     "lab": "Lab",
     "contact": "Contact",
-    "primaryCta": "Planifier votre shift",
+    "primaryCta": "Diagnostic gratuit",
     "menuToggle": "Ouvrir le menu",
     "menuClose": "Fermer le menu",
     "skipToContent": "Aller au contenu",
@@ -20,263 +29,206 @@
   },
   "home": {
     "hero": {
-      "kicker": "Powering Your Next Shift",
-      "headlinePre": "Quatre prestataires, quatre systèmes,",
-      "headlinePost": "et vous au milieu. L'heure du",
-      "headlineWord": "shift.",
-      "subhead": "Coshift construit et opère tout le système digital de votre entreprise — site, ERP, applications, email et l'infrastructure sous-jacente — comme un seul ensemble connecté, par une seule équipe.",
-      "ctaPrimary": "Planifier votre shift",
+      "ariaLabel": "Coshift — présentation",
+      "audience": "Pour les PME qui ont dépassé Excel et WhatsApp",
+      "headlineLead": "Nous alimentons votre prochain",
+      "headlineAccent": "shift.",
+      "subhead": "Fini le stock faux, les commandes ressaisies et les outils qui ne se parlent pas. Nous relions votre site, votre ERP, vos applications et vos emails en un seul système — et nous le faisons tourner pour vous.",
+      "ctaPrimary": "Réserver un diagnostic gratuit",
       "ctaSecondary": "Voir nos réalisations",
-      "scrollCue": "défiler"
+      "note": "30 min · sans engagement · réponse sous 2 jours ouvrés",
+      "trustLabel": "Ils nous font confiance",
+      "board": {
+        "title": "Votre entreprise",
+        "toggleLabel": "Comparer avant et après le shift",
+        "before": "Aujourd'hui",
+        "after": "Après le shift",
+        "hub": {
+          "before": { "title": "Vous", "sub": "au milieu de tout" },
+          "after": { "title": "Un seul système", "sub": "géré par Coshift" }
+        },
+        "nodes": {
+          "stock": {
+            "before": { "label": "Stock sur Excel", "status": "Jamais à jour" },
+            "after": { "label": "Stock en temps réel", "status": "Toujours juste" }
+          },
+          "orders": {
+            "before": { "label": "Commandes par WhatsApp", "status": "Ressaisies à la main" },
+            "after": { "label": "Commandes centralisées", "status": "Saisies une seule fois" }
+          },
+          "site": {
+            "before": { "label": "Site web à part", "status": "Prix et stock faux" },
+            "after": { "label": "Site relié au stock", "status": "À jour tout seul" }
+          },
+          "invoices": {
+            "before": { "label": "Factures à la main", "status": "Erreurs et retards" },
+            "after": { "label": "Factures automatiques", "status": "En un clic" }
+          },
+          "email": {
+            "before": { "label": "Adresse @gmail.com", "status": "Arrive en spam" },
+            "after": { "label": "contact@votre-societe.dz", "status": "Email professionnel" }
+          }
+        },
+        "caption": {
+          "before": { "strong": "Cinq outils qui ne se parlent pas.", "rest": "Et c'est vous qui faites le lien, à la main." },
+          "after": { "strong": "Un seul système connecté.", "rest": "Chaque information est saisie une fois, puis suit partout." }
+        },
+        "hint": "cliquez pour comparer"
+      }
     },
     "manifesto": {
+      "kicker": "Manifeste",
       "linePre": "Nous ne faisons pas que construire vos systèmes.",
-      "linePost": "Nous les opérons."
+      "linePost": "Nous les opérons.",
+      "hand": "même après le lancement"
     },
-    "services": {
-      "kicker": "Ce que nous faisons",
-      "heading": "Un système connecté. Pas quatre factures de quatre prestataires.",
-      "intro": "Site, ERP, apps, email, hébergement — la plupart des entreprises les achètent à quatre personnes différentes et paient pendant des années les trous entre les deux. Nous livrons toute la chaîne comme un seul système, et nous continuons de l'opérer après le lancement.",
-      "odoo": {
-        "tag": "Odoo & ERPNext",
-        "title": "Un seul système pour piloter toute l'entreprise.",
-        "body": "Odoo 18 — CRM, ventes, stock, achats, comptabilité, RH, point de vente — configuré à votre façon de travailler, avec des modules sur mesure là où le logiciel standard s'arrête. ERPNext quand il convient mieux.",
-        "cta": "Explorer l'ERP"
-      },
-      "web": {
-        "tag": "Web & e-commerce",
-        "title": "Sites et boutiques faits pour une entreprise — parce qu'ils le sont.",
-        "body": "Storefronts et sites vitrines Next.js et React sur mesure, plus WordPress + WooCommerce. Multilingue FR / AR / EN. Reliés à l'ERP pour que stock et commandes restent synchronisés.",
-        "cta": "Explorer le web"
-      },
-      "linesHeading": "Et tout ce qu'il faut pour que la chaîne tienne",
-      "lines": [
-        { "title": "Modules & plugins sur mesure", "body": "Nous écrivons du code, pas seulement de la configuration — fidélité, anti-fraude, affiliation et pointage que le logiciel standard ne sait pas faire." },
-        { "title": "Applications mobiles & web", "body": "Portails clients, apps pour équipes terrain et tableaux de bord dirigeants, reliés à l'ERP par API." },
-        { "title": "Hébergement & gestion serveur", "body": "Notre propre infrastructure dédiée — déploiement, SSL, sauvegardes et supervision." },
-        { "title": "Email professionnel", "body": "Boîtes sur votre propre domaine, délivrabilité configurée, migration offerte — environ 4 à 5× moins cher que Microsoft 365 ou Google Workspace.", "highlight": true },
-        { "title": "Domaines & DNS", "body": "Enregistrement et gestion de domaines DZ et internationaux, faits correctement." },
-        { "title": "Intégration & automatisation", "body": "Faire dialoguer des systèmes qui n'ont jamais été conçus pour se parler — zéro double saisie." },
-        { "title": "3D & production visuelle", "body": "Configurateurs produit, modèles 3D, visuels animés et systèmes d'identité de marque complets." },
-        { "title": "Maintenance & supervision", "body": "Supervision, sauvegardes, mises à jour et réponse sécurité continues après le lancement." }
-      ]
+    "solutions": {
+      "eyebrow": "Ce que nous faisons",
+      "title": "Un seul partenaire pour tout votre système.",
+      "intro": "Commencez par ce qui vous coûte le plus aujourd'hui. Le reste se branche ensuite, sans tout refaire.",
+      "startHere": "Le plus simple pour commencer",
+      "items": {
+        "erp": {
+          "name": "ERP & gestion",
+          "title": "Gérez toute l'entreprise dans un seul logiciel.",
+          "body": "Ventes, stock, achats, comptabilité, RH et caisse au même endroit, avec Odoo. Vous savez enfin où en est chaque commande — et ce que chaque produit vous rapporte.",
+          "link": "Découvrir l'ERP"
+        },
+        "web": {
+          "name": "Sites & e-commerce",
+          "title": "Vendez en ligne avec un site relié à votre stock.",
+          "body": "Site vitrine ou boutique en ligne, en français, en arabe et en anglais. Paiement à la livraison ou en ligne — CIB, Edahabia, Visa, Mastercard — et les commandes arrivent directement dans votre gestion et chez votre livreur.",
+          "link": "Découvrir les sites"
+        },
+        "apps": {
+          "name": "Apps & intégrations",
+          "title": "Quand le logiciel standard ne suffit pas, nous écrivons le module.",
+          "body": "Application mobile pour vos équipes, pointeuse reliée à la paie, module anti-fraude : vos outils se parlent enfin, sans double saisie.",
+          "link": "Découvrir les apps"
+        },
+        "automation": {
+          "name": "Automatisation & IA",
+          "title": "Les tâches répétitives se font toutes seules.",
+          "body": "Commandes confirmées sur WhatsApp, impayés relancés, factures fournisseurs lues automatiquement, assistant IA relié à votre ERP. Votre équipe garde son temps pour le reste.",
+          "link": "Découvrir l'automatisation"
+        },
+        "email": {
+          "name": "Email pro & hébergement",
+          "title": "Des emails professionnels à votre nom.",
+          "body": "Des adresses @votre-entreprise qui n'arrivent pas en spam, environ 4 à 5 fois moins chères que Microsoft 365 ou Google Workspace, migration offerte. Et l'hébergement de vos sites, sauvegardé chaque nuit.",
+          "link": "Découvrir l'offre email"
+        }
+      }
     },
-    "proof": {
-      "kicker": "Pourquoi Coshift",
-      "heading": "Nous opérons ce que nous construisons.",
-      "intro": "La plupart des agences couvrent une seule tranche, ou font exploser le prix du reste. Nous occupons ce vide, délibérément.",
-      "items": [
-        { "title": "Notre propre infrastructure", "body": "Nous hébergeons et opérons les systèmes de nos clients sur notre propre infrastructure dédiée — pas de l'hébergement mutualisé revendu. C'est la colonne vertébrale du « nous opérons ce que nous construisons »." },
-        { "title": "Une démo qui fonctionne, pas un PowerPoint", "body": "Nous montons une démo ERP pleinement fonctionnelle sur sa propre adresse sécurisée en environ deux minutes. Vous vous connectez à un vrai système, pas à une présentation." },
-        { "title": "Quand le logiciel standard ne suffit pas", "body": "Pointage biométrique branché sur la paie, module anti-fraude au checkout, programme d'affiliation qui suit les commissions à travers le paiement à la livraison, tracking pub qui récupère les ventes que le navigateur perd." },
-        { "title": "De l'IA dans l'ERP d'un client", "body": "Nous avons construit et déployé un assistant IA auto-hébergé relié à une instance Odoo — le modèle tourne sur notre propre infrastructure, les données ne la quittent jamais. (Déployé sur une base de démonstration, pas encore en production quotidienne.)" }
-      ]
+    "work": {
+      "eyebrow": "Réalisations",
+      "title": "Ils ont fait leur shift.",
+      "intro": "Des projets livrés et en service, du site e-commerce à l'ERP complet.",
+      "viewAll": "Toutes les réalisations",
+      "view": "Voir",
+      "hand": "de vrais clients, de vrais sites"
+    },
+    "process": {
+      "kicker": "Notre méthode",
+      "heading": "Quatre phases. Pas de mauvaises surprises.",
+      "steps": {
+        "diagnose": { "title": "Diagnostic", "body": "Nous regardons comment vous travaillez vraiment, avant de toucher au moindre outil." },
+        "design": { "title": "Conception", "body": "Nous dessinons le système avec vous : écrans, données, priorités. Vous validez avant que nous construisions." },
+        "build": { "title": "Construction", "body": "Notre propre équipe le construit et le teste. Pas de sous-traitance." },
+        "shift": { "title": "Mise en route", "body": "Reprise de vos données, formation de vos équipes, lancement. Puis nous restons pour le faire tourner." }
+      }
     },
     "demo": {
       "kicker": "Voyez-le, ne le lisez pas",
       "heading": "Une démo qui fonctionne en deux minutes.",
       "body": "Nous n'envoyons pas de slides. Nous montons un vrai ERP pleinement fonctionnel sur sa propre adresse sécurisée — vous vous connectez et vous cliquez. Voici l'idée, en miniature.",
       "command": "coshift demo --new",
-      "steps": [
-        "allocation de l'instance",
-        "installation d'Odoo 18",
-        "configuration HTTPS & DNS",
-        "injection des données de démo",
-        "démo prête"
-      ],
+      "steps": ["allocation de l'instance", "installation d'Odoo 18", "configuration HTTPS & DNS", "injection des données de démo", "démo prête"],
       "cta": "Lancer une démo",
       "running": "Provisionnement…",
       "again": "Relancer",
       "realCta": "Demander une vraie démo",
       "note": "Illustration — pas une instance réelle"
     },
-    "process": {
-      "kicker": "Comment un shift se déroule",
-      "heading": "Quatre phases. Pas de mauvaises surprises.",
-      "steps": {
-        "diagnose": {
-          "title": "Diagnostiquer",
-          "body": "Nous cartographions le flux de travail réel avant de toucher au moindre outil."
-        },
-        "design": {
-          "title": "Concevoir",
-          "body": "Architecture, modèle de données, interface — conçus ensemble."
-        },
-        "build": {
-          "title": "Construire",
-          "body": "Nous le construisons. Pas un pool de freelances. Nous."
-        },
-        "shift": {
-          "title": "Basculer",
-          "body": "Migration, formation, transfert. Le shift est complet."
+    "why": {
+      "eyebrow": "Pourquoi Coshift",
+      "title": "Une équipe qui reste après le lancement.",
+      "intro": "Beaucoup de prestataires livrent puis disparaissent. Nous construisons votre système, puis nous le faisons tourner.",
+      "points": {
+        "oneTeam": { "title": "Un seul interlocuteur", "body": "Site, ERP, applications, email, serveurs : une seule équipe répond de tout. Fini de coordonner quatre prestataires." },
+        "weRunIt": { "title": "Hébergé et surveillé par nous", "body": "Vos systèmes tournent sur notre propre infrastructure, surveillés en continu et sauvegardés chaque nuit." },
+        "demo": { "title": "Une démo, pas des diapos", "body": "En deux minutes environ, nous ouvrons un vrai ERP de démonstration sur sa propre adresse. Vous testez avant de décider." },
+        "custom": {
+          "title": "Du sur-mesure quand il le faut",
+          "body": "Pointeuse biométrique reliée à la paie, module anti-fraude, commissions d'affiliés en paiement à la livraison : nous développons ce que le standard ne fait pas."
         }
+      },
+      "facts": {
+        "clients": { "value": "14", "label": "clients livrés ou en cours" },
+        "sectors": { "value": "12", "label": "secteurs d'activité" },
+        "domains": { "value": "10", "label": "domaines email clients en service" },
+        "languages": { "value": "3", "label": "langues : français, arabe, anglais" }
       }
     },
-    "work": {
-      "kicker": "Réalisations choisies",
-      "heading": "Shifts récents.",
-      "viewAll": "Toutes les études de cas"
-    },
-    "numbers": {
-      "kicker": "Où nous en sommes aujourd'hui",
-      "items": {
-        "clients": "Clients livrés & en service",
-        "domains": "Domaines email clients actifs",
-        "sectors": "Secteurs servis",
-        "languages": "Langues de livraison"
-      },
-      "note": "Les chiffres reflètent le travail livré et en cours de livraison. Nous ne publions que des chiffres que nous pouvons assumer — jamais d'effectif estimé, de chiffre d'affaires ou de données métier client."
-    },
-    "sectors": {
-      "kicker": "À travers les secteurs",
-      "heading": "Nous avons construit le back-office d'une entreprise de construction, d'un distributeur pharmaceutique et d'une marque de cosmétiques — et le même principe a tenu à chaque fois.",
+    "faq": {
+      "eyebrow": "Questions fréquentes",
+      "title": "Avant de commencer.",
+      "intro": "Les questions que les dirigeants nous posent le plus souvent.",
       "items": [
-        "E-commerce & retail",
-        "Construction & agencement",
-        "Industrie manufacturière",
-        "Distribution pharmaceutique",
-        "Plasturgie",
-        "Textile & broderie",
-        "Cosmétiques",
-        "Immobilier",
-        "E-learning",
-        "Plomberie & métiers",
-        "Retail gaming",
-        "Matériel audiovisuel"
+        { "q": "Un ERP, ce n'est pas réservé aux grandes entreprises ?", "a": "Non. Plus une entreprise grandit sans ERP, plus la remise en ordre coûte cher. Nous dimensionnons le système à votre taille et commençons par ce qui vous fait perdre le plus de temps." },
+        { "q": "Nous avons déjà un prestataire pour notre site. Faut-il tout changer ?", "a": "Non. La vraie question, c'est qui s'occupe du lien entre votre site et votre stock. Nous pouvons connecter ce que vous avez déjà, ou reprendre l'ensemble si c'est plus simple." },
+        { "q": "Combien ça coûte ?", "a": "Cela dépend de ce qu'il faut mettre en place : un email professionnel coûte peu, un ERP complet davantage. Après le diagnostic, vous recevez une proposition écrite avec le périmètre et le prix. Pour comparer, comptez les heures que votre équipe passe chaque mois à ressaisir les mêmes données." },
+        { "q": "Comment ça démarre ?", "a": "Par un diagnostic gratuit de 30 minutes : vous nous montrez comment vous travaillez, nous vous disons ce que nous changerions. Ensuite, une démo et une proposition écrite. Rien n'est engagé avant votre accord." },
+        { "q": "Et si Coshift disparaît ?", "a": "Vos données et vos serveurs vous appartiennent. Vous recevez une documentation complète, et nous utilisons des logiciels open source : un autre prestataire pourrait reprendre le relais." },
+        { "q": "Que se passe-t-il après le lancement ?", "a": "Nous restons. Hébergement, sauvegardes chaque nuit, surveillance, mises à jour et support : votre système continue d'être suivi et amélioré." }
       ]
     },
-    "emailOffer": {
-      "kicker": "Commencez petit, commencez malin",
-      "heading": "Email professionnel sur votre domaine — à environ un cinquième du prix.",
-      "body": "Des boîtes sur votre propre domaine, la délivrabilité configurée (SPF, DKIM, DMARC) et la migration offerte depuis Gmail ou Microsoft 365. Le premier pas le plus simple vers un système connecté.",
-      "cta": "Obtenir les tarifs email"
-    },
-    "trust": {
-      "kicker": "Clients choisis"
-    },
     "cta": {
-      "heading": "Prêts quand vous l'êtes.",
-      "body": "Dites-nous où ça frotte. Nous reviendrons avec la forme du shift.",
-      "primary": "Planifier votre shift",
-      "secondary": "Envoyer un brief"
+      "title": "Prêt pour votre prochain shift ?",
+      "body": "Réservez 30 minutes avec nous. Nous regardons vos outils actuels et vous disons, concrètement, ce que nous changerions.",
+      "primary": "Réserver un diagnostic gratuit",
+      "secondary": "Écrire sur WhatsApp",
+      "note": "30 min · sans engagement · réponse sous 2 jours ouvrés",
+      "hand": "juste une conversation"
     }
   },
   "about": {
-    "kicker": "Qui nous sommes",
-    "heading": "Nous travaillons sur tout le système, pas sur une seule tranche.",
-    "intro": "La plupart des entreprises n'achètent pas un système. Elles en achètent quatre — un site chez un freelance, un ERP chez un autre prestataire, l'email chez un troisième, l'hébergement là où le domaine a atterri — puis paient pendant des années les trous entre les deux. Coshift est une agence technique en Algérie qui comble ce vide : nous construisons toute la chaîne et l'opérons sur notre propre infrastructure, comme un seul système connecté.",
+    "kicker": "À propos",
+    "heading": "Une équipe technique qui construit — et qui reste.",
+    "hand": "une vraie équipe, à Alger",
+    "intro": "Beaucoup d'entreprises achètent leur site à un freelance, leur ERP à un autre prestataire et leur email à un troisième. Elles passent ensuite des années à payer les trous entre les trois. Coshift est une agence technique basée à Alger qui comble ces trous : nous construisons l'ensemble, puis nous le faisons tourner sur notre propre infrastructure.",
     "principles": {
-      "heading": "Trois principes, aucune exception.",
+      "heading": "Trois principes, sans exception.",
       "items": {
         "scope": {
-          "title": "Toute la chaîne, pas une seule tranche.",
-          "body": "Site, ERP, apps, email, serveurs — nous couvrons tout le système, pour qu'il ne reste aucune couture à votre charge. Les grands intégrateurs mettent cela hors de portée ; les freelances ne couvrent qu'une tranche. Nous occupons ce vide, délibérément."
+          "title": "Tout le système, pas une partie.",
+          "body": "Site, ERP, applications, email, serveurs : nous couvrons l'ensemble, pour qu'aucune jonction ne reste à votre charge. Les grands intégrateurs sont hors de portée d'une PME, les freelances ne couvrent qu'une partie. Nous sommes entre les deux, volontairement."
         },
         "ownership": {
-          "title": "Nous opérons ce que nous construisons.",
-          "body": "Notre propre infrastructure dédiée, notre propre supervision, nos propres sauvegardes. Le projet ne s'arrête pas à la livraison — nous continuons de l'opérer et de l'améliorer."
+          "title": "Nous faisons tourner ce que nous construisons.",
+          "body": "Notre propre infrastructure, notre surveillance, nos sauvegardes. Le projet ne s'arrête pas à la livraison : nous continuons à l'exploiter et à l'améliorer."
         },
         "engineering": {
-          "title": "Nous écrivons du code, pas seulement de la config.",
-          "body": "Quand le logiciel standard ne suffit pas, nous construisons le module — logique de fidélité, anti-fraude, intégrations. C'est la différence entre un intégrateur et un ingénieur. Nous travaillons en français, arabe et anglais."
+          "title": "Du code, pas seulement des réglages.",
+          "body": "Quand le logiciel standard ne suffit pas, nous développons le module qui manque. Et nous livrons en français, en arabe et en anglais."
         }
       }
     },
     "location": {
-      "heading": "Où nous sommes.",
-      "body": "Basés en Algérie, au service des PME et entreprises industrielles algériennes — les dirigeants et gérants qui ont dépassé les feuilles de calcul et WhatsApp mais ne peuvent pas justifier un grand intégrateur."
-    }
-  },
-  "services": {
-    "odoo": {
-      "kicker": "Odoo & ERPNext",
-      "heading": "Un système. Toute l'entreprise.",
-      "intro": "Nous concevons, construisons et opérons des ERP Odoo 18 — CRM, ventes, stock, achats, comptabilité, RH et point de vente — pour les entreprises qui en ont assez de bricoler des feuilles de calcul et des outils qui ne se parlent pas. Nous écrivons des modules sur mesure là où Odoo standard ne suffit pas, et nous continuons d'opérer le système après le lancement.",
-      "deliverables": {
-        "heading": "Ce que vous obtenez",
-        "items": [
-          "Découverte et cartographie des flux — une démo à laquelle se connecter, pas un PowerPoint",
-          "Choix des modules, configuration et développement sur mesure",
-          "Migration depuis feuilles de calcul et systèmes existants (clients, fournisseurs, employés, produits)",
-          "Intégration avec ce que vous utilisez déjà — pointage biométrique, e-commerce, apps mobiles",
-          "Formation et documentation en français, anglais ou arabe",
-          "Hébergement, sauvegardes et supervision sur notre propre infrastructure — ou la vôtre",
-          "Support continu après le go-live — nous opérons ce que nous construisons"
-        ]
-      },
-      "modules": {
-        "heading": "Modules que nous implémentons",
-        "items": ["Ventes", "Stock", "Production", "Comptabilité", "RH & Paie", "CRM", "Projet", "Service terrain", "Abonnements", "Point de vente", "eCommerce", "Modules sur mesure"]
-      },
-      "faq": {
-        "heading": "Questions fréquentes",
-        "items": [
-          {
-            "q": "Odoo ou ERPNext ?",
-            "a": "Le plus souvent Odoo — c'est là que vit l'essentiel de notre travail livré. ERPNext est une vraie option quand il convient mieux à votre cas, et nous comparons les deux honnêtement plutôt que d'en pousser un. (Nous sommes un studio indépendant, pas un revendeur.)"
-          },
-          {
-            "q": "Odoo Community ou Enterprise ?",
-            "a": "Les deux. Nous recommandons en fonction de vos modules et de votre échelle. Enterprise se rentabilise vite au-dessus d'un certain effectif ; Community convient à beaucoup d'opérations légères. Nous tranchons dès le jour un."
-          },
-          {
-            "q": "Pouvez-vous nous migrer depuis un autre système ?",
-            "a": "Oui — depuis des feuilles de calcul, des ERP existants et des systèmes maison. La migration complète des clients, fournisseurs, employés et produits est routinière. Le travail sur les données est la partie ingrate du métier ; nous l'assumons."
-          },
-          {
-            "q": "Et l'hébergement et le support ?",
-            "a": "Nous l'opérons sur notre propre infrastructure dédiée, sauvegardes et supervision incluses — ou sur la vôtre si vous préférez. Dans tous les cas, le projet ne s'arrête pas à la livraison ; nous continuons de l'opérer et de l'améliorer."
-          }
-        ]
-      }
+      "heading": "Où nous trouver.",
+      "body": "À Alger. Nous travaillons avec des PME et des entreprises industrielles qui ont dépassé Excel et WhatsApp, sans pouvoir justifier un grand intégrateur."
     },
-    "web": {
-      "kicker": "Web & e-commerce",
-      "heading": "Web sur mesure. Pas un template repeint.",
-      "intro": "Storefronts, sites vitrines, outils internes et portails clients — construits comme du logiciel, dessinés comme un magazine. Multilingue FR / AR / EN dès le jour un, et reliés à votre ERP pour que stock, commandes et clients restent synchronisés.",
-      "deliverables": {
-        "heading": "Ce que vous obtenez",
-        "items": [
-          "Build Next.js / React sur mesure, ou WordPress + WooCommerce quand cela convient",
-          "Système de design aligné à votre marque, pas un cimetière de fichiers Figma",
-          "Front-end avec budget de performance (LCP < 2,5s, INP < 200ms)",
-          "Contenu multilingue — français, arabe, anglais — dès le jour un",
-          "Intégration à votre ERP, aux paiements et à la livraison — zéro double saisie",
-          "Tracking de conversion côté serveur qui récupère les ventes que le pixel navigateur perd",
-          "Hébergement, déploiement et supervision sur notre propre infrastructure"
-        ]
-      },
-      "stack": {
-        "heading": "Stack que nous utilisons",
-        "items": ["Next.js", "React", "TypeScript", "Tailwind", "GSAP & R3F", "WordPress & WooCommerce", "NestJS", "Postgres", "API Conversions Meta", "3D / WebGL"]
-      },
-      "faq": {
-        "heading": "Questions fréquentes",
-        "items": [
-          {
-            "q": "Vous faites design et ingénierie, ou seulement l'un ?",
-            "a": "Les deux, dans la même pièce. Nous n'acceptons pas de passation que nous n'avons pas façonnée ; nous ne livrons pas de designs que nous ne pouvons pas construire."
-          },
-          {
-            "q": "Le site que vous nous livrerez ressemblera-t-il à celui-ci ?",
-            "a": "Non. Votre site ressemble à votre entreprise. Celui-ci ressemble à la nôtre."
-          },
-          {
-            "q": "Pouvez-vous travailler avec notre marque existante ?",
-            "a": "Oui. Nous avons transformé des chartes graphiques PDF en bibliothèques de composants fonctionnelles des dizaines de fois."
-          },
-          {
-            "q": "Vous suivez après le lancement ?",
-            "a": "Une stabilisation de 90 jours est standard. Les régies ensuite sont optionnelles et calibrées aux besoins réels."
-          }
-        ]
-      }
+    "sectors": {
+      "kicker": "Secteurs que nous connaissons",
+      "heading": "Construction, pharmacie, cosmétiques, textile… Le même principe fonctionne partout : une seule saisie, un seul système.",
+      "items": ["E-commerce & retail", "Construction & agencement", "Industrie manufacturière", "Distribution pharmaceutique", "Plasturgie", "Textile & broderie", "Cosmétiques", "Immobilier", "E-learning", "Plomberie & métiers", "Retail gaming", "Matériel audiovisuel"]
     }
   },
   "work": {
-    "kicker": "Études de cas",
-    "heading": "Les shifts que nous avons livrés.",
-    "intro": "Une sélection courte et assumée. Chaque cas est la version que nous serions heureux de défendre.",
+    "kicker": "Réalisations",
+    "heading": "Ce que nous avons livré.",
+    "hand": "vrais projets, vrais clients",
+    "intro": "Une sélection de projets en service : le problème, ce que nous avons construit, ce qui a changé.",
     "labels": {
       "client": "Client",
       "year": "Année",
@@ -284,43 +236,49 @@
       "summary": "Résumé",
       "problem": "Problème",
       "approach": "Approche",
-      "result": "Résultat"
-    }
+      "result": "Résultat",
+      "visit": "Voir le site",
+      "caseLink": "Le projet",
+      "back": "Toutes les réalisations",
+      "next": "Projet suivant"
+    },
+    "sites": { "title": "Sites en ligne", "intro": "Des sites que vous pouvez visiter dès maintenant." },
+    "systems": { "title": "ERP, intégrations et sur-mesure", "intro": "Des systèmes qui tournent en coulisses — moins visibles, mais ce sont eux qui comptent le plus." }
   },
   "lab": {
     "kicker": "Lab",
-    "heading": "Ce que nous construisons pour rester affûtés.",
-    "intro": "Expériences rapides, études de motion, et outillage que nous publions pour que l'équipe — et vous — voyiez l'atelier.",
-    "viewSource": "Voir le code"
+    "heading": "Nos idées, en version jouable.",
+    "intro": "Six petites expériences. Chacune met en scène, en quelques secondes, un problème que nous résolvons pour nos clients.",
+    "hand": "allez-y, touchez"
   },
   "contact": {
     "kicker": "Contact",
-    "heading": "Parlez-nous du shift.",
-    "intro": "Plus le problème est clair, plus la réponse est rapide. Nous répondons à chaque demande sous deux jours ouvrés.",
+    "heading": "Réservez votre diagnostic gratuit.",
+    "hand": "montrez-nous votre Excel",
+    "intro": "30 minutes, sans engagement. Vous nous montrez comment vous travaillez aujourd'hui, nous vous disons concrètement ce que nous changerions. Réponse sous 2 jours ouvrés.",
     "form": {
       "name": "Votre nom",
       "company": "Entreprise",
       "email": "Email",
-      "projectType": "À propos de quoi ?",
+      "projectType": "Par quoi voulez-vous commencer ?",
       "projectTypes": {
-        "erp": "ERP (Odoo / ERPNext)",
-        "web": "Web & e-commerce",
-        "email": "Email & hébergement",
-        "other": "Autre chose"
+        "erp": "ERP & gestion",
+        "web": "Site ou boutique en ligne",
+        "apps": "App ou intégration",
+        "automation": "Automatisation & IA",
+        "email": "Email pro & hébergement",
+        "other": "Je ne sais pas encore"
       },
-      "message": "Autre chose à savoir ?",
-      "submit": "Envoyer le brief",
-      "submitting": "Envoi en cours…",
-      "success": "Reçu. Nous revenons vers vous sous deux jours ouvrés.",
-      "error": "Quelque chose a échoué. Écrivez-nous directement à contact@coshift.agency.",
-      "validation": {
-        "required": "Requis",
-        "email": "Email invalide"
-      }
+      "message": "Qu'est-ce qui vous fait perdre le plus de temps ? (facultatif)",
+      "submit": "Envoyer ma demande",
+      "submitting": "Envoi…",
+      "success": "C'est reçu. Nous vous répondons sous 2 jours ouvrés.",
+      "error": "L'envoi n'a pas abouti. Écrivez-nous directement à contact@coshift.agency.",
+      "validation": { "required": "Champ obligatoire", "email": "Adresse email invalide" }
     },
-    "calendly": "Ou prenez un créneau directement.",
+    "calendly": "Ou choisissez directement un créneau.",
     "details": {
-      "heading": "Les détails",
+      "heading": "Nous joindre",
       "address": "113 Rue Saidi Ahmed, Lot N7 Étage 4, Bordj El Kiffane, Alger 16031 — Algérie",
       "emailLabel": "Email",
       "phoneLabel": "Téléphone",
@@ -334,12 +292,11 @@
     "ctaWork": "Voir les réalisations"
   },
   "footer": {
-    "tagline": "Une seule équipe pour tout votre système digital — site, ERP, apps, email, serveurs. Powering Your Next Shift.",
-    "navLabel": "Site",
-    "contactLabel": "Nous contacter",
-    "social": "Ailleurs",
+    "sloganLead": "Nous alimentons votre prochain",
+    "sloganAccent": "shift.",
+    "social": "Réseaux",
     "legal": "© {year} Coshift. Tous droits réservés.",
-    "languageHeading": "Langue"
+    "location": "Alger, Algérie"
   },
   "common": {
     "scrollHint": "défiler",

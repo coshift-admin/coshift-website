@@ -34,24 +34,37 @@ export function Cursor() {
     let mouseY = window.innerHeight / 2;
     let ringX = mouseX;
     let ringY = mouseY;
+    let scale = 1;
     let isOver = false;
     let raf = 0;
+
+    // The loop only runs while the ring is catching up — it sleeps when the
+    // pointer is still, instead of ticking every frame forever.
+    const tick = () => {
+      const targetScale = isOver ? 4 : 1;
+      ringX += (mouseX - ringX) * 0.18;
+      ringY += (mouseY - ringY) * 0.18;
+      scale += (targetScale - scale) * 0.2;
+      ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%) scale(${scale})`;
+      // Label trails the cursor slightly, offset below-right.
+      label.style.transform = `translate3d(${mouseX + 18}px, ${mouseY + 18}px, 0)`;
+      const settled =
+        Math.abs(mouseX - ringX) < 0.1 &&
+        Math.abs(mouseY - ringY) < 0.1 &&
+        Math.abs(targetScale - scale) < 0.01;
+      raf = settled ? 0 : requestAnimationFrame(tick);
+    };
+    const wake = () => {
+      if (!raf) raf = requestAnimationFrame(tick);
+    };
 
     const onMove = (e: PointerEvent) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
       dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+      wake();
     };
-
-    const tick = () => {
-      ringX += (mouseX - ringX) * 0.18;
-      ringY += (mouseY - ringY) * 0.18;
-      ring.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%) scale(${isOver ? 4 : 1})`;
-      // Label trails the cursor slightly, offset below-right.
-      label.style.transform = `translate3d(${mouseX + 18}px, ${mouseY + 18}px, 0)`;
-      raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
+    wake();
 
     const interactiveSel =
       'a, button, [role="button"], [data-cursor="hover"], input, textarea, select, [contenteditable="true"]';
@@ -62,6 +75,7 @@ export function Cursor() {
       if (target.closest(interactiveSel)) {
         isOver = true;
         ring.dataset.state = "hover";
+        wake();
       }
       const labelled = target.closest<HTMLElement>("[data-cursor-label]");
       if (labelled?.dataset.cursorLabel) {
@@ -75,6 +89,7 @@ export function Cursor() {
       if (target.closest(interactiveSel)) {
         isOver = false;
         ring.dataset.state = "idle";
+        wake();
       }
       if (target.closest("[data-cursor-label]")) {
         label.dataset.show = "false";
@@ -115,7 +130,9 @@ export function Cursor() {
           borderRadius: 9999,
           border: "1.5px solid var(--coshift-cyan)",
           mixBlendMode: "difference",
-          transition: "transform 240ms var(--ease-out-expo), background 200ms",
+          // No transform transition: position and scale are already eased in
+          // JS, and a CSS transition on top restarts every frame.
+          transition: "background 200ms",
           willChange: "transform",
           backgroundColor: "transparent",
         }}

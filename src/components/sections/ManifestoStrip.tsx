@@ -1,10 +1,18 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
+import { useRef, useState } from "react";
+import {
+  motion,
+  motionValue,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+  type MotionValue,
+} from "framer-motion";
 import { useTranslations } from "next-intl";
 import { useReducedMotionPref } from "@/hooks/useReducedMotion";
 import { ShiftGlyph } from "@/components/icons/ShiftGlyph";
+import { HandNote } from "@/components/ui/HandNote";
 
 /**
  * The one light-palette moment. As the section scrolls through, a bone-coloured
@@ -15,6 +23,8 @@ import { ShiftGlyph } from "@/components/icons/ShiftGlyph";
 export function ManifestoStrip() {
   const ref = useRef<HTMLElement | null>(null);
   const t = useTranslations("home.manifesto");
+  const kicker = t("kicker");
+  const hand = t("hand");
   const reduced = useReducedMotionPref();
   const pre = t("linePre");
   const post = t("linePost");
@@ -41,10 +51,10 @@ export function ManifestoStrip() {
     return (
       <section
         data-palette="bone"
-        aria-label="Manifesto"
+        aria-label={kicker}
         className="relative overflow-hidden py-32 md:py-48"
       >
-        <Content pre={pre} post={post} />
+        <Content kicker={kicker} hand={hand} pre={pre} post={post} />
       </section>
     );
   }
@@ -52,7 +62,7 @@ export function ManifestoStrip() {
   return (
     <section
       ref={ref}
-      aria-label="Manifesto"
+      aria-label={kicker}
       className="relative isolate overflow-hidden py-32 md:py-48"
     >
       {/* animated bone curtain */}
@@ -62,16 +72,20 @@ export function ManifestoStrip() {
         style={{ clipPath }}
         className="absolute inset-0 bg-[var(--coshift-bone)]"
       />
-      <Content pre={pre} post={post} reveal={reveal} />
+      <Content kicker={kicker} hand={hand} pre={pre} post={post} reveal={reveal} />
     </section>
   );
 }
 
 function Content({
+  kicker,
+  hand,
   pre,
   post,
   reveal,
 }: {
+  kicker: string;
+  hand: string;
   pre: string;
   post: string;
   reveal?: MotionValue<number>;
@@ -80,7 +94,7 @@ function Content({
     <div className="container-x relative z-10 mx-auto max-w-[1600px]">
       <div className="text-mono mb-12 flex items-center gap-3 text-[var(--coshift-ink)]/50">
         <ShiftGlyph className="h-3 w-auto text-[var(--coshift-cyan)]" />
-        MANIFESTO
+        {kicker}
       </div>
       <h2
         aria-label={`${pre} ${post}`}
@@ -100,6 +114,8 @@ function Content({
           </>
         )}
       </h2>
+      {/* handwritten aside pointing back at "we run them" — deep coral on the light curtain */}
+      <ManifestoHand text={hand} reveal={reveal} />
     </div>
   );
 }
@@ -152,3 +168,22 @@ function Word({
     <motion.span style={{ y, display: "inline-block" }}>{word}</motion.span>
   );
 }
+
+/** The aside waits until "we run them" has fully revealed before it writes itself. */
+function ManifestoHand({ text, reveal }: { text: string; reveal?: MotionValue<number> }) {
+  const [done, setDone] = useState(false);
+  useMotionValueEvent(reveal ?? FALLBACK_REVEAL, "change", (v) => {
+    if (v > 0.97) setDone(true);
+  });
+  return (
+    <HandNote
+      arrow="up-start"
+      play={reveal ? done : undefined}
+      className="ms-[8%] mt-4 [--hand:var(--warm-700)] md:ms-[22%]"
+    >
+      {text}
+    </HandNote>
+  );
+}
+
+const FALLBACK_REVEAL = motionValue(1);

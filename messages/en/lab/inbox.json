@@ -1,0 +1,17 @@
+{
+  "title": "Spam or inbox?",
+  "desc": "Switch on the three settings that prove an email really comes from you, and watch where it lands.",
+  "link": "See the email offer",
+  "outbox": "Your email",
+  "inbox": "Inbox",
+  "spam": "Spam",
+  "send": "Send",
+  "trust": "Trust",
+  "delivered": "Landed in the inbox ✓",
+  "spammed": "Sent to spam",
+  "settings": {
+    "spf": "The list of servers allowed to send your emails.",
+    "dkim": "A signature proving the email wasn't changed on the way.",
+    "dmarc": "The rule that says what to do with an email pretending to be you."
+  }
+}

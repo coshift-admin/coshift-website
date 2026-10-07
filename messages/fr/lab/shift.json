@@ -1,0 +1,9 @@
+{
+  "title": "Du désordre à l'ordre",
+  "desc": "Des milliers de points éparpillés, comme vos outils. Survolez (ou touchez) : ils se rangent.",
+  "order": "Ranger",
+  "scatter": "Éparpiller",
+  "hint": "survolez ou touchez",
+  "statusOrdered": "Les points forment le logo Coshift.",
+  "statusScattered": "Les points sont éparpillés."
+}

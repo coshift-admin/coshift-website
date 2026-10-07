@@ -6,7 +6,7 @@ const schema = z.object({
   name: z.string().min(2).max(120),
   company: z.string().max(120).optional(),
   email: z.string().email().max(200),
-  projectType: z.enum(["erp", "web", "email", "other"]),
+  projectType: z.enum(["erp", "web", "apps", "automation", "email", "other"]),
   message: z.string().max(8000).optional(),
 });
 

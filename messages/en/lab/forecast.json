@@ -1,0 +1,13 @@
+{
+  "title": "Draw your sales",
+  "desc": "Sketch twelve months of sales with your finger: the curve carries on, with its margin of uncertainty.",
+  "link": "See automation",
+  "history": "Sales",
+  "forecast": "Forecast",
+  "today": "Today",
+  "hint": "Draw here",
+  "reset": "Reset",
+  "note": "A simple forecast (Holt's method), for illustration only.",
+  "updated": "Forecast updated",
+  "chartLabel": "Sales chart. Draw to change the last twelve months, or use the arrow keys: left and right to pick a month, up and down to change it."
+}

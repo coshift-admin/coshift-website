@@ -44,7 +44,7 @@ function Frame({ children }: { children: React.ReactNode }) {
       viewBox={ART_VIEWBOX}
       className="block w-full"
       preserveAspectRatio="xMidYMid meet"
-      style={{ height: "auto", maxHeight: "180px" }}
+      style={{ height: "auto", maxHeight: "min(180px, 22svh)" }}
       aria-hidden
     >
       {children}

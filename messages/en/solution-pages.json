@@ -1,0 +1,529 @@
+{
+  "common": {
+    "ctaPrimary": "Book a free audit",
+    "ctaSecondary": "See our work",
+    "note": "30 min · no commitment",
+    "painsEyebrow": "The problem",
+    "painsTitle": "Sound familiar?",
+    "deliverablesEyebrow": "What you get",
+    "deliverablesTitle": "What we put in place",
+    "proofEyebrow": "Our work",
+    "proofTitle": "Already running for our clients",
+    "proofLink": "See the project",
+    "allWork": "All our work",
+    "stepsEyebrow": "How it works",
+    "stepsTitle": "Three steps, no surprises.",
+    "steps": [
+      {
+        "title": "Free audit",
+        "body": "30 minutes to understand how you work today and what's costing you time."
+      },
+      {
+        "title": "Demo and proposal",
+        "body": "You try a real system, then get a written proposal: what we'll do, in what order, and at what price."
+      },
+      {
+        "title": "Setup and follow-up",
+        "body": "We set it up, move your data over and train your team. Then we stay on to keep the system running."
+      }
+    ],
+    "methodLink": "See how we work",
+    "faqEyebrow": "FAQ",
+    "faqTitle": "Questions we get asked"
+  },
+  "erp": {
+    "meta": {
+      "title": "ERP & operations — Odoo for growing businesses",
+      "description": "Sales, stock, purchasing, accounting and HR in one piece of software. Coshift sets up Odoo, fits it to the way you work and keeps it running after launch."
+    },
+    "name": "ERP & operations",
+    "title": "See your whole business on one screen.",
+    "sub": "An ERP is the software that brings sales, stock, purchasing, accounting and HR together. We set it up with Odoo, fit it to the way you work and keep it running after launch.",
+    "hand": "No more asking three people",
+    "pains": [
+      "Your stock figures never match what's actually in the warehouse.",
+      "The same order gets typed three times: in Excel, on the invoice, then in the accounts.",
+      "To find out where the business stands, you have to call three people.",
+      "You don't know what each product or each job really earns you."
+    ],
+    "deliverables": [
+      {
+        "icon": "search",
+        "title": "Your way of working, mapped",
+        "body": "We look at how you actually work before configuring anything."
+      },
+      {
+        "icon": "modules",
+        "title": "Odoo set to your rules",
+        "body": "The modules you need — sales, stock, purchasing, accounting, HR, point of sale — configured for your business."
+      },
+      {
+        "icon": "code",
+        "title": "Custom modules",
+        "body": "When Odoo doesn't do what you need, we write the missing module."
+      },
+      {
+        "icon": "data",
+        "title": "Your data moved over",
+        "body": "Customers, suppliers, staff, products: we bring everything across from your spreadsheets or old software."
+      },
+      {
+        "icon": "dashboard",
+        "title": "Your numbers on your phone",
+        "body": "Sales, margin, stock and cash on a simple, up-to-date dashboard you can open wherever you are."
+      },
+      {
+        "icon": "pos",
+        "title": "Till and hardware connected",
+        "body": "Till, barcode scanners, label printers and scales: every counter sale updates the stock."
+      },
+      {
+        "icon": "team",
+        "title": "Your team trained",
+        "body": "Training and guides in French, Arabic or English, so everyone uses it from day one."
+      },
+      {
+        "icon": "hosting",
+        "title": "Hosted and looked after",
+        "body": "On our infrastructure — or yours — with backups, monitoring and support after launch."
+      },
+      {
+        "icon": "repair",
+        "title": "Your current Odoo, back on its feet",
+        "body": "Set up badly by another provider, or abandoned halfway? We take it over and get it working again."
+      }
+    ],
+    "modules": {
+      "label": "Modules we put in place",
+      "items": [
+        "Sales",
+        "Stock",
+        "Purchasing",
+        "Accounting",
+        "HR & payroll",
+        "CRM",
+        "Projects",
+        "Point of sale",
+        "E-commerce",
+        "AI assistant",
+        "Custom modules"
+      ],
+      "note": "Odoo or ERPNext? Usually Odoo, but we compare both honestly for your case. We're independent, not a reseller."
+    },
+    "faq": [
+      {
+        "q": "Isn't an ERP only for big companies?",
+        "a": "No. The bigger you grow without one, the more it costs to fix. We size the system to your company and start with whatever costs you the most time."
+      },
+      {
+        "q": "Odoo Community or Enterprise?",
+        "a": "Both exist. We recommend one or the other based on the modules you need and the size of your team — and we tell you during the audit."
+      },
+      {
+        "q": "Can you bring over our current data?",
+        "a": "Yes: spreadsheets, old software or a home-grown tool. Moving your customers, suppliers, staff and products is part of the project."
+      },
+      {
+        "q": "We already use Odoo, but it isn't working well.",
+        "a": "That's more common than you'd think. We start by going through your setup: what's misconfigured, what's missing, what can be kept. Then we fix it, starting with what holds you back most."
+      }
+    ],
+    "ctaTitle": "Ready to see your whole business on one screen?",
+    "ctaBody": "Book 30 minutes. We look at your current tools and show you what your ERP would look like."
+  },
+  "web": {
+    "meta": {
+      "title": "Websites & e-commerce connected to your stock",
+      "description": "Showcase sites and online stores built for your business, in French, Arabic and English, connected to your stock and orders."
+    },
+    "name": "Websites & e-commerce",
+    "title": "A website that sells — connected to your stock.",
+    "sub": "A showcase site or an online store, built for your business, in French, Arabic and English. Orders and stock update themselves — nothing to re-type.",
+    "hand": "your stock keeps up, on its own",
+    "pains": [
+      "Your website shows a product as available when the shop has run out.",
+      "Every online order gets copied by hand into your software.",
+      "With cash on delivery, you can't tell which ads actually sell.",
+      "Your site looks dated, it's slow on mobile and it's only in one language."
+    ],
+    "deliverables": [
+      {
+        "icon": "design",
+        "title": "Designed for your brand",
+        "body": "A site designed for your business, not a template repainted in your logo's colours."
+      },
+      {
+        "icon": "store",
+        "title": "A complete online store",
+        "body": "Catalogue, cart, cash on delivery or online payment, order tracking."
+      },
+      {
+        "icon": "payment",
+        "title": "Online payment",
+        "body": "Your customers pay by CIB, Edahabia, Visa or Mastercard card — alongside cash on delivery if you keep it."
+      },
+      {
+        "icon": "truck",
+        "title": "Delivery connected",
+        "body": "Yalidine, ZR Express and the others: the shipment is created from the order, and tracking flows back into your system on its own."
+      },
+      {
+        "icon": "sync",
+        "title": "Connected to your ERP",
+        "body": "Stock, prices and orders synced with your ERP: enter it once, up to date everywhere."
+      },
+      {
+        "icon": "team",
+        "title": "Your team in control",
+        "body": "Training and an admin guide so your team can run the site day to day."
+      }
+    ],
+    "included": {
+      "eyebrow": "Included",
+      "title": "In every site we deliver.",
+      "intro": "Not an option — our standard.",
+      "items": [
+        {
+          "icon": "mobile",
+          "title": "Mobile first",
+          "body": "Your customers find you on their phone. The site is built for them."
+        },
+        {
+          "icon": "speed",
+          "title": "Fast to load",
+          "body": "Light pages that show up quickly, even on an average connection."
+        },
+        {
+          "icon": "languages",
+          "title": "French, Arabic, English",
+          "body": "Your customers' three languages, from launch day."
+        },
+        {
+          "icon": "stock",
+          "title": "Stock and orders up to date",
+          "body": "What the customer sees matches what you actually have."
+        },
+        {
+          "icon": "tracking",
+          "title": "Ad tracking you can trust",
+          "body": "Server-side tracking recovers the sales the browser pixel misses — cash on delivery included."
+        },
+        {
+          "icon": "hosting",
+          "title": "Hosted and monitored",
+          "body": "Launch, SSL certificate, backups and monitoring on our infrastructure."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "Do you do both design and development?",
+        "a": "Yes, both, in the same team. We don't hand over designs nobody can build."
+      },
+      {
+        "q": "Can you take over our current site?",
+        "a": "Yes. Depending on its state, we connect it to your stock, modernise it or rebuild it. The audit tells us which option makes the most sense."
+      },
+      {
+        "q": "WordPress or custom-built?",
+        "a": "WordPress + WooCommerce when that's enough, custom development (Next.js, React) when you need more. We explain the choice in plain terms."
+      },
+      {
+        "q": "Can you add CIB / Edahabia online payment?",
+        "a": "Yes. We integrate CIB and Edahabia card payment, as well as Visa and Mastercard, into your website or platform. Cash on delivery can stay available alongside it."
+      },
+      {
+        "q": "Do you handle cash on delivery?",
+        "a": "Yes, end to end: the order funnel, confirmation, and server-side ad tracking so you know which campaigns actually sell."
+      }
+    ],
+    "ctaTitle": "Ready to sell online without re-typing a thing?",
+    "ctaBody": "Book 30 minutes. We look at your current site and the way you sell, and tell you what we'd change."
+  },
+  "apps": {
+    "meta": {
+      "title": "Apps, custom modules and integrations",
+      "description": "Mobile apps, custom modules and connections between your tools. When standard software falls short, Coshift writes the code."
+    },
+    "name": "Apps & integrations",
+    "title": "When standard software falls short, we write the module.",
+    "sub": "Mobile apps for your teams and customers, custom modules, tools that finally talk to each other: we build what your system is missing.",
+    "hand": "we write what's missing",
+    "pains": [
+      "Your time clock and your payroll don't talk: someone copies the hours by hand.",
+      "Your field teams send everything over WhatsApp, and none of it reaches the system.",
+      "Your software does almost everything — except the one thing you actually need.",
+      "Off-the-shelf plugins can't handle your special cases: affiliates, fraud, cash on delivery."
+    ],
+    "deliverables": [
+      {
+        "icon": "mobile",
+        "title": "Mobile apps",
+        "body": "Spaces for your customers, supervisors or managers, connected to your ERP."
+      },
+      {
+        "icon": "code",
+        "title": "Custom modules",
+        "body": "Loyalty, anti-fraud, affiliates, rules specific to your trade: the code off-the-shelf software doesn't have."
+      },
+      {
+        "icon": "integration",
+        "title": "Tools that talk to each other",
+        "body": "Time clock, online store, delivery companies, advertising: your tools exchange data on their own. Online payment included: CIB, Edahabia, Visa, Mastercard."
+      },
+      {
+        "icon": "whatsapp",
+        "title": "WhatsApp connected to your system",
+        "body": "Photos, delivery notes and reports your field teams send on WhatsApp go straight into your ERP."
+      },
+      {
+        "icon": "threeD",
+        "title": "3D and configurators",
+        "body": "3D product configurators in the browser, models and animated visuals."
+      },
+      {
+        "icon": "docs",
+        "title": "Everything documented",
+        "body": "Every build comes with its documentation: you know exactly what you own."
+      }
+    ],
+    "examples": {
+      "eyebrow": "Real examples",
+      "title": "What we've already built.",
+      "intro": "Problems off-the-shelf software couldn't solve.",
+      "problemLabel": "The problem",
+      "builtLabel": "What we built",
+      "items": [
+        {
+          "client": "Profit Zone",
+          "problem": "An e-learning platform needed to take payments online from Algerian customers.",
+          "built": "An Algerian online-payment gateway integration, plus a landing page to present the offer."
+        },
+        {
+          "client": "FastPlast",
+          "problem": "The biometric time clock and payroll lived apart, with manual re-entry in between.",
+          "built": "An integration that sends clock-ins straight into Odoo."
+        },
+        {
+          "client": "Renoh",
+          "problem": "No plugin could track influencer commissions on cash-on-delivery orders.",
+          "built": "A link-based affiliate programme with commissions calculated automatically."
+        },
+        {
+          "client": "Savoir",
+          "problem": "The ad pixel was losing a large share of conversions (iOS, Brave, ad blockers).",
+          "built": "Server-side conversion tracking that recovers the sales the browser couldn't see."
+        },
+        {
+          "client": "White Rose",
+          "problem": "Standard tools didn't protect the store against fraudulent orders.",
+          "built": "A custom anti-fraud module built into the checkout."
+        },
+        {
+          "client": "Kompen",
+          "problem": "Photos weren't enough to show a configurable product.",
+          "built": "An interactive 3D configurator, right in the browser."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "Can you connect the tools we already use?",
+        "a": "Often, yes. If a tool gives access to its data, we can link it to your ERP or your website. The audit quickly tells us what's possible."
+      },
+      {
+        "q": "Do we stay free to leave?",
+        "a": "Yes. Your data is yours, every build comes with its documentation, and we use open technologies: you're never locked in."
+      },
+      {
+        "q": "Does a mobile app take long to build?",
+        "a": "It depends on what it needs to do. We start with the essentials, which help you straight away, then add the rest."
+      },
+      {
+        "q": "What about artificial intelligence?",
+        "a": "We've made it an offer of its own, “Automation & AI”: WhatsApp confirmations, reminders, an AI assistant connected to your ERP, supplier invoices read automatically."
+      }
+    ],
+    "ctaTitle": "If it's missing, we can build it.",
+    "ctaBody": "Walk us through the problem in 30 minutes. We'll tell you honestly whether a custom module is the right answer."
+  },
+  "automation": {
+    "meta": {
+      "title": "Automation & AI for SMEs",
+      "description": "Orders confirmed on WhatsApp, automatic reminders and alerts, supplier invoices read by AI, an assistant connected to your ERP. Coshift automates the repetitive work in your business."
+    },
+    "name": "Automation & AI",
+    "title": "The repetitive work does itself.",
+    "sub": "Confirming orders, chasing unpaid invoices, retyping supplier bills, answering the same questions: we automate these tasks on WhatsApp, in your ERP and on your website. Your team keeps its time for everything else.",
+    "hand": "runs even at night",
+    "pains": [
+      "Your team spends its days on the phone confirming orders.",
+      "Unpaid invoices only get chased when someone remembers.",
+      "Every supplier invoice is typed into the software by hand.",
+      "The same questions keep coming: the price, the lead time, “where's my order?”"
+    ],
+    "deliverables": [
+      {
+        "icon": "whatsapp",
+        "title": "Orders confirmed on WhatsApp",
+        "body": "As soon as an order comes in, the customer gets a message and confirms in one tap. They then track their delivery, and their invoice arrives in the same place."
+      },
+      {
+        "icon": "alerts",
+        "title": "Automatic reminders and alerts",
+        "body": "Unpaid invoice, unanswered quote, low stock, purchase to approve: the right person hears about it at the right time."
+      },
+      {
+        "icon": "report",
+        "title": "Your week's numbers, ready",
+        "body": "Every Monday, the week's key figures arrive by email or on WhatsApp. Nobody has to put them together."
+      },
+      {
+        "icon": "ai",
+        "title": "An AI assistant inside your Odoo",
+        "body": "It analyses your numbers and makes forecasts. Ask it “how much did we sell this month?” and it answers from your ERP.",
+        "tag": "Already delivered"
+      },
+      {
+        "icon": "chat",
+        "title": "An assistant for your customers",
+        "body": "On your website and on WhatsApp, it answers common questions and gives the status of an order. When it doesn't know, it hands over to your team."
+      },
+      {
+        "icon": "scan",
+        "title": "Supplier invoices that enter themselves",
+        "body": "A photo or a PDF is enough: supplier, items and amounts land in your ERP. All that's left is to check.",
+        "tag": "Already delivered"
+      }
+    ],
+    "control": {
+      "eyebrow": "You stay in charge",
+      "title": "Automation works for you, not instead of you.",
+      "intro": "The rules are yours, and a person always stays in the loop.",
+      "items": [
+        {
+          "icon": "rules",
+          "title": "Your rules",
+          "body": "We decide with you who gets what, when, and with which message. Nothing goes out without your approval."
+        },
+        {
+          "icon": "handoff",
+          "title": "A person takes over",
+          "body": "As soon as a customer goes beyond the usual questions, the conversation passes to your team."
+        },
+        {
+          "icon": "validate",
+          "title": "You approve what matters",
+          "body": "An invoice read by AI arrives as a draft. Someone on your team checks it before it's recorded."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "Do we need to change our tools?",
+        "a": "No. We automate what you already use: WhatsApp, your website, your ERP, your email."
+      },
+      {
+        "q": "What if the AI gets it wrong?",
+        "a": "It can, just like a person. That's why it suggests and your team approves: an invoice it reads arrives as a draft, and a customer it can't help is passed to a person."
+      },
+      {
+        "q": "Where does our data go?",
+        "a": "We can run the assistant on our own infrastructure, so your numbers never go to an outside service."
+      },
+      {
+        "q": "Where do we start?",
+        "a": "With the task that costs you the most time. Often that's confirming orders or entering invoices. The free audit is there to find it."
+      }
+    ],
+    "ctaTitle": "Which task costs you the most time?",
+    "ctaBody": "Book 30 minutes. We'll find it with you and show you how it can run on its own."
+  },
+  "email": {
+    "meta": {
+      "title": "Business email and hosting",
+      "description": "Email addresses on your own domain, set up to stay out of spam, about 4–5× cheaper than Microsoft 365 or Google Workspace. Free migration."
+    },
+    "name": "Business email & hosting",
+    "title": "Email in your company's name — that actually gets delivered.",
+    "sub": "Addresses @your-company, set up to stay out of spam, about 4–5× cheaper than Microsoft 365 or Google Workspace. We move your old emails over for free.",
+    "hand": "goodbye, @gmail addresses",
+    "badge": "The easiest place to start",
+    "pains": [
+      "You email your customers from an @gmail.com address.",
+      "Your quotes and invoices land in your customers' spam folder.",
+      "You pay a lot for licences you only half use.",
+      "Your website, your domain and your email sit with three different providers."
+    ],
+    "deliverables": [
+      {
+        "icon": "address",
+        "title": "Addresses in your name",
+        "body": "The addresses your team needs, on your own domain name."
+      },
+      {
+        "icon": "shield",
+        "title": "No more spam folder",
+        "body": "SPF, DKIM and DMARC configured: the settings that prove your emails really come from you."
+      },
+      {
+        "icon": "migrate",
+        "title": "Free migration",
+        "body": "We move your old emails over from Gmail or Microsoft 365."
+      },
+      {
+        "icon": "domain",
+        "title": "Domain names",
+        "body": "Registration and management of your .dz and international domains."
+      },
+      {
+        "icon": "server",
+        "title": "Website hosting",
+        "body": "Your site hosted on our own infrastructure, with an SSL certificate."
+      },
+      {
+        "icon": "support",
+        "title": "Backups and monitoring",
+        "body": "Encrypted backups every night, constant monitoring, updates and support."
+      }
+    ],
+    "offer": {
+      "eyebrow": "The offer",
+      "title": "The same service, without the premium price.",
+      "figure": "4–5×",
+      "figureLabel": "cheaper than Microsoft 365 or Google Workspace, for addresses in your own name.",
+      "listTitle": "Included",
+      "items": [
+        "Addresses on your own domain name",
+        "Anti-spam settings (SPF, DKIM, DMARC)",
+        "Your old emails moved over, free",
+        "One contact who speaks French, Arabic and English"
+      ],
+      "pricingNote": "Exact pricing depends on the number of addresses — sent on request."
+    },
+    "proofFact": {
+      "figure": "10",
+      "label": "client domains already run on our business email."
+    },
+    "faq": [
+      {
+        "q": "Will I lose my old emails?",
+        "a": "No. We move them over from Gmail or Microsoft 365, free of charge."
+      },
+      {
+        "q": "Why do my emails land in spam today?",
+        "a": "Usually because your domain isn't set up to prove that emails really come from you. Those are the SPF, DKIM and DMARC settings — we take care of them."
+      },
+      {
+        "q": "Can I keep my website with another provider?",
+        "a": "Yes. Business email works on its own. It's a good first step — the rest can follow whenever you want."
+      },
+      {
+        "q": "How much does it cost?",
+        "a": "About 4–5× less than Microsoft 365 or Google Workspace. We send you the exact price based on how many addresses you need."
+      }
+    ],
+    "ctaTitle": "Start with email that arrives.",
+    "ctaBody": "Tell us how many addresses you need. We send you the price, then take care of everything."
+  }
+}

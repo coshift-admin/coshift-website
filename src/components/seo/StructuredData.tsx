@@ -50,14 +50,21 @@ export function StructuredData({ locale }: { locale: string }) {
         name: "Odoo ERP implementation",
         provider: { "@id": `${site.url}#org` },
         areaServed: ["DZ", "FR", "MA", "TN", "AE"],
-        url: `${site.url}/${locale}/services/odoo`,
+        url: `${site.url}/${locale}/solutions/erp`,
       },
       {
         "@type": "Service",
         name: "Web development",
         provider: { "@id": `${site.url}#org` },
         areaServed: ["DZ", "FR", "MA", "TN", "AE"],
-        url: `${site.url}/${locale}/services/web`,
+        url: `${site.url}/${locale}/solutions/web`,
+      },
+      {
+        "@type": "Service",
+        name: "Business automation and AI",
+        provider: { "@id": `${site.url}#org` },
+        areaServed: ["DZ", "FR", "MA", "TN", "AE"],
+        url: `${site.url}/${locale}/solutions/automation`,
       },
     ],
   };

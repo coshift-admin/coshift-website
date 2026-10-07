@@ -21,8 +21,25 @@ const nextConfig: NextConfig = {
     optimizePackageImports: [
       "framer-motion",
       "lucide-react",
+      "@phosphor-icons/react",
       "@react-three/drei",
     ],
+  },
+  // The site is organised by need now (/solutions/*); keep old links and
+  // search results working.
+  async redirects() {
+    return [
+      {
+        source: "/:locale(fr|en)/services/odoo",
+        destination: "/:locale/solutions/erp",
+        permanent: true,
+      },
+      {
+        source: "/:locale(fr|en)/services/web",
+        destination: "/:locale/solutions/web",
+        permanent: true,
+      },
+    ];
   },
   // Three.js / drei often ship as ESM with side-effects; Next 15 handles this,
   // but transpile them explicitly so dev-mode HMR is reliable.

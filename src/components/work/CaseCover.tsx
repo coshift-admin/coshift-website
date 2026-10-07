@@ -32,6 +32,13 @@ export function CaseCover({
     let mouseX = 0.5;
     let mouseY = 0.5;
     let active = true;
+    // Only animate while the tile is on screen.
+    let visible = false;
+    const io = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      if (visible && !raf) raf = requestAnimationFrame(draw);
+    });
+    io.observe(canvas);
 
     const resize = () => {
       const r = canvas.getBoundingClientRect();
@@ -91,11 +98,12 @@ export function CaseCover({
       ctx.fillRect(0, 0, w, h * 0.35);
 
       t += active ? 1.6 : 0.4;
-      raf = requestAnimationFrame(draw);
+      raf = visible ? requestAnimationFrame(draw) : 0;
     };
     draw();
 
     return () => {
+      io.disconnect();
       cancelAnimationFrame(raf);
       canvas.removeEventListener("pointermove", onMove);
       canvas.removeEventListener("pointerenter", onEnter);

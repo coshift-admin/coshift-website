@@ -1,17 +1,19 @@
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Hero } from "@/components/sections/Hero";
 import { ManifestoStrip } from "@/components/sections/ManifestoStrip";
-import { Services } from "@/components/sections/Services";
-import { ProofPoints } from "@/components/sections/ProofPoints";
-import { DemoProvisioner } from "@/components/sections/DemoProvisioner";
-import { Process } from "@/components/sections/Process";
+import { Solutions } from "@/components/sections/Solutions";
 import { SelectedWork } from "@/components/sections/SelectedWork";
-import { Numbers } from "@/components/sections/Numbers";
-import { Sectors } from "@/components/sections/Sectors";
-import { EmailBand } from "@/components/sections/EmailBand";
-import { TrustStrip } from "@/components/sections/TrustStrip";
-import { CtaBlock } from "@/components/sections/CtaBlock";
-import { setRequestLocale } from "next-intl/server";
+import { Process } from "@/components/sections/Process";
+import { WhyCoshift } from "@/components/sections/WhyCoshift";
+import { Faq } from "@/components/sections/Faq";
+import { CtaBand } from "@/components/ui/CtaBand";
+import { site } from "@/lib/site";
 
+/**
+ * Home, in the order an owner decides: what changes (hero) → our stance
+ * (manifesto) → what we do (solutions) → proof (work) → how it goes
+ * (process) → why us → objections (FAQ) → next step.
+ */
 export default async function HomePage({
   params,
 }: {
@@ -19,21 +21,28 @@ export default async function HomePage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const t = await getTranslations("home.cta");
 
   return (
     <>
       <Hero />
       <ManifestoStrip />
-      <Services />
-      <ProofPoints />
-      <DemoProvisioner />
-      <Process />
+      <Solutions />
       <SelectedWork />
-      <Numbers />
-      <Sectors />
-      <EmailBand />
-      <TrustStrip />
-      <CtaBlock />
+      <Process />
+      <WhyCoshift />
+      <Faq />
+      <CtaBand
+        title={t("title")}
+        body={t("body")}
+        primary={{ label: t("primary"), href: "/contact" }}
+        secondary={{
+          label: t("secondary"),
+          href: `https://wa.me/${site.whatsapp.replace(/\D+/g, "")}`,
+        }}
+        note={t("note")}
+        hand={t("hand")}
+      />
     </>
   );
 }

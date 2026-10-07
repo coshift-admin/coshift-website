@@ -1,14 +1,18 @@
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { ArrowSquareOut } from "@phosphor-icons/react/dist/ssr";
 import { Link } from "@/i18n/routing";
-import { caseStudies, findCaseStudy } from "@/content/work";
-import { CaseCover } from "@/components/work/CaseCover";
+import { routing } from "@/i18n/routing";
+import { caseStudies, findCaseStudy, hostOf, tr } from "@/content/work";
+import { CaseVisual } from "@/components/work/CaseVisual";
 import { CaseNarrative, type Panel } from "@/components/work/CaseNarrative";
 import { Testimonial } from "@/components/work/Testimonial";
-import { RevealWords } from "@/components/motion/Reveal";
+import { Reveal, RevealWords } from "@/components/motion/Reveal";
+import { CtaBand } from "@/components/ui/CtaBand";
+import { languageAlternates } from "@/lib/locale";
 
-export async function generateStaticParams() {
-  return caseStudies.map((c) => ({ slug: c.slug }));
+export function generateStaticParams() {
+  return routing.locales.flatMap((locale) => caseStudies.map((c) => ({ locale, slug: c.slug })));
 }
 
 export async function generateMetadata({
@@ -19,9 +23,11 @@ export async function generateMetadata({
   const { slug, locale } = await params;
   const c = findCaseStudy(slug);
   if (!c) return {};
-  const title = locale === "fr" && c.titleFr ? c.titleFr : c.title;
-  const description = locale === "fr" && c.summaryFr ? c.summaryFr : c.summary;
-  return { title, description };
+  return {
+    title: tr(c.title, locale),
+    description: tr(c.summary, locale),
+    alternates: { languages: languageAlternates(`/work/${slug}`) },
+  };
 }
 
 export default async function CaseStudyPage({
@@ -32,93 +38,98 @@ export default async function CaseStudyPage({
   const { locale, slug } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("work.labels");
+  const tCta = await getTranslations("home.cta");
   const c = findCaseStudy(slug);
   if (!c) notFound();
-  const isFr = locale === "fr";
-  const pick = <T,>(en: T, fr?: T) => (isFr && fr !== undefined ? fr : en);
+
+  const idx = caseStudies.findIndex((x) => x.slug === c.slug);
+  const next = caseStudies[(idx + 1) % caseStudies.length];
 
   return (
     <article>
-      <header className="relative isolate overflow-hidden">
-        <div className="absolute inset-0">
-          <CaseCover hue={c.cover.hue} tone={c.cover.tone} />
+      <header className="relative isolate overflow-hidden bg-[var(--coshift-ink)] pt-[max(8rem,16svh)]">
+        <div aria-hidden className="pointer-events-none absolute inset-0">
+          <div className="absolute inset-0 bg-[radial-gradient(55%_70%_at_80%_0%,color-mix(in_oklab,var(--coshift-cyan)_14%,transparent),transparent_70%)]" />
+          <div className="pattern-shift absolute inset-0 [mask-image:radial-gradient(70%_90%_at_80%_10%,black_10%,transparent_75%)]" />
         </div>
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_0%,transparent_55%,var(--coshift-ink)_100%)]" />
-        <div className="container-x relative z-10 mx-auto max-w-[1600px] pb-24 pt-44 md:pb-40 md:pt-56">
+        <div className="container-x relative mx-auto max-w-[1320px]">
           <Link
             href="/work"
-            className="text-mono inline-flex items-center gap-2 text-[var(--coshift-bone)]/70 hover:text-[var(--coshift-cyan)]"
+            className="group text-mono inline-flex items-center gap-2 text-[var(--navy-300)] hover:text-[var(--cyan-300)]"
           >
-            ← {t("client")} index
+            <span aria-hidden className="arrow-back">←</span> {t("back")}
           </Link>
-          <h1 className="mt-8 max-w-[24ch] text-[length:var(--fs-h1)] font-extrabold leading-[0.95] tracking-[-0.02em]">
-            <RevealWords text={pick(c.title, c.titleFr)} />
+          <p className="text-mono mt-8 text-[var(--cyan-300)]">{c.client}</p>
+          <h1 className="mt-4 max-w-[26ch] text-balance text-[length:clamp(2.1rem,4.6vw,4rem)] font-extrabold leading-[1.08] tracking-[-0.025em] text-white">
+            <RevealWords text={tr(c.title, locale)} />
           </h1>
-          <dl className="text-mono mt-10 grid grid-cols-2 gap-x-8 gap-y-5 text-[var(--coshift-bone)]/70 sm:grid-cols-4">
-            <div>
-              <dt className="opacity-60">{t("client")}</dt>
-              <dd className="mt-1 text-[var(--coshift-bone)]">{c.client}</dd>
+          <Reveal delay={0.15}>
+            <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
+              <dl className="flex flex-wrap gap-1.5">
+                <dt className="sr-only">{t("services")}</dt>
+                {c.services.map((s) => (
+                  <dd key={s.en} className="rounded-md border border-white/12 px-2.5 py-1 text-sm text-[var(--navy-100)]/80">
+                    {tr(s, locale)}
+                  </dd>
+                ))}
+              </dl>
+              {c.url && (
+                <a
+                  href={c.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-11 items-center gap-2 rounded-lg bg-[var(--coshift-cyan)] px-5 font-bold text-[#170f3c] transition-colors duration-[var(--dur-ds-fast)] hover:bg-[var(--cyan-500)]"
+                >
+                  {t("visit")} <span dir="ltr" className="font-medium opacity-70">{hostOf(c.url)}</span>
+                  <ArrowSquareOut weight="bold" aria-hidden className="size-4" />
+                </a>
+              )}
             </div>
-            <div>
-              <dt className="opacity-60">{t("year")}</dt>
-              <dd className="mt-1 text-[var(--coshift-bone)]">{c.year}</dd>
+          </Reveal>
+          <Reveal delay={0.25}>
+            <div className="relative mt-12 aspect-[16/8] overflow-hidden rounded-t-xl border border-b-0 border-white/10 md:mt-16">
+              <CaseVisual c={c} alt={c.client} sizes="(min-width: 1320px) 1240px, 94vw" priority />
             </div>
-            <div className="col-span-2">
-              <dt className="opacity-60">{t("services")}</dt>
-              <dd className="mt-1 text-[var(--coshift-bone)]">
-                {c.services.join(" · ")}
-              </dd>
-            </div>
-          </dl>
+          </Reveal>
         </div>
       </header>
 
       <CaseNarrative
         panels={
           [
-            { label: t("summary"), body: pick(c.summary, c.summaryFr), lead: true },
-            { label: t("problem"), body: pick(c.problem, c.problemFr) },
-            { label: t("approach"), body: pick(c.approach, c.approachFr) },
-            { label: t("result"), body: pick(c.result, c.resultFr), lead: true },
+            { label: t("summary"), body: tr(c.summary, locale), lead: true },
+            { label: t("problem"), body: tr(c.problem, locale) },
+            { label: t("approach"), body: tr(c.approach, locale) },
+            { label: t("result"), body: tr(c.result, locale), lead: true },
           ] satisfies Panel[]
         }
       />
 
       <Testimonial
-        quote={pick(c.quote, c.quoteFr)}
+        quote={c.quote ? tr(c.quote, locale) : undefined}
         author={c.quoteAuthor}
-        role={c.quoteRole}
+        role={c.quoteRole ? tr(c.quoteRole, locale) : undefined}
       />
 
-      <NextCase currentSlug={c.slug} locale={locale} />
-    </article>
-  );
-}
+      {next && next.slug !== c.slug && (
+        <Link href={`/work/${next.slug}`} className="group relative block border-t border-white/10 py-16 md:py-24">
+          <div className="container-x mx-auto max-w-[1320px]">
+            <p className="text-mono text-[var(--navy-300)]">
+              {t("next")} <span aria-hidden className="arrow-fwd">→</span>
+            </p>
+            <p className="mt-4 max-w-[30ch] text-pretty text-[clamp(1.6rem,3.2vw,2.75rem)] font-bold leading-[1.1] tracking-[-0.02em] text-white transition-colors duration-[var(--dur-ds-fast)] group-hover:text-[var(--cyan-300)]">
+              {tr(next.title, locale)}
+            </p>
+          </div>
+        </Link>
+      )}
 
-function NextCase({
-  currentSlug,
-  locale,
-}: {
-  currentSlug: string;
-  locale: string;
-}) {
-  const idx = caseStudies.findIndex((c) => c.slug === currentSlug);
-  const next = caseStudies[(idx + 1) % caseStudies.length];
-  if (!next) return null;
-  const isFr = locale === "fr";
-  return (
-    <Link
-      href={`/work/${next.slug}`}
-      className="group relative block border-t border-white/10 py-20 md:py-28"
-    >
-      <div className="container-x mx-auto max-w-[1600px]">
-        <div className="text-mono text-[var(--coshift-bone)]/60">
-          Next case
-        </div>
-        <h3 className="mt-4 max-w-[28ch] text-[length:var(--fs-h2)] font-bold leading-[1.05] tracking-[-0.02em] transition-colors group-hover:text-[var(--coshift-cyan)]">
-          {isFr ? next.titleFr ?? next.title : next.title}
-        </h3>
-      </div>
-    </Link>
+      <CtaBand
+        title={tCta("title")}
+        body={tCta("body")}
+        primary={{ label: tCta("primary"), href: "/contact" }}
+        note={tCta("note")}
+      />
+    </article>
   );
 }

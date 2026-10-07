@@ -1,148 +1,128 @@
 "use client";
 
-import dynamic from "next/dynamic";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/routing";
-import { Magnetic } from "@/components/motion/Magnetic";
-import { ShiftGlyph } from "@/components/icons/ShiftGlyph";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { ButtonLink } from "@/components/ui/ButtonLink";
+import { ShiftBoard } from "./ShiftBoard";
+import { ClientLogos } from "./ClientLogos";
+import { HandNote } from "@/components/ui/HandNote";
+import { HandMark } from "@/components/ui/HandMark";
 
-const HeroScene = dynamic(() => import("@/components/three/HeroScene"), {
-  ssr: false,
-  loading: () => <HeroPoster />,
+/**
+ * Home hero — "We power your next shift."
+ *
+ * Left: who it's for, the slogan, what we do in plain words, one clear next
+ * step. Right: the ShiftBoard, which shows what "your next shift" means —
+ * scattered tools → one connected system — and lets the visitor flip it.
+ * Foot: client logos as immediate proof.
+ *
+ * Entrance is CSS (first paint, not hydration), offset by --intro-delay while
+ * the first-visit preloader is up. Loops pause while the hero is off-screen.
+ */
+
+const WORD_STAGGER = 70;
+const T_HEADLINE = 120;
+
+const delay = (ms: number): CSSProperties => ({
+  animationDelay: `calc(var(--intro-delay) + ${ms}ms)`,
 });
 
-function HeroPoster() {
-  // Static SVG fallback while the WebGL scene initialises or for low-power devices.
-  return (
-    <div className="absolute inset-0 grid place-items-center">
-      <div className="relative h-[60vmin] w-[60vmin]">
-        <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_30%_30%,var(--coshift-cyan)_0%,transparent_60%)] opacity-30 blur-3xl" />
-        <div className="absolute inset-[12%] rounded-full bg-[radial-gradient(circle_at_70%_70%,var(--coshift-indigo)_0%,transparent_70%)] opacity-50 blur-2xl" />
-        <ShiftGlyph className="absolute inset-0 m-auto h-2/3 w-auto text-[var(--coshift-cyan)]/70" />
-      </div>
-    </div>
-  );
+function HeroWords({ text, start }: { text: string; start: number }) {
+  return text.split(" ").map((word, i) => (
+    <span key={i}>
+      {i > 0 && " "}
+      <span className="hero-word">
+        <span style={delay(start + i * WORD_STAGGER)}>{word}</span>
+      </span>
+    </span>
+  ));
 }
 
 export function Hero() {
   const t = useTranslations("home.hero");
-  const ref = useRef<HTMLElement | null>(null);
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const [inView, setInView] = useState(true);
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(([entry]) => setInView(entry.isIntersecting));
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
 
-  // Headline parallax: drift up & fade as the user scrolls past.
-  const headlineY = useTransform(scrollYProgress, [0, 1], [0, -80]);
-  const headlineOpacity = useTransform(scrollYProgress, [0, 0.6, 1], [1, 1, 0]);
-  const cueOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+  const lead = t("headlineLead");
+  const leadWords = lead.split(" ").length;
 
   return (
     <section
-      ref={ref}
-      aria-label="Coshift"
-      className="relative isolate flex min-h-[100svh] w-full items-center overflow-hidden"
+      ref={sectionRef}
+      aria-label={t("ariaLabel")}
+      data-hero-paused={!inView}
+      className="relative isolate flex min-h-[100svh] w-full flex-col overflow-hidden bg-[var(--coshift-ink)]"
     >
-      {/* WebGL scene */}
-      <div className="absolute inset-0">
-        <HeroScene />
+      {/* Backdrop: the one gradient the DS allows + the "shift" line pattern. */}
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(60%_60%_at_72%_10%,color-mix(in_oklab,var(--coshift-cyan)_15%,transparent),transparent_70%)]" />
+        <div className="pattern-shift absolute inset-0 [mask-image:radial-gradient(80%_80%_at_65%_35%,black_15%,transparent_80%)]" />
       </div>
 
-      {/* gradient veil so the text stays legible against the 3D */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,var(--coshift-ink)_0%,color-mix(in_oklab,var(--coshift-ink)_72%,transparent)_42%,transparent_68%)]"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(180deg,transparent_0%,var(--coshift-ink)_100%)]"
-      />
-
-      <motion.div
-        style={{ y: headlineY, opacity: headlineOpacity }}
-        className="container-x relative z-10 mx-auto max-w-[1600px] pt-28 md:pt-40"
-      >
-        <div className="text-mono mb-6 flex items-center gap-3 text-[var(--coshift-bone)]/60">
-          <span aria-hidden className="inline-block h-px w-8 bg-[var(--coshift-cyan)]" />
-          {t("kicker")}
-        </div>
-
-        <h1 className="max-w-[18ch] text-[length:var(--fs-h1)] font-extrabold leading-[0.95] tracking-[-0.02em] text-[var(--coshift-bone)]">
-          <span className="block">{t("headlinePre")}</span>
-          <span className="mt-2 block">
-            {t("headlinePost")}{" "}
-            <span className="font-display text-[var(--coshift-cyan)]">
-              {t("headlineWord")}
-            </span>
-          </span>
-        </h1>
-
-        <p className="mt-8 max-w-[52ch] text-[length:var(--fs-lead)] text-[var(--coshift-bone)]/70">
-          {t("subhead")}
-        </p>
-
-        <div className="mt-10 flex flex-wrap items-center gap-4">
-          <Magnetic pull={8}>
-            <Link
-              href="/contact"
-              className="group inline-flex items-center gap-3 rounded-full bg-[var(--coshift-cyan)] px-6 py-3 text-base font-semibold text-[var(--coshift-ink)] transition-colors hover:bg-[var(--coshift-glow)]"
-            >
-              {t("ctaPrimary")}
-              <span
-                aria-hidden
-                className="transition-transform duration-300 ease-[var(--ease-out-expo)] group-hover:translate-x-1"
-              >
-                →
-              </span>
-            </Link>
-          </Magnetic>
-          <Magnetic pull={6}>
-            <Link
-              href="/work"
-              className="inline-flex items-center gap-3 rounded-full border border-white/20 px-6 py-3 text-base text-[var(--coshift-bone)] transition-colors hover:border-[var(--coshift-cyan)] hover:text-[var(--coshift-cyan)]"
-            >
-              {t("ctaSecondary")}
-            </Link>
-          </Magnetic>
-        </div>
-      </motion.div>
-
-      <motion.div
-        style={{ opacity: cueOpacity }}
-        className="absolute bottom-10 left-1/2 z-10 -translate-x-1/2"
-      >
-        <motion.div
-          className="flex flex-col items-center gap-3 text-[var(--coshift-bone)]/70"
-          animate={{ y: [0, 8, 0] }}
-          transition={{
-            duration: 2.4,
-            repeat: Infinity,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-        >
-          {/* progress capsule with a "draining" cyan line */}
-          <span
-            aria-hidden
-            className="relative h-10 w-[2px] overflow-hidden rounded-full bg-white/15"
+      <div className="container-x relative z-10 mx-auto grid w-full max-w-[1320px] flex-1 items-center gap-10 pb-10 pt-[max(6.5rem,13svh)] lg:grid-cols-[minmax(0,1fr)_minmax(0,1.08fr)] lg:gap-14">
+        <div>
+          <p
+            className="hero-fade text-mono flex items-center gap-3 text-[0.72rem] text-[var(--cyan-300)]"
+            style={delay(0)}
           >
-            <motion.span
-              className="absolute inset-x-0 top-0 block w-full bg-[var(--coshift-cyan)]"
-              animate={{ y: ["-100%", "100%"] }}
-              transition={{
-                duration: 1.6,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-              style={{ height: "60%" }}
-            />
-          </span>
-          <ShiftGlyph className="h-4 w-auto text-[var(--coshift-cyan)]" />
-          <span className="text-mono">{t("scrollCue")}</span>
-        </motion.div>
-      </motion.div>
+            <span aria-hidden className="h-px w-8 shrink-0 bg-current opacity-60" />
+            {t("audience")}
+          </p>
+
+          <h1 className="mt-5 text-[length:clamp(2.6rem,min(5.4vw,10.5svh),5.5rem)] font-extrabold leading-[1.02] tracking-[-0.03em] text-white">
+            <HeroWords text={lead} start={T_HEADLINE} />{" "}
+            {/* the brand word gets the coral pen once the headline has landed */}
+            <HandMark delay={1.3} afterIntro>
+              <span className="text-[var(--coshift-cyan)]">
+                <HeroWords text={t("headlineAccent")} start={T_HEADLINE + leadWords * WORD_STAGGER} />
+              </span>
+            </HandMark>
+          </h1>
+
+          <p
+            className="hero-fade mt-6 max-w-[46ch] text-pretty text-[length:var(--fs-lead)] leading-[1.55] text-[var(--navy-100)]/90"
+            style={delay(450)}
+          >
+            {t("subhead")}
+          </p>
+
+          <div
+            className="hero-fade mt-9 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center"
+            style={delay(600)}
+          >
+            <ButtonLink href="/contact" arrow>
+              {t("ctaPrimary")}
+            </ButtonLink>
+            <ButtonLink href="/work" variant="secondary">
+              {t("ctaSecondary")}
+            </ButtonLink>
+          </div>
+
+          <p className="hero-fade text-mono mt-5 text-[0.66rem] text-[var(--navy-300)]" style={delay(750)}>
+            {t("note")}
+          </p>
+        </div>
+
+        <div className="hero-fade relative pt-12" style={delay(350)}>
+          {/* handwritten hint: the board is interactive — point at the switch */}
+          <HandNote arrow="down-end" delay={1.4} className="absolute end-[92px] top-0 z-10">
+            {t("board.hint")}
+          </HandNote>
+          <ShiftBoard />
+        </div>
+      </div>
+
+      <div className="hero-fade relative z-10 border-t border-white/[0.07]" style={delay(900)}>
+        <ClientLogos label={t("trustLabel")} />
+      </div>
     </section>
   );
 }

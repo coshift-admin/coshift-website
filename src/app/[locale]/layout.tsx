@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { dirOf, languageAlternates, ogLocale } from "@/lib/locale";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
@@ -6,15 +7,15 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import { routing } from "@/i18n/routing";
-import { geist, jetbrainsMono, fraunces } from "@/lib/fonts";
+import { gabarito, caveat, cairo, lemonada } from "@/lib/fonts";
 import { ReducedMotionProvider } from "@/hooks/useReducedMotion";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { Cursor } from "@/components/layout/Cursor";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Preloader } from "@/components/layout/Preloader";
+import { PRELOADER_GATE } from "@/components/layout/preloaderGate";
 import { KonamiEgg } from "@/components/layout/KonamiEgg";
-import { GrainOverlay } from "@/components/layout/GrainOverlay";
 import { WhatsAppFab } from "@/components/layout/WhatsAppFab";
 import { RouteTransition } from "@/components/layout/RouteTransition";
 import { StructuredData } from "@/components/seo/StructuredData";
@@ -32,6 +33,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
+  // The OG image renderer's default font has no Arabic glyphs, so the share
+  // image keeps the English line for /ar (title/description stay Arabic).
+  const ogTitle =
+    locale === "ar"
+      ? (await getTranslations({ locale: "en", namespace: "meta" }))("ogDefault")
+      : t("ogDefault");
   const baseUrl = site.url;
   return {
     metadataBase: new URL(baseUrl),
@@ -46,10 +53,10 @@ export async function generateMetadata({
       siteName: t("siteName"),
       title: t("ogDefault"),
       description: t("siteTagline"),
-      locale: locale === "fr" ? "fr_FR" : "en_US",
+      locale: ogLocale(locale),
       images: [
         {
-          url: `/api/og?title=${encodeURIComponent(t("ogDefault"))}`,
+          url: `/api/og?title=${encodeURIComponent(ogTitle)}`,
           width: 1200,
           height: 630,
           alt: t("siteName"),
@@ -60,23 +67,14 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: t("ogDefault"),
       description: t("siteTagline"),
-      images: [`/api/og?title=${encodeURIComponent(t("ogDefault"))}`],
+      images: [`/api/og?title=${encodeURIComponent(ogTitle)}`],
     },
     alternates: {
       canonical: `${baseUrl}/${locale}`,
-      languages: {
-        fr: `${baseUrl}/fr`,
-        en: `${baseUrl}/en`,
-        "x-default": `${baseUrl}/fr`,
-      },
+      languages: languageAlternates(""),
     },
-    icons: {
-      icon: [
-        { url: "/favicon.svg", type: "image/svg+xml" },
-        { url: "/favicon.ico" },
-      ],
-      apple: "/apple-touch-icon.png",
-    },
+    // Icons come from the file conventions src/app/icon.svg (theme-adaptive
+    // "CO") and src/app/apple-icon.tsx.
     manifest: "/manifest.webmanifest",
   };
 }
@@ -96,10 +94,13 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${geist.variable} ${jetbrainsMono.variable} ${fraunces.variable}`}
+      dir={dirOf(locale)}
+      className={`${gabarito.variable} ${caveat.variable} ${cairo.variable} ${lemonada.variable}`}
       suppressHydrationWarning
     >
       <body className="bg-[var(--coshift-ink)] text-[var(--coshift-bone)] antialiased">
+        {/* Must run before the preloader is parsed — see PRELOADER_GATE. */}
+        <script dangerouslySetInnerHTML={{ __html: PRELOADER_GATE }} />
         <StructuredData locale={locale} />
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ReducedMotionProvider>
@@ -114,7 +115,6 @@ export default async function LocaleLayout({
               <KonamiEgg />
               <WhatsAppFab />
             </SmoothScroll>
-            <GrainOverlay />
           </ReducedMotionProvider>
         </NextIntlClientProvider>
         <Analytics />

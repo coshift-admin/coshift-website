@@ -86,7 +86,7 @@ export function DemoProvisioner() {
             <span className="h-3 w-3 rounded-full bg-white/15" />
             <span className="h-3 w-3 rounded-full bg-white/15" />
             <span className="h-3 w-3 rounded-full bg-white/15" />
-            <span className="text-mono ml-3 text-[var(--coshift-bone)]/40">
+            <span className="text-mono ms-3 text-[var(--coshift-bone)]/40">
               coshift · instant-demo
             </span>
           </div>
@@ -152,7 +152,7 @@ export function DemoProvisioner() {
                 href="/contact"
                 className="text-mono text-[var(--coshift-cyan)] underline-offset-4 hover:underline"
               >
-                {t("realCta")} →
+                {t("realCta")} <span aria-hidden className="arrow-fwd">→</span>
               </Link>
             )}
             <span className="text-mono ml-auto text-[var(--coshift-bone)]/35">

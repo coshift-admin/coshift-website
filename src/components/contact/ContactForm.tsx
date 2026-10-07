@@ -10,7 +10,7 @@ const schema = z.object({
   name: z.string().min(2),
   company: z.string().optional(),
   email: z.string().email(),
-  projectType: z.enum(["erp", "web", "email", "other"]),
+  projectType: z.enum(["erp", "web", "apps", "automation", "email", "other"]),
   message: z.string().optional(),
 });
 type FormData = z.infer<typeof schema>;
@@ -90,7 +90,7 @@ export function ContactForm() {
           {t("projectType")}
         </legend>
         <div className="flex flex-wrap gap-2">
-          {(["erp", "web", "email", "other"] as const).map((opt) => (
+          {(["erp", "web", "apps", "automation", "email", "other"] as const).map((opt) => (
             <label key={opt} className="cursor-pointer">
               <input
                 type="radio"
@@ -98,7 +98,7 @@ export function ContactForm() {
                 className="peer sr-only"
                 {...register("projectType")}
               />
-              <span className="inline-flex rounded-full border border-white/20 px-4 py-2 text-sm peer-checked:border-[var(--coshift-cyan)] peer-checked:bg-[var(--coshift-cyan)] peer-checked:text-[var(--coshift-ink)]">
+              <span className="inline-flex rounded-lg border border-white/20 px-4 py-2 text-sm transition-colors duration-[var(--dur-ds-fast)] hover:border-white/40 peer-checked:border-[var(--coshift-cyan)] peer-checked:bg-[var(--coshift-cyan)] peer-checked:font-semibold peer-checked:text-[#170f3c] peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-[var(--coshift-cyan)]">
                 {t(`projectTypes.${opt}`)}
               </span>
             </label>
@@ -120,7 +120,8 @@ export function ContactForm() {
           disabled={status === "submitting"}
           className="inline-flex items-center gap-3 rounded-full bg-[var(--coshift-cyan)] px-6 py-3 text-base font-semibold text-[var(--coshift-ink)] transition-colors hover:bg-[var(--coshift-glow)] disabled:opacity-60"
         >
-          {status === "submitting" ? t("submitting") : t("submit")} →
+          {status === "submitting" ? t("submitting") : t("submit")}{" "}
+          <span aria-hidden className="arrow-fwd">→</span>
         </button>
         {status === "success" && (
           <p className="text-mono text-[var(--coshift-cyan)]">{t("success")}</p>

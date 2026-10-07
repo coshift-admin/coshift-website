@@ -1,0 +1,26 @@
+{
+  "title": "One order, everything follows",
+  "desc": "Place an order: stock, invoice, WhatsApp and delivery all update at once.",
+  "link": "See the ERP",
+  "place": "Place an order",
+  "restock": "Restock",
+  "soldOut": "Out of stock",
+  "lowStock": "Low stock · reorder suggested",
+  "orders": "Orders: {count}",
+  "nodes": {
+    "shop": "Shop",
+    "stock": "Stock",
+    "invoice": "Invoice",
+    "whatsapp": "WhatsApp",
+    "delivery": "Delivery",
+    "accounting": "Accounting"
+  },
+  "values": {
+    "stock": "In stock: {count}",
+    "waiting": "Waiting",
+    "whatsapp": "Order confirmed ✓",
+    "delivery": "Parcels ready: {count}",
+    "total": "Total: {amount}"
+  },
+  "announce": "Order recorded: stock, invoice {invoice}, WhatsApp, delivery and accounting are up to date."
+}

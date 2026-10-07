@@ -29,7 +29,7 @@ export default function NotFound() {
             href="/"
             className="inline-flex items-center gap-3 rounded-full bg-[var(--coshift-cyan)] px-6 py-3 text-base font-semibold text-[var(--coshift-ink)]"
           >
-            {t("ctaHome")} →
+            {t("ctaHome")} <span aria-hidden className="arrow-fwd">→</span>
           </Link>
           <Link
             href="/work"

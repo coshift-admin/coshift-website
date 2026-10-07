@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "title": "How we work",
+    "description": "Diagnose, design, build, launch — then we stay on to keep your system running. Here's how a project with Coshift goes."
+  },
+  "hero": {
+    "eyebrow": "How we work",
+    "title": "From the first call to long after launch, here's how we work.",
+    "hand": "no jargon, promise",
+    "sub": "First we understand how you work. Then we design, build and launch your system with you. And after launch, we stay."
+  },
+  "start": {
+    "eyebrow": "How it starts",
+    "title": "Before you sign anything.",
+    "intro": "Three steps so you know exactly what you're buying.",
+    "steps": [
+      {
+        "title": "A free audit",
+        "body": "30 minutes to show us how you work: your tools, your files, what gets stuck. We tell you honestly what we'd change."
+      },
+      {
+        "title": "A demo and a written proposal",
+        "body": "We open a demo of your future system on its own secure address, in about two minutes. Then you get a clear proposal: the scope, the steps and the price."
+      },
+      {
+        "title": "A guided launch",
+        "body": "Once you accept the proposal, we build, move your data over and train your team. Nothing starts without your go-ahead."
+      }
+    ]
+  },
+  "after": {
+    "eyebrow": "After launch",
+    "title": "We don't leave after delivery.",
+    "intro": "Your system runs on our infrastructure, and we keep looking after it.",
+    "items": [
+      {
+        "icon": "server",
+        "title": "Hosting",
+        "body": "On our own dedicated infrastructure — or on yours, if you prefer."
+      },
+      {
+        "icon": "backup",
+        "title": "Nightly backups",
+        "body": "Encrypted, stored off-site, with a documented restore procedure."
+      },
+      {
+        "icon": "monitor",
+        "title": "Constant monitoring",
+        "body": "We're alerted the moment a service stops responding."
+      },
+      {
+        "icon": "sync",
+        "title": "Updates",
+        "body": "Security fixes and improvements applied, without you having to think about it."
+      },
+      {
+        "icon": "support",
+        "title": "Support",
+        "body": "One contact who knows your system, because they built it."
+      },
+      {
+        "icon": "docs",
+        "title": "Documentation",
+        "body": "User guides and technical documentation: you know exactly what you own."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Working with us, in practice.",
+    "items": [
+      {
+        "q": "How long does a project take?",
+        "a": "It depends on the scope: business email is set up quickly, a full ERP takes longer. You get a step-by-step schedule in the proposal."
+      },
+      {
+        "q": "Do we have to change everything at once?",
+        "a": "No. We start with what costs you the most, then add the rest when you're ready."
+      },
+      {
+        "q": "Who owns our data?",
+        "a": "You do. Your data and your servers stay yours, and you get full documentation."
+      },
+      {
+        "q": "What if Coshift disappears?",
+        "a": "You keep your data, your servers and the documentation. And our systems are built on open-source software, so another provider can take over."
+      },
+      {
+        "q": "Which languages do you work in?",
+        "a": "French, Arabic and English — for our conversations, the systems we deliver and the documentation."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Let's start with 30 minutes.",
+    "body": "Show us how you work. We'll tell you what we'd change — free, no commitment.",
+    "primary": "Book a free audit",
+    "secondary": "See our work",
+    "note": "30 min · no commitment"
+  }
+}

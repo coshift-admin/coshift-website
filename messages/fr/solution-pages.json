@@ -1,0 +1,529 @@
+{
+  "common": {
+    "ctaPrimary": "Réserver un diagnostic gratuit",
+    "ctaSecondary": "Voir nos réalisations",
+    "note": "30 min · sans engagement",
+    "painsEyebrow": "Le constat",
+    "painsTitle": "Vous vous reconnaissez ?",
+    "deliverablesEyebrow": "Ce que vous obtenez",
+    "deliverablesTitle": "Ce que nous mettons en place",
+    "proofEyebrow": "Réalisations",
+    "proofTitle": "Déjà en place chez nos clients",
+    "proofLink": "Voir le projet",
+    "allWork": "Toutes nos réalisations",
+    "stepsEyebrow": "Comment ça se passe",
+    "stepsTitle": "Trois étapes, sans surprise.",
+    "steps": [
+      {
+        "title": "Diagnostic gratuit",
+        "body": "30 minutes pour comprendre comment vous travaillez aujourd'hui et ce qui vous fait perdre du temps."
+      },
+      {
+        "title": "Démo et proposition",
+        "body": "Vous testez un vrai système, puis vous recevez une proposition écrite : ce que nous faisons, dans quel ordre, et à quel prix."
+      },
+      {
+        "title": "Mise en place et suivi",
+        "body": "Nous installons, reprenons vos données et formons vos équipes. Ensuite, nous restons pour faire tourner le système."
+      }
+    ],
+    "methodLink": "Voir notre méthode",
+    "faqEyebrow": "Questions fréquentes",
+    "faqTitle": "Les questions qu'on nous pose"
+  },
+  "erp": {
+    "meta": {
+      "title": "ERP & gestion — Odoo pour les PME",
+      "description": "Ventes, stock, achats, comptabilité et RH dans un seul logiciel. Coshift installe Odoo, l'adapte à votre façon de travailler et le fait tourner après le lancement."
+    },
+    "name": "ERP & gestion",
+    "title": "Voyez toute votre entreprise sur un seul écran.",
+    "sub": "Un ERP, c'est le logiciel qui réunit ventes, stock, achats, comptabilité et RH. Nous l'installons avec Odoo, l'adaptons à votre façon de travailler et le faisons tourner après le lancement.",
+    "hand": "Fini de demander à trois personnes",
+    "pains": [
+      "Vos chiffres de stock ne correspondent jamais à ce qu'il y a dans l'entrepôt.",
+      "La même commande est saisie trois fois : dans Excel, sur la facture, puis dans la compta.",
+      "Pour savoir où en est l'entreprise, vous devez appeler trois personnes.",
+      "Vous ne savez pas ce que chaque produit ou chaque chantier vous rapporte vraiment."
+    ],
+    "deliverables": [
+      {
+        "icon": "search",
+        "title": "Votre façon de travailler, cartographiée",
+        "body": "Nous regardons comment vous travaillez vraiment avant de configurer quoi que ce soit."
+      },
+      {
+        "icon": "modules",
+        "title": "Odoo réglé sur vos règles",
+        "body": "Les modules dont vous avez besoin — ventes, stock, achats, compta, RH, caisse — configurés pour votre entreprise."
+      },
+      {
+        "icon": "code",
+        "title": "Des modules sur mesure",
+        "body": "Quand Odoo ne fait pas ce qu'il faut, nous écrivons le module qui manque."
+      },
+      {
+        "icon": "data",
+        "title": "Vos données reprises",
+        "body": "Clients, fournisseurs, employés, produits : nous transférons tout depuis vos fichiers Excel ou votre ancien logiciel."
+      },
+      {
+        "icon": "dashboard",
+        "title": "Vos chiffres sur votre téléphone",
+        "body": "Ventes, marge, stock et trésorerie sur un tableau de bord simple et à jour, que vous ouvrez où que vous soyez."
+      },
+      {
+        "icon": "pos",
+        "title": "Caisse et matériel reliés",
+        "body": "Caisse, lecteurs de code-barres, imprimantes d'étiquettes et balances : chaque vente au comptoir met le stock à jour."
+      },
+      {
+        "icon": "team",
+        "title": "Vos équipes formées",
+        "body": "Formation et guides en français, en arabe ou en anglais, pour que chacun s'en serve dès le premier jour."
+      },
+      {
+        "icon": "hosting",
+        "title": "Hébergé et suivi",
+        "body": "Sur notre infrastructure — ou la vôtre — avec sauvegardes, surveillance et support après le lancement."
+      },
+      {
+        "icon": "repair",
+        "title": "Votre Odoo actuel, remis d'aplomb",
+        "body": "Installé par un autre prestataire et mal réglé, ou abandonné en cours de route ? Nous le reprenons et le remettons en marche."
+      }
+    ],
+    "modules": {
+      "label": "Modules que nous mettons en place",
+      "items": [
+        "Ventes",
+        "Stock",
+        "Achats",
+        "Comptabilité",
+        "RH & paie",
+        "CRM",
+        "Projets",
+        "Caisse",
+        "E-commerce",
+        "Assistant IA",
+        "Modules sur mesure"
+      ],
+      "note": "Odoo ou ERPNext ? Le plus souvent Odoo, mais nous comparons honnêtement les deux selon votre cas. Nous sommes indépendants, pas revendeurs."
+    },
+    "faq": [
+      {
+        "q": "Un ERP, ce n'est pas réservé aux grandes entreprises ?",
+        "a": "Non. Plus vous grandissez sans ERP, plus la remise en ordre coûte cher. Nous dimensionnons le système à votre taille, et nous commençons par ce qui vous fait perdre le plus de temps."
+      },
+      {
+        "q": "Odoo Community ou Enterprise ?",
+        "a": "Les deux existent. Nous vous recommandons l'une ou l'autre selon les modules dont vous avez besoin et la taille de votre équipe — et nous vous le disons dès le diagnostic."
+      },
+      {
+        "q": "Pouvez-vous reprendre nos données actuelles ?",
+        "a": "Oui : fichiers Excel, ancien logiciel ou outil maison. La reprise des clients, fournisseurs, employés et produits fait partie du projet."
+      },
+      {
+        "q": "Nous utilisons déjà Odoo, mais ça ne marche pas bien.",
+        "a": "C'est plus courant qu'on ne le croit. Nous commençons par faire le tour de votre installation : ce qui est mal réglé, ce qui manque, ce qui peut être gardé. Puis nous corrigeons, en commençant par ce qui vous bloque le plus."
+      }
+    ],
+    "ctaTitle": "Prêt à voir toute votre entreprise sur un seul écran ?",
+    "ctaBody": "Réservez 30 minutes. Nous regardons vos outils actuels et nous vous montrons à quoi ressemblerait votre ERP."
+  },
+  "web": {
+    "meta": {
+      "title": "Sites & e-commerce reliés à votre stock",
+      "description": "Sites vitrines et boutiques en ligne conçus pour votre entreprise, en français, arabe et anglais, reliés à votre stock et à vos commandes."
+    },
+    "name": "Sites & e-commerce",
+    "title": "Un site qui vend, relié à votre stock.",
+    "sub": "Site vitrine ou boutique en ligne, conçu pour votre entreprise, en français, arabe et anglais. Les commandes et le stock se mettent à jour tout seuls — rien à ressaisir.",
+    "hand": "votre stock suit, tout seul",
+    "pains": [
+      "Votre site affiche un produit disponible alors qu'il est épuisé au magasin.",
+      "Chaque commande en ligne est recopiée à la main dans votre logiciel.",
+      "En paiement à la livraison, vous ne savez pas quelles publicités font vraiment vendre.",
+      "Votre site date, il est lent sur mobile et n'existe qu'en une seule langue."
+    ],
+    "deliverables": [
+      {
+        "icon": "design",
+        "title": "Un design à votre image",
+        "body": "Un site conçu pour votre marque, pas un modèle repeint aux couleurs de votre logo."
+      },
+      {
+        "icon": "store",
+        "title": "Une boutique en ligne complète",
+        "body": "Catalogue, panier, paiement à la livraison ou en ligne, suivi des commandes."
+      },
+      {
+        "icon": "payment",
+        "title": "Paiement en ligne",
+        "body": "Vos clients paient par carte CIB, Edahabia, Visa ou Mastercard — en plus du paiement à la livraison si vous le gardez."
+      },
+      {
+        "icon": "truck",
+        "title": "Livraison reliée",
+        "body": "Yalidine, ZR Express et les autres : l'envoi se crée depuis la commande, et le suivi revient tout seul dans votre système."
+      },
+      {
+        "icon": "sync",
+        "title": "Relié à votre ERP",
+        "body": "Stock, prix et commandes synchronisés avec votre ERP : une seule saisie, partout à jour."
+      },
+      {
+        "icon": "team",
+        "title": "Votre équipe autonome",
+        "body": "Formation et guide d'administration pour que votre équipe gère le site au quotidien."
+      }
+    ],
+    "included": {
+      "eyebrow": "Inclus",
+      "title": "Dans chaque site que nous livrons.",
+      "intro": "Ce n'est pas une option : c'est notre standard.",
+      "items": [
+        {
+          "icon": "mobile",
+          "title": "Pensé d'abord pour le mobile",
+          "body": "Vos clients vous découvrent sur leur téléphone. Le site est conçu pour eux."
+        },
+        {
+          "icon": "speed",
+          "title": "Rapide à charger",
+          "body": "Des pages légères, qui s'affichent vite, même avec une connexion moyenne."
+        },
+        {
+          "icon": "languages",
+          "title": "Français, arabe, anglais",
+          "body": "Les trois langues de vos clients, dès le lancement."
+        },
+        {
+          "icon": "stock",
+          "title": "Stock et commandes à jour",
+          "body": "Ce que le client voit correspond à ce que vous avez vraiment."
+        },
+        {
+          "icon": "tracking",
+          "title": "Un suivi publicitaire fiable",
+          "body": "Le suivi côté serveur récupère les ventes que le pixel du navigateur perd — y compris en paiement à la livraison."
+        },
+        {
+          "icon": "hosting",
+          "title": "Hébergé et surveillé",
+          "body": "Mise en ligne, certificat SSL, sauvegardes et surveillance sur notre infrastructure."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "Vous faites le design et le développement ?",
+        "a": "Oui, les deux, dans la même équipe. Nous ne livrons pas de maquette impossible à construire."
+      },
+      {
+        "q": "Pouvez-vous reprendre notre site actuel ?",
+        "a": "Oui. Selon son état, nous le relions à votre stock, nous le modernisons ou nous le reconstruisons. Le diagnostic nous dit quelle option est la plus raisonnable."
+      },
+      {
+        "q": "WordPress ou sur mesure ?",
+        "a": "WordPress + WooCommerce quand c'est suffisant, développement sur mesure (Next.js, React) quand vous avez besoin de plus. Nous vous expliquons le choix simplement."
+      },
+      {
+        "q": "Pouvez-vous intégrer le paiement en ligne CIB / Edahabia ?",
+        "a": "Oui. Nous intégrons le paiement par carte CIB et Edahabia, ainsi que Visa et Mastercard, à votre site ou à votre plateforme. Le paiement à la livraison peut rester disponible à côté."
+      },
+      {
+        "q": "Gérez-vous le paiement à la livraison ?",
+        "a": "Oui, de bout en bout : tunnel de commande, confirmation, et suivi publicitaire côté serveur pour savoir quelles campagnes font vraiment vendre."
+      }
+    ],
+    "ctaTitle": "Prêt à vendre en ligne sans rien ressaisir ?",
+    "ctaBody": "Réservez 30 minutes. Nous regardons votre site actuel et votre façon de vendre, et nous vous disons ce que nous changerions."
+  },
+  "apps": {
+    "meta": {
+      "title": "Applications, modules sur mesure et intégrations",
+      "description": "Applications mobiles, modules sur mesure et connexions entre vos outils. Quand le logiciel standard ne suffit pas, Coshift écrit le code."
+    },
+    "name": "Apps & intégrations",
+    "title": "Quand le logiciel standard ne suffit pas, on écrit le module.",
+    "sub": "Applications mobiles pour vos équipes et vos clients, modules sur mesure, outils qui se parlent enfin : nous développons ce qui manque à votre système.",
+    "hand": "on écrit ce qui manque",
+    "pains": [
+      "Votre pointeuse et votre paie ne se parlent pas : quelqu'un recopie les heures à la main.",
+      "Vos équipes sur le terrain envoient tout par WhatsApp, et rien n'arrive dans le système.",
+      "Votre logiciel fait presque tout — sauf la chose précise dont vous avez besoin.",
+      "Les plugins standards ne gèrent pas vos cas particuliers : affiliation, fraude, paiement à la livraison."
+    ],
+    "deliverables": [
+      {
+        "icon": "mobile",
+        "title": "Applications mobiles",
+        "body": "Des espaces client, superviseur ou gérant, reliés à votre ERP."
+      },
+      {
+        "icon": "code",
+        "title": "Modules sur mesure",
+        "body": "Fidélité, anti-fraude, affiliation, règles propres à votre métier : le code que le standard n'a pas."
+      },
+      {
+        "icon": "integration",
+        "title": "Des outils qui se parlent",
+        "body": "Pointeuse, boutique en ligne, sociétés de livraison, publicité : vos outils échangent leurs données tout seuls. Y compris le paiement en ligne : CIB, Edahabia, Visa, Mastercard."
+      },
+      {
+        "icon": "whatsapp",
+        "title": "WhatsApp relié au système",
+        "body": "Photos, bons et rapports que vos équipes terrain envoient sur WhatsApp arrivent directement dans votre ERP."
+      },
+      {
+        "icon": "threeD",
+        "title": "3D et configurateurs",
+        "body": "Configurateurs produits en 3D dans le navigateur, modèles et visuels animés."
+      },
+      {
+        "icon": "docs",
+        "title": "Tout est documenté",
+        "body": "Chaque développement est livré avec sa documentation : vous savez ce que vous possédez."
+      }
+    ],
+    "examples": {
+      "eyebrow": "Exemples concrets",
+      "title": "Ce que nous avons déjà construit.",
+      "intro": "Des problèmes que les logiciels standards ne savaient pas résoudre.",
+      "problemLabel": "Le problème",
+      "builtLabel": "Ce qu'on a construit",
+      "items": [
+        {
+          "client": "Profit Zone",
+          "problem": "Une plateforme e-learning devait encaisser ses paiements en ligne, auprès de clients algériens.",
+          "built": "L'intégration d'une passerelle de paiement en ligne algérienne, et une page d'atterrissage pour présenter l'offre."
+        },
+        {
+          "client": "FastPlast",
+          "problem": "La pointeuse biométrique et la paie vivaient séparément, avec une ressaisie entre les deux.",
+          "built": "Une intégration qui envoie les pointages directement dans Odoo."
+        },
+        {
+          "client": "Renoh",
+          "problem": "Aucun plugin ne savait suivre les commissions d'influenceurs sur des commandes payées à la livraison.",
+          "built": "Un programme d'affiliation par lien, avec une commission calculée automatiquement."
+        },
+        {
+          "client": "Savoir",
+          "problem": "Le pixel publicitaire perdait une grande partie des conversions (iOS, Brave, bloqueurs de pub).",
+          "built": "Un suivi des conversions côté serveur, qui récupère les ventes que le navigateur ne voyait pas."
+        },
+        {
+          "client": "White Rose",
+          "problem": "Les outils standards ne protégeaient pas la boutique contre les commandes frauduleuses.",
+          "built": "Un module anti-fraude sur mesure, intégré au processus de commande."
+        },
+        {
+          "client": "Kompen",
+          "problem": "Des photos ne suffisaient pas à montrer un produit configurable.",
+          "built": "Un configurateur 3D interactif, directement dans le navigateur."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "Pouvez-vous connecter nos outils existants ?",
+        "a": "Souvent, oui. Si un outil donne accès à ses données, nous pouvons le relier à votre ERP ou à votre site. Le diagnostic nous dit vite ce qui est possible."
+      },
+      {
+        "q": "Est-ce que nous restons libres ?",
+        "a": "Oui. Vos données vous appartiennent, chaque développement est livré avec sa documentation, et nous utilisons des technologies ouvertes : vous n'êtes jamais prisonnier."
+      },
+      {
+        "q": "Une application mobile, c'est long à faire ?",
+        "a": "Ça dépend de ce qu'elle doit faire. Nous commençons par l'essentiel, qui vous sert tout de suite, puis nous ajoutons le reste."
+      },
+      {
+        "q": "Et l'intelligence artificielle ?",
+        "a": "Nous en avons fait une offre à part, « Automatisation & IA » : confirmations sur WhatsApp, relances, assistant IA relié à votre ERP, lecture des factures fournisseurs."
+      }
+    ],
+    "ctaTitle": "Ce qui vous manque, nous pouvons le construire.",
+    "ctaBody": "Décrivez-nous le problème en 30 minutes. Nous vous disons franchement si un module sur mesure est la bonne réponse."
+  },
+  "automation": {
+    "meta": {
+      "title": "Automatisation & IA pour les PME",
+      "description": "Commandes confirmées sur WhatsApp, relances et alertes automatiques, factures fournisseurs lues par l'IA, assistant relié à votre ERP. Coshift automatise les tâches répétitives de votre entreprise."
+    },
+    "name": "Automatisation & IA",
+    "title": "Les tâches répétitives se font toutes seules.",
+    "sub": "Confirmer les commandes, relancer les impayés, recopier les factures, répondre aux mêmes questions : nous automatisons ces tâches sur WhatsApp, dans votre ERP et sur votre site. Votre équipe garde son temps pour le reste.",
+    "hand": "ça tourne même la nuit",
+    "pains": [
+      "Votre équipe passe ses journées au téléphone pour confirmer les commandes.",
+      "Les factures impayées ne sont relancées que quand quelqu'un y pense.",
+      "Chaque facture fournisseur est recopiée à la main dans le logiciel.",
+      "Les mêmes questions reviennent sans arrêt : le prix, le délai, « où est ma commande ? »."
+    ],
+    "deliverables": [
+      {
+        "icon": "whatsapp",
+        "title": "Commandes confirmées sur WhatsApp",
+        "body": "Dès qu'une commande arrive, le client reçoit un message et confirme d'un clic. Il suit ensuite sa livraison, et sa facture lui arrive au même endroit."
+      },
+      {
+        "icon": "alerts",
+        "title": "Relances et alertes automatiques",
+        "body": "Facture impayée, devis sans réponse, stock bas, achat à valider : la bonne personne est prévenue au bon moment."
+      },
+      {
+        "icon": "report",
+        "title": "Le point de la semaine, tout prêt",
+        "body": "Chaque lundi, les chiffres clés de la semaine arrivent par email ou sur WhatsApp. Personne n'a besoin de les préparer."
+      },
+      {
+        "icon": "ai",
+        "title": "Un assistant IA dans votre Odoo",
+        "body": "Il analyse vos chiffres et fait des prévisions. Vous lui demandez « combien avons-nous vendu ce mois-ci ? », il répond à partir de votre ERP.",
+        "tag": "Déjà livré"
+      },
+      {
+        "icon": "chat",
+        "title": "Un assistant pour vos clients",
+        "body": "Sur votre site et sur WhatsApp, il répond aux questions courantes et donne l'état d'une commande. Quand il ne sait pas, il passe la main à votre équipe."
+      },
+      {
+        "icon": "scan",
+        "title": "Les factures fournisseurs saisies toutes seules",
+        "body": "Une photo ou un PDF suffit : fournisseur, articles et montants arrivent dans votre ERP. Il ne reste qu'à vérifier.",
+        "tag": "Déjà livré"
+      }
+    ],
+    "control": {
+      "eyebrow": "Vous gardez la main",
+      "title": "L'automatisation travaille pour vous, pas à votre place.",
+      "intro": "Les règles sont les vôtres, et une personne reste toujours dans la boucle.",
+      "items": [
+        {
+          "icon": "rules",
+          "title": "Vos règles",
+          "body": "Nous décidons avec vous qui reçoit quoi, quand, et avec quel message. Rien ne part sans votre accord."
+        },
+        {
+          "icon": "handoff",
+          "title": "Un humain prend le relais",
+          "body": "Dès qu'un client sort des questions courantes, la conversation passe à votre équipe."
+        },
+        {
+          "icon": "validate",
+          "title": "Vous validez ce qui compte",
+          "body": "Une facture lue par l'IA arrive en brouillon. Quelqu'un de chez vous la vérifie avant qu'elle soit enregistrée."
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "Faut-il changer nos outils ?",
+        "a": "Non. Nous automatisons ce que vous utilisez déjà : WhatsApp, votre site, votre ERP, votre email."
+      },
+      {
+        "q": "Et si l'IA se trompe ?",
+        "a": "Elle peut se tromper, comme une personne. C'est pour ça qu'elle propose et que votre équipe valide : une facture lue arrive en brouillon, et un client que l'assistant ne sait pas aider passe à un humain."
+      },
+      {
+        "q": "Où vont nos données ?",
+        "a": "Nous pouvons faire tourner l'assistant sur notre propre infrastructure : vos chiffres ne partent alors chez aucun service extérieur."
+      },
+      {
+        "q": "Par quoi commencer ?",
+        "a": "Par la tâche qui vous coûte le plus de temps. Souvent, c'est la confirmation des commandes ou la saisie des factures. Le diagnostic gratuit sert à la trouver."
+      }
+    ],
+    "ctaTitle": "Quelle tâche vous coûte le plus de temps ?",
+    "ctaBody": "Réservez 30 minutes. Nous la trouvons avec vous, et nous vous montrons comment elle peut se faire toute seule."
+  },
+  "email": {
+    "meta": {
+      "title": "Email professionnel et hébergement",
+      "description": "Des adresses email à votre nom de domaine, configurées pour ne pas tomber en spam, environ 4 à 5 fois moins cher que Microsoft 365 ou Google Workspace. Migration offerte."
+    },
+    "name": "Email pro & hébergement",
+    "title": "Des emails à votre nom, qui arrivent à destination.",
+    "sub": "Des adresses @votre-entreprise, configurées pour ne pas tomber en spam, environ 4 à 5 fois moins cher que Microsoft 365 ou Google Workspace. Nous transférons vos anciens emails gratuitement.",
+    "hand": "fini les adresses @gmail",
+    "badge": "Le plus simple pour commencer",
+    "pains": [
+      "Vous écrivez à vos clients depuis une adresse @gmail.com.",
+      "Vos devis et vos factures arrivent dans les spams de vos clients.",
+      "Vous payez cher des licences dont vous n'utilisez qu'une partie.",
+      "Votre site, votre domaine et vos emails sont chez trois prestataires différents."
+    ],
+    "deliverables": [
+      {
+        "icon": "address",
+        "title": "Des adresses à votre nom",
+        "body": "Les adresses dont votre équipe a besoin, sur votre propre nom de domaine."
+      },
+      {
+        "icon": "shield",
+        "title": "Pas de spam",
+        "body": "SPF, DKIM et DMARC configurés : les réglages qui prouvent que vos emails viennent bien de vous."
+      },
+      {
+        "icon": "migrate",
+        "title": "Migration offerte",
+        "body": "Nous transférons vos anciens emails depuis Gmail ou Microsoft 365."
+      },
+      {
+        "icon": "domain",
+        "title": "Noms de domaine",
+        "body": "Enregistrement et gestion de vos domaines .dz et internationaux."
+      },
+      {
+        "icon": "server",
+        "title": "Hébergement de sites",
+        "body": "Votre site hébergé sur notre propre infrastructure, avec certificat SSL."
+      },
+      {
+        "icon": "support",
+        "title": "Sauvegardes et surveillance",
+        "body": "Sauvegardes chiffrées chaque nuit, surveillance continue, mises à jour et support."
+      }
+    ],
+    "offer": {
+      "eyebrow": "L'offre",
+      "title": "Le même service, sans payer le prix fort.",
+      "figure": "4 à 5×",
+      "figureLabel": "moins cher que Microsoft 365 ou Google Workspace, pour des adresses à votre nom.",
+      "listTitle": "Inclus",
+      "items": [
+        "Adresses sur votre nom de domaine",
+        "Réglages anti-spam (SPF, DKIM, DMARC)",
+        "Transfert de vos anciens emails, offert",
+        "Un interlocuteur qui parle français, arabe et anglais"
+      ],
+      "pricingNote": "Tarif exact selon le nombre d'adresses — envoyé sur demande."
+    },
+    "proofFact": {
+      "figure": "10",
+      "label": "domaines clients utilisent déjà notre email professionnel."
+    },
+    "faq": [
+      {
+        "q": "Est-ce que je vais perdre mes anciens emails ?",
+        "a": "Non. Nous les transférons depuis Gmail ou Microsoft 365, gratuitement."
+      },
+      {
+        "q": "Pourquoi mes emails arrivent-ils en spam aujourd'hui ?",
+        "a": "Le plus souvent, parce que votre domaine n'est pas configuré pour prouver que les emails viennent bien de vous. Ce sont les réglages SPF, DKIM et DMARC : nous nous en occupons."
+      },
+      {
+        "q": "Je peux garder mon site chez un autre prestataire ?",
+        "a": "Oui. L'email pro fonctionne seul. C'est une bonne première étape : le reste peut suivre, quand vous le voulez."
+      },
+      {
+        "q": "Combien ça coûte ?",
+        "a": "Environ 4 à 5 fois moins cher que Microsoft 365 ou Google Workspace. Nous vous envoyons le tarif exact selon le nombre d'adresses dont vous avez besoin."
+      }
+    ],
+    "ctaTitle": "Commencez par des emails qui arrivent.",
+    "ctaBody": "Dites-nous combien d'adresses il vous faut. Nous vous envoyons le tarif, puis nous nous occupons de tout."
+  }
+}

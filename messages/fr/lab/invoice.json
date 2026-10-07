@@ -1,0 +1,36 @@
+{
+  "title": "Une facture lue en un instant",
+  "desc": "Lancez la lecture : fournisseur, date et montant passent tout seuls dans le logiciel.",
+  "link": "Voir l'automatisation",
+  "scan": "Lire la facture",
+  "reset": "Recommencer",
+  "form": {
+    "title": "Nouvelle facture fournisseur",
+    "supplier": "Fournisseur",
+    "date": "Date",
+    "number": "N° de facture",
+    "total": "Total TTC"
+  },
+  "status": {
+    "idle": "En attente d'une facture",
+    "reading": "Lecture en cours…",
+    "draft": "Brouillon créé — à vérifier"
+  },
+  "paper": {
+    "heading": "FACTURE",
+    "from": "Fournisseur",
+    "supplier": "Fournitures Démo SARL",
+    "address": "Zone industrielle, Alger",
+    "dateLabel": "Date :",
+    "item": "Désignation",
+    "qty": "Qté",
+    "amount": "Montant",
+    "items": [
+      "Ramettes de papier A4",
+      "Cartouches d'encre",
+      "Classeurs à levier"
+    ],
+    "vat": "TVA 19 %",
+    "total": "Total TTC"
+  }
+}

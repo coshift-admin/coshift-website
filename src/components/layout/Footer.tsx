@@ -1,9 +1,31 @@
 import { getTranslations } from "next-intl/server";
+import { FacebookLogo, InstagramLogo, LinkedinLogo } from "@phosphor-icons/react/dist/ssr";
 import { Link } from "@/i18n/routing";
 import { CoshiftWordmark } from "@/components/icons/CoshiftWordmark";
-import { ShiftGlyph } from "@/components/icons/ShiftGlyph";
+import { HandMark } from "@/components/ui/HandMark";
 import { site } from "@/lib/site";
-import { FooterBgGlyph } from "./FooterBgGlyph";
+
+/**
+ * Minimal footer: the signature, then how to reach us + socials, then one
+ * line with the wordmark, the pages and the legal mention. No CTA here — every
+ * page already ends with the CtaBand — and no solutions list: the header menu
+ * has them.
+ */
+const PAGES = [
+  { href: "/work", key: "work" as const },
+  { href: "/method", key: "method" as const },
+  { href: "/about", key: "about" as const },
+  { href: "/lab", key: "lab" as const },
+  { href: "/contact", key: "contact" as const },
+];
+
+const SOCIAL = [
+  { href: site.social.linkedin, label: "LinkedIn", Icon: LinkedinLogo },
+  { href: site.social.facebook, label: "Facebook", Icon: FacebookLogo },
+  { href: site.social.instagram, label: "Instagram", Icon: InstagramLogo },
+];
+
+const LINK = "transition-colors duration-[var(--dur-ds-fast)] hover:text-[var(--coshift-cyan)]";
 
 export async function Footer() {
   const t = await getTranslations("footer");
@@ -11,139 +33,80 @@ export async function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="relative overflow-hidden border-t border-white/10 bg-[var(--coshift-ink)]">
-      <FooterBgGlyph />
-      <div className="container-x relative z-10 mx-auto max-w-[1600px] py-16 md:py-24">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
-          <div className="md:col-span-5">
-            <Link href="/" aria-label="Coshift home">
-              <CoshiftWordmark tone="mono-light" className="h-8 w-auto" />
-            </Link>
-            <p className="mt-6 max-w-sm text-balance text-base text-[var(--coshift-bone)]/70">
-              {t("tagline")}
-            </p>
-            <div className="mt-8 flex items-center gap-3">
-              <ShiftGlyph className="h-6 w-auto text-[var(--coshift-cyan)]" />
-              <span className="text-mono not-italic text-[var(--coshift-bone)]/60">
-                {site.address.street}
-                <br />
-                {site.address.municipality}, {site.address.city} {site.address.postalCode} — {site.address.country}
-              </span>
-            </div>
-          </div>
+    <footer className="border-t border-white/10 bg-[var(--coshift-ink)]">
+      <div className="container-x mx-auto max-w-[1320px] pb-8 pt-16 md:pt-24">
+        <p className="max-w-[16ch] text-[clamp(2.1rem,5vw,4rem)] font-extrabold leading-[1.02] tracking-[-0.03em] text-white">
+          {t("sloganLead")}{" "}
+          <HandMark delay={0.4}>
+            <span className="text-[var(--coshift-cyan)]">{t("sloganAccent")}</span>
+          </HandMark>
+        </p>
 
-          <div className="md:col-span-3">
-            <h3 className="text-mono text-[var(--coshift-bone)]/60">
-              {t("navLabel")}
-            </h3>
-            <ul className="mt-4 space-y-2 text-base">
-              <li>
-                <Link className="hover:text-[var(--coshift-cyan)]" href="/work">
-                  {tNav("work")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="hover:text-[var(--coshift-cyan)]"
-                  href="/services/odoo"
-                >
-                  {tNav("servicesOdoo")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="hover:text-[var(--coshift-cyan)]"
-                  href="/services/web"
-                >
-                  {tNav("servicesWeb")}
-                </Link>
-              </li>
-              <li>
-                <Link className="hover:text-[var(--coshift-cyan)]" href="/about">
-                  {tNav("about")}
-                </Link>
-              </li>
-              <li>
-                <Link className="hover:text-[var(--coshift-cyan)]" href="/lab">
-                  {tNav("lab")}
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className="md:col-span-4">
-            <h3 className="text-mono text-[var(--coshift-bone)]/60">
-              {t("contactLabel")}
-            </h3>
-            <ul className="mt-4 space-y-2 text-base">
-              <li>
+        {/* how to reach us · socials */}
+        <div className="mt-10 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+          <ul className="flex flex-wrap gap-x-7 gap-y-2 text-[var(--navy-100)]/85">
+            <li>
+              <a dir="ltr" className={LINK} href={`mailto:${site.email}`}>
+                {site.email}
+              </a>
+            </li>
+            <li>
+              <a dir="ltr" className={`tabular ${LINK}`} href={`tel:${site.phone.replace(/\s+/g, "")}`}>
+                {site.phone}
+              </a>
+            </li>
+            <li>
+              <a
+                className={LINK}
+                href={`https://wa.me/${site.whatsapp.replace(/\D+/g, "")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WhatsApp
+              </a>
+            </li>
+          </ul>
+          <ul aria-label={t("social")} className="flex gap-2">
+            {SOCIAL.map(({ href, label, Icon }) => (
+              <li key={label}>
                 <a
-                  className="hover:text-[var(--coshift-cyan)]"
-                  href={`mailto:${site.email}`}
-                >
-                  {site.email}
-                </a>
-              </li>
-              <li>
-                <a
-                  className="hover:text-[var(--coshift-cyan)]"
-                  href={`tel:${site.phone.replace(/\s+/g, "")}`}
-                >
-                  {site.phone}
-                </a>
-              </li>
-              <li>
-                <a
-                  className="hover:text-[var(--coshift-cyan)]"
-                  href={`https://wa.me/${site.whatsapp.replace(/\D+/g, "")}`}
+                  href={href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={label}
+                  className="grid size-10 place-items-center rounded-lg border border-white/10 text-[var(--navy-100)] transition-colors duration-[var(--dur-ds-fast)] hover:border-white/25 hover:text-[var(--coshift-cyan)]"
                 >
-                  WhatsApp
+                  <Icon weight="fill" className="size-[18px]" />
                 </a>
               </li>
-            </ul>
-            <h3 className="text-mono mt-8 text-[var(--coshift-bone)]/60">
-              {t("social")}
-            </h3>
-            <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-base">
-              <li>
-                <a
-                  className="hover:text-[var(--coshift-cyan)]"
-                  href={site.social.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a
-                  className="hover:text-[var(--coshift-cyan)]"
-                  href={site.social.facebook}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Facebook
-                </a>
-              </li>
-              <li>
-                <a
-                  className="hover:text-[var(--coshift-cyan)]"
-                  href={site.social.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Instagram
-                </a>
-              </li>
-            </ul>
-          </div>
+            ))}
+          </ul>
         </div>
 
-        <div className="mt-16 flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-[var(--coshift-bone)]/50 md:flex-row md:items-center md:justify-between">
-          <p>{t("legal", { year })}</p>
-          <p className="text-mono">v0.1.0 — built with shifts</p>
+        {/* wordmark · pages · legal */}
+        <div className="mt-12 flex flex-col gap-6 border-t border-white/10 pt-7 lg:flex-row lg:items-center lg:justify-between">
+          <div className="flex flex-col gap-5 md:flex-row md:items-center md:gap-10">
+            <Link href="/" aria-label={tNav("home")} className="shrink-0 self-start md:self-auto">
+              <CoshiftWordmark tone="mono-light" crop className="h-[18px] w-auto" />
+            </Link>
+            <nav aria-label="Coshift">
+              <ul className="flex flex-wrap gap-x-6 gap-y-2 text-[0.95rem] text-[var(--navy-100)]/85">
+                {PAGES.map(({ href, key }) => (
+                  <li key={href}>
+                    <Link className={LINK} href={href}>
+                      {tNav(key)}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+          <p className="text-sm text-[var(--navy-300)]">
+            {t("legal", { year })} ·{" "}
+            <a className={LINK} href={site.address.mapsUrl} target="_blank" rel="noopener noreferrer">
+              {t("location")}
+            </a>
+          </p>
         </div>
       </div>
     </footer>

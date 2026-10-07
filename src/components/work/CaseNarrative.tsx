@@ -7,6 +7,7 @@ import {
   useTransform,
   useMotionValueEvent,
 } from "framer-motion";
+import { useLocale } from "next-intl";
 import { useReducedMotionPref } from "@/hooks/useReducedMotion";
 import { ShiftGlyph } from "@/components/icons/ShiftGlyph";
 
@@ -34,7 +35,9 @@ export function CaseNarrative({ panels }: { panels: Panel[] }) {
 
   const trackVw = panels.length * PANEL_VW + (panels.length - 1) * GAP_REM;
   const distanceVw = trackVw + LEFT_PAD_VW + RIGHT_PAD_VW - 100;
-  const x = useTransform(scrollYProgress, [0.05, 0.95], ["0vw", `-${distanceVw}vw`]);
+  // RTL lays the track out from the right edge, so it slides the other way.
+  const rtl = useLocale() === "ar";
+  const x = useTransform(scrollYProgress, [0.05, 0.95], ["0vw", `${rtl ? "" : "-"}${distanceVw}vw`]);
   const railWidth = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   useMotionValueEvent(scrollYProgress, "change", (p) => {
@@ -84,7 +87,7 @@ export function CaseNarrative({ panels }: { panels: Panel[] }) {
               </span>
               <div className="relative h-px flex-1 bg-white/10">
                 <motion.div
-                  className="absolute left-0 top-0 h-px bg-[var(--coshift-cyan)]"
+                  className="absolute start-0 top-0 h-px bg-[var(--coshift-cyan)]"
                   style={{ width: railWidth }}
                 />
               </div>

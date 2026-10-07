@@ -1,0 +1,17 @@
+{
+  "title": "Spam ou boîte de réception ?",
+  "desc": "Activez les trois réglages qui prouvent qu'un email vient bien de vous, et regardez où il atterrit.",
+  "link": "Voir l'offre email",
+  "outbox": "Votre email",
+  "inbox": "Boîte de réception",
+  "spam": "Spam",
+  "send": "Envoyer",
+  "trust": "Confiance",
+  "delivered": "Arrivé en boîte de réception ✓",
+  "spammed": "Classé en spam",
+  "settings": {
+    "spf": "La liste des serveurs autorisés à envoyer vos emails.",
+    "dkim": "Une signature qui prouve que l'email n'a pas été modifié en route.",
+    "dmarc": "La règle qui dit quoi faire d'un email qui se fait passer pour vous."
+  }
+}

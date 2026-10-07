@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import {
   motion,
   useScroll,
@@ -35,6 +35,7 @@ const RIGHT_PAD_VW = 4;
 
 export function Process() {
   const t = useTranslations("home.process");
+  const rtl = useLocale() === "ar";
   const ref = useRef<HTMLDivElement | null>(null);
   const [active, setActive] = useState(1);
 
@@ -49,7 +50,8 @@ export function Process() {
   const x = useTransform(
     scrollYProgress,
     [0.05, 0.95],
-    [`0vw`, `-${distanceVw}vw`],
+    // RTL lays the track out from the right edge, so it slides the other way.
+    [`0vw`, `${rtl ? "" : "-"}${distanceVw}vw`],
   );
   const railWidth = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
@@ -63,8 +65,8 @@ export function Process() {
       {/* Mobile: simple vertical stack — each card gets its animation driven by
           its own in-view scroll so the artwork still plays on phones. */}
       <section
-        aria-label="Process"
-        className="md:hidden container-x mx-auto max-w-[1600px] section-y"
+        aria-label={t("kicker")}
+        className="container-x mx-auto max-w-[1600px] section-y md:[@media(min-height:640px)]:hidden"
       >
         <SectionHeader t={t} active={1} mobile />
         <ol className="mt-12 space-y-6">
@@ -83,21 +85,21 @@ export function Process() {
       {/* Desktop: pinned horizontal scroll */}
       <section
         ref={ref}
-        aria-label="Process"
-        className="relative hidden md:block"
+        aria-label={t("kicker")}
+        className="relative hidden md:[@media(min-height:640px)]:block"
         style={{ height: "320vh" }}
       >
-        <div className="sticky top-0 flex h-screen w-full flex-col overflow-hidden">
-          <div className="container-x mx-auto flex w-full max-w-[1600px] items-center justify-between pt-28 md:pt-32">
+        <div className="sticky top-0 flex h-[100svh] w-full flex-col overflow-hidden">
+          <div className="container-x mx-auto flex w-full max-w-[1600px] items-end justify-between gap-8 pt-[max(6rem,12svh)]">
             <SectionHeader t={t} active={active} />
-            <div className="text-mono tabular-nums hidden text-[var(--coshift-bone)]/60 md:block">
+            <div className="text-mono tabular-nums shrink-0 whitespace-nowrap pb-2 text-[var(--navy-300)]">
               {String(active).padStart(2, "0")} / 04
             </div>
           </div>
 
           <motion.div
             style={{ x }}
-            className="mt-auto flex h-[64vh] min-h-[520px] items-stretch gap-6 pb-12"
+            className="flex min-h-0 flex-1 items-stretch gap-6 py-[clamp(1rem,3.5svh,2.5rem)]"
           >
             <div
               aria-hidden
@@ -124,7 +126,7 @@ export function Process() {
           <div className="container-x mx-auto w-full max-w-[1600px] pb-6">
             <div className="relative h-px w-full bg-white/10">
               <motion.div
-                className="absolute left-0 top-0 h-px bg-[var(--coshift-cyan)]"
+                className="absolute start-0 top-0 h-px bg-[var(--coshift-cyan)]"
                 style={{ width: railWidth }}
               />
             </div>
@@ -146,12 +148,12 @@ function SectionHeader({
 }) {
   return (
     <div>
-      <div className="text-mono mb-3 flex items-center gap-3 text-[var(--coshift-bone)]/60">
+      <div className="text-mono mb-3 flex items-center gap-3 text-[var(--navy-300)]">
         <ShiftGlyph className="h-3 w-auto text-[var(--coshift-cyan)]" />
         {t("kicker")}
       </div>
       <h2
-        className={`text-[length:var(--fs-h2)] font-bold leading-[1] tracking-[-0.02em] ${mobile ? "max-w-[18ch]" : ""}`}
+        className={`font-extrabold leading-[1.05] tracking-[-0.025em] ${mobile ? "max-w-[18ch] text-[length:var(--fs-h2)]" : "text-[clamp(2rem,min(4.2vw,7.5svh),4.25rem)]"}`}
       >
         {t("heading")}
       </h2>
@@ -187,29 +189,29 @@ function DesktopCard({
   return (
     <article
       style={{ width: `${CARD_VW}vw` }}
-      className="relative flex shrink-0 flex-col overflow-hidden rounded-3xl border border-white/10 bg-[var(--coshift-haze)] p-8 md:p-10"
+      className="relative flex shrink-0 flex-col overflow-hidden rounded-2xl border border-white/10 bg-[var(--coshift-haze)] p-[clamp(1.25rem,3.5svh,2.5rem)]"
     >
       <div className="flex items-start justify-between gap-6">
         <div
-          className="font-display leading-[0.85] text-[var(--coshift-cyan)]"
-          style={{ fontSize: "clamp(5rem,9vw,9.5rem)" }}
+          className="font-display tabular leading-[0.85] text-[var(--coshift-cyan)]"
+          style={{ fontSize: "clamp(2.75rem, min(9vw, 13svh), 9.5rem)" }}
         >
           0{index + 1}
         </div>
-        <ShiftGlyph className="h-10 w-auto text-[var(--coshift-cyan)]/70 md:h-14" />
+        <ShiftGlyph className="h-[clamp(1.75rem,6svh,3.5rem)] w-auto text-[var(--coshift-cyan)]/70" />
       </div>
 
       {/* artwork: takes remaining space between number and title block,
           but its SVG is capped so the title is guaranteed visible */}
-      <div className="my-4 flex grow items-center text-[var(--coshift-cyan)]">
+      <div className="my-[2svh] flex min-h-0 grow items-center text-[var(--coshift-cyan)]">
         <ProcessCardArt variant={variant} progress={cardProgress} />
       </div>
 
       <div className="max-w-[44ch]">
-        <h3 className="text-[length:var(--fs-h3)] font-semibold leading-[1.1] tracking-[-0.01em]">
+        <h3 className="text-[clamp(1.25rem,min(2.2vw,4.2svh),2.25rem)] font-bold leading-[1.15] tracking-[-0.015em]">
           {title}
         </h3>
-        <p className="mt-3 text-[length:var(--fs-lead)] text-[var(--coshift-bone)]/70">
+        <p className="mt-[1.2svh] text-[clamp(0.95rem,min(1.3vw,2.6svh),1.25rem)] leading-[1.5] text-[var(--navy-100)]/80">
           {body}
         </p>
       </div>

@@ -1,0 +1,10 @@
+{
+  "title": "Un écran, trois langues",
+  "desc": "Passez du français à l'arabe : tout l'écran se retourne, sans rien casser.",
+  "link": "Voir les sites",
+  "hint": "changez de langue",
+  "switchLabel": "Langue de la démo",
+  "frameLabel": "Démo : la page produit d'une boutique en ligne",
+  "decrease": "Retirer un article",
+  "increase": "Ajouter un article"
+}

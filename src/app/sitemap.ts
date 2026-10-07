@@ -1,19 +1,24 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
 import { caseStudies } from "@/content/work";
+import { routing } from "@/i18n/routing";
 
 const STATIC = [
   "",
   "/work",
-  "/services/odoo",
-  "/services/web",
+  "/solutions/erp",
+  "/solutions/web",
+  "/solutions/apps",
+  "/solutions/automation",
+  "/solutions/email",
+  "/method",
   "/about",
   "/lab",
   "/contact",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const locales = ["fr", "en"];
+  const locales = routing.locales;
   const base = site.url.replace(/\/$/, "");
   const entries: MetadataRoute.Sitemap = [];
 

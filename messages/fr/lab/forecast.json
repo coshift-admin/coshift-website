@@ -1,0 +1,13 @@
+{
+  "title": "Dessinez vos ventes",
+  "desc": "Tracez douze mois de ventes du bout du doigt : la courbe se prolonge, avec sa marge d'incertitude.",
+  "link": "Voir l'automatisation",
+  "history": "Ventes",
+  "forecast": "Prévision",
+  "today": "Aujourd'hui",
+  "hint": "Dessinez ici",
+  "reset": "Réinitialiser",
+  "note": "Prévision simple (méthode de Holt), à titre d'illustration.",
+  "updated": "Prévision mise à jour",
+  "chartLabel": "Graphique des ventes. Dessinez pour modifier les douze derniers mois, ou utilisez les flèches : gauche et droite pour choisir un mois, haut et bas pour le modifier."
+}

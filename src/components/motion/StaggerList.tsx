@@ -1,21 +1,21 @@
 "use client";
 
-import { useRef, type ReactNode } from "react";
-import { motion, useInView } from "framer-motion";
+import { createElement, useEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { useReducedMotionPref } from "@/hooks/useReducedMotion";
-
-const EASE = [0.22, 1, 0.36, 1] as const;
+import { cn } from "@/lib/cn";
 
 /**
- * StaggerList — fade + slide-in for each direct child, with a configurable
- * stagger. Wraps an existing list (`<ul>`/`<ol>`/grid `<div>`) and animates
- * its children on viewport entry.
+ * StaggerList — fade + lift each direct child in sequence when the list
+ * enters the viewport. Use for deliverables, principles, chips, card grids.
  *
- * Use for: deliverables lists, module/tech chips, principles, work index rows.
+ * No wrapper elements: children stay direct children (valid <ul>/<li>), and the
+ * motion is a CSS transition on them (`.stagger` in globals.css), indexed by
+ * :nth-child. Items are only hidden once JS has armed the list, so content
+ * never stays invisible without JS, and reduced motion skips it entirely.
  */
 export function StaggerList({
   children,
-  as: As = "ul",
+  as = "ul",
   className,
   staggerChildren = 0.08,
   y = 20,
@@ -32,58 +32,43 @@ export function StaggerList({
   amount?: number;
   initialDelay?: number;
 }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, amount });
+  const ref = useRef<HTMLElement | null>(null);
   const reduced = useReducedMotionPref();
-  const MotionAs = motion[As];
+  const [state, setState] = useState<"idle" | "armed" | "in">("idle");
 
-  if (reduced) {
-    return <As className={className}>{children}</As>;
-  }
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || reduced) {
+      setState("idle");
+      return;
+    }
+    setState("armed");
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setState("in");
+          io.disconnect();
+        }
+      },
+      // Trigger when the list's top edge is `amount` of the way up the
+      // viewport — NOT when `amount` of the list is visible, which a list
+      // taller than the screen could never reach (it would stay hidden).
+      { threshold: 0, rootMargin: `0px 0px -${Math.round(amount * 100)}% 0px` },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [reduced, amount]);
 
-  return (
-    <MotionAs
-      ref={ref}
-      className={className}
-      initial="hidden"
-      animate={inView ? "show" : "hidden"}
-      variants={{
-        hidden: {},
-        show: {
-          transition: { staggerChildren, delayChildren: initialDelay },
-        },
-      }}
-    >
-      {wrapChildren(children, y, duration)}
-    </MotionAs>
-  );
-}
+  const style = {
+    "--stagger": `${staggerChildren}s`,
+    "--stagger-y": `${y}px`,
+    "--stagger-dur": `${duration}s`,
+    "--stagger-delay": `${initialDelay}s`,
+  } as CSSProperties;
 
-function wrapChildren(children: ReactNode, y: number, duration: number) {
-  const variants = {
-    hidden: { opacity: 0, y },
-    show: {
-      opacity: 1,
-      y: 0,
-      transition: { duration, ease: EASE },
-    },
-  };
-  // Wrap each direct child in a motion.div with variants. Using a fragment-like
-  // map preserves keys when callers pass an array.
-  if (Array.isArray(children)) {
-    return children.map((child, i) => (
-      <motion.div
-        key={(child as { key?: string | number })?.key ?? i}
-        variants={variants}
-        className="contents"
-      >
-        {child}
-      </motion.div>
-    ));
-  }
-  return (
-    <motion.div variants={variants} className="contents">
-      {children}
-    </motion.div>
+  return createElement(
+    as,
+    { ref, className: cn("stagger", className), "data-stagger": state, style },
+    children,
   );
 }

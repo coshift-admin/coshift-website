@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "title": "Notre méthode",
+    "description": "Diagnostic, conception, construction, mise en route — puis nous restons pour faire tourner votre système. Voici comment se passe un projet avec Coshift."
+  },
+  "hero": {
+    "eyebrow": "Méthode",
+    "title": "Du premier appel au suivi, voici comment nous travaillons.",
+    "hand": "sans jargon, promis",
+    "sub": "Nous comprenons d'abord comment vous travaillez, puis nous concevons, construisons et lançons votre système avec vous. Et après le lancement, nous restons."
+  },
+  "start": {
+    "eyebrow": "Comment ça démarre",
+    "title": "Avant de signer quoi que ce soit.",
+    "intro": "Trois étapes pour savoir exactement ce que vous achetez.",
+    "steps": [
+      {
+        "title": "Un diagnostic gratuit",
+        "body": "30 minutes pour nous montrer comment vous travaillez : vos outils, vos fichiers, ce qui bloque. Nous vous disons franchement ce que nous changerions."
+      },
+      {
+        "title": "Une démo et une proposition écrite",
+        "body": "Nous ouvrons une démo de votre futur système sur sa propre adresse sécurisée, en deux minutes environ. Puis vous recevez une proposition claire : le périmètre, les étapes et le prix."
+      },
+      {
+        "title": "Un lancement accompagné",
+        "body": "Une fois la proposition acceptée, nous construisons, reprenons vos données et formons vos équipes. Rien ne commence sans votre accord."
+      }
+    ]
+  },
+  "after": {
+    "eyebrow": "Après le lancement",
+    "title": "Nous ne partons pas après la livraison.",
+    "intro": "Votre système tourne sur notre infrastructure, et nous continuons à nous en occuper.",
+    "items": [
+      {
+        "icon": "server",
+        "title": "Hébergement",
+        "body": "Sur notre propre infrastructure dédiée — ou sur la vôtre, si vous préférez."
+      },
+      {
+        "icon": "backup",
+        "title": "Sauvegardes chaque nuit",
+        "body": "Chiffrées, stockées hors site, avec une procédure de restauration documentée."
+      },
+      {
+        "icon": "monitor",
+        "title": "Surveillance continue",
+        "body": "Nous sommes alertés dès qu'un service ne répond plus."
+      },
+      {
+        "icon": "sync",
+        "title": "Mises à jour",
+        "body": "Sécurité et améliorations appliquées, sans que vous ayez à y penser."
+      },
+      {
+        "icon": "support",
+        "title": "Support",
+        "body": "Un interlocuteur qui connaît votre système, parce qu'il l'a construit."
+      },
+      {
+        "icon": "docs",
+        "title": "Documentation",
+        "body": "Guides utilisateurs et documentation technique : vous savez ce que vous possédez."
+      }
+    ]
+  },
+  "faq": {
+    "eyebrow": "Questions fréquentes",
+    "title": "Travailler avec nous, concrètement.",
+    "items": [
+      {
+        "q": "Combien de temps dure un projet ?",
+        "a": "Ça dépend du périmètre : un email professionnel se met en place rapidement, un ERP complet demande plus de temps. Vous recevez un planning par étapes dans la proposition."
+      },
+      {
+        "q": "Faut-il tout changer d'un coup ?",
+        "a": "Non. Nous commençons par ce qui vous coûte le plus, puis nous ajoutons le reste quand vous êtes prêt."
+      },
+      {
+        "q": "À qui appartiennent nos données ?",
+        "a": "À vous. Vos données et vos serveurs restent les vôtres, et vous recevez une documentation complète."
+      },
+      {
+        "q": "Et si Coshift disparaît ?",
+        "a": "Vous gardez vos données, vos serveurs et la documentation. Et nos systèmes reposent sur des logiciels open source : un autre prestataire peut reprendre le relais."
+      },
+      {
+        "q": "Dans quelles langues travaillez-vous ?",
+        "a": "Français, arabe et anglais — pour les échanges, les systèmes livrés et la documentation."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Commençons par 30 minutes.",
+    "body": "Montrez-nous comment vous travaillez. Nous vous dirons ce que nous changerions — gratuitement, sans engagement.",
+    "primary": "Réserver un diagnostic gratuit",
+    "secondary": "Voir nos réalisations",
+    "note": "30 min · sans engagement"
+  }
+}

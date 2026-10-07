@@ -1,0 +1,10 @@
+{
+  "title": "One screen, three languages",
+  "desc": "Switch from French to Arabic: the whole screen flips, without breaking a thing.",
+  "link": "See websites",
+  "hint": "switch language",
+  "switchLabel": "Demo language",
+  "frameLabel": "Demo: an online store's product page",
+  "decrease": "Remove one",
+  "increase": "Add one"
+}

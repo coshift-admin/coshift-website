@@ -1,0 +1,36 @@
+{
+  "title": "An invoice, read in a blink",
+  "desc": "Start the reading: supplier, date and amount move into the software on their own.",
+  "link": "See automation",
+  "scan": "Read the invoice",
+  "reset": "Start over",
+  "form": {
+    "title": "New supplier bill",
+    "supplier": "Supplier",
+    "date": "Date",
+    "number": "Invoice no.",
+    "total": "Total incl. tax"
+  },
+  "status": {
+    "idle": "Waiting for an invoice",
+    "reading": "Reading…",
+    "draft": "Draft created — to be checked"
+  },
+  "paper": {
+    "heading": "INVOICE",
+    "from": "From",
+    "supplier": "Demo Supplies Ltd",
+    "address": "Industrial zone, Algiers",
+    "dateLabel": "Date:",
+    "item": "Item",
+    "qty": "Qty",
+    "amount": "Amount",
+    "items": [
+      "A4 paper reams",
+      "Ink cartridges",
+      "Lever-arch files"
+    ],
+    "vat": "VAT 19%",
+    "total": "Total incl. tax"
+  }
+}

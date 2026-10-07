@@ -1,0 +1,9 @@
+{
+  "title": "From chaos to order",
+  "desc": "Thousands of scattered dots, like your tools. Hover (or tap): they fall into place.",
+  "order": "Tidy up",
+  "scatter": "Scatter",
+  "hint": "hover or tap",
+  "statusOrdered": "The dots form the Coshift logo.",
+  "statusScattered": "The dots are scattered."
+}

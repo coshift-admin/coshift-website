@@ -11,7 +11,7 @@ export function Accordion({
 }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
   return (
-    <ul className="divide-y divide-white/10 border-y border-white/10">
+    <ul className="divide-y divide-[var(--line)] border-y border-[var(--line)]">
       {items.map((item, i) => (
         <AccordionItem
           key={i}
@@ -42,14 +42,14 @@ function AccordionItem({
         type="button"
         onClick={onToggle}
         aria-expanded={open}
-        className="group flex w-full items-start justify-between gap-6 py-7 text-left"
+        className="group flex w-full items-start justify-between gap-6 py-6 text-start"
       >
         <span
           className={cn(
-            "text-[length:var(--fs-h3)] font-semibold leading-[1.15] tracking-[-0.01em] transition-colors",
+            "text-[clamp(1.125rem,1.6vw,1.375rem)] font-semibold leading-[1.25] tracking-[-0.01em] transition-colors duration-[var(--dur-ds-fast)]",
             open
-              ? "text-[var(--coshift-cyan)]"
-              : "text-[var(--coshift-bone)] group-hover:text-[var(--coshift-cyan)]",
+              ? "text-[var(--fg)]"
+              : "text-[var(--fg)] group-hover:text-[var(--eyebrow)]",
           )}
         >
           {q}
@@ -69,7 +69,7 @@ function AccordionItem({
             }}
             style={{ overflow: "hidden" }}
           >
-            <p className="max-w-[60ch] pb-7 pr-12 text-base text-[var(--coshift-bone)]/70">
+            <p className="max-w-[64ch] pb-6 pe-12 text-base leading-[1.6] text-[var(--fg-body)]">
               {a}
             </p>
           </motion.div>
@@ -83,7 +83,7 @@ function Glyph({ open }: { open: boolean }) {
   return (
     <span
       className={cn(
-        "mt-2 flex h-6 w-6 shrink-0 items-center justify-center transition-transform duration-300",
+        "mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center text-[var(--eyebrow)] transition-transform duration-[var(--dur-ds-slow)] ease-[var(--ease-ds)]",
         open ? "rotate-45" : "rotate-0",
       )}
       aria-hidden

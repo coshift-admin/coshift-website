@@ -1,78 +1,54 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
-import { caseStudies } from "@/content/work";
-import { CaseCover } from "@/components/work/CaseCover";
-import { Reveal, RevealWords } from "@/components/motion/Reveal";
+import { caseStudies, tr } from "@/content/work";
+import { CaseVisual } from "@/components/work/CaseVisual";
+import { SectionHeader } from "@/components/ui/SectionHeader";
 import { StaggerList } from "@/components/motion/StaggerList";
+import { HandNote } from "@/components/ui/HandNote";
+
+/** Home: three live websites as proof — real screenshots, link to each case. */
+const FEATURED = caseStudies.filter((c) => c.kind === "site").slice(0, 3);
 
 export function SelectedWork() {
   const t = useTranslations("home.work");
-  return (
-    <section
-      aria-label="Selected work"
-      className="container-x mx-auto max-w-[1600px] section-y"
-    >
-      <header className="mb-12 flex items-end justify-between gap-6 md:mb-20">
-        <Reveal>
-          <div className="text-mono mb-3 flex items-center gap-3 text-[var(--coshift-bone)]/60">
-            <span aria-hidden className="h-px w-8 bg-[var(--coshift-cyan)]" />
-            {t("kicker")}
-          </div>
-          <h2 className="text-[length:var(--fs-h2)] font-bold leading-[1] tracking-[-0.02em]">
-            <RevealWords text={t("heading")} />
-          </h2>
-        </Reveal>
-        <Reveal delay={0.2}>
-          <Link
-            href="/work"
-            className="text-mono hidden text-[var(--coshift-cyan)] underline-offset-4 hover:underline md:inline-flex"
-          >
-            {t("viewAll")} →
-          </Link>
-        </Reveal>
-      </header>
+  const locale = useLocale();
 
-      <StaggerList as="div" className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3" staggerChildren={0.15}>
-        {caseStudies.slice(0, 3).map((c, i) => (
-          <Link
-            key={c.slug}
-            href={`/work/${c.slug}`}
-            data-cursor-label="View"
-            className="group block"
-          >
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 md:aspect-[5/4]">
-              <CaseCover hue={c.cover.hue} tone={c.cover.tone} />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(5,6,20,0.85)_100%)]" />
-              <div className="absolute bottom-6 left-6 right-6">
-                <div className="text-mono text-[var(--coshift-cyan)]">
-                  0{i + 1} — {c.client}
-                </div>
-                <h3 className="mt-2 max-w-[24ch] text-[length:var(--fs-h3)] font-semibold leading-[1.15] tracking-[-0.01em] text-[var(--coshift-bone)]">
-                  <ShiftIn>{c.title}</ShiftIn>
-                </h3>
+  return (
+    <section aria-labelledby="work-title" className="container-x mx-auto max-w-[1320px] py-[var(--section-y)]">
+      <div className="mb-12 flex flex-wrap items-end justify-between gap-6 md:mb-16">
+        <SectionHeader id="work-title" eyebrow={t("eyebrow")} title={t("title")} intro={t("intro")}>
+          <HandNote arrow="down-start" delay={0.3} className="ms-[30%] mt-4">
+            {t("hand")}
+          </HandNote>
+        </SectionHeader>
+        <Link
+          href="/work"
+          className="group inline-flex items-center gap-1.5 font-semibold text-[var(--cyan-300)] transition-colors duration-[var(--dur-ds-fast)] hover:text-white"
+        >
+          {t("viewAll")} <span aria-hidden className="arrow-fwd">→</span>
+        </Link>
+      </div>
+
+      <StaggerList as="ul" className="grid grid-cols-1 gap-6 md:grid-cols-3" staggerChildren={0.12}>
+        {FEATURED.map((c) => (
+          <li key={c.slug}>
+            <Link href={`/work/${c.slug}`} data-cursor-label={t("view")} className="group block">
+              <div className="relative aspect-video overflow-hidden rounded-xl border border-white/10">
+                <CaseVisual c={c} alt={c.client} sizes="(min-width: 768px) 33vw, 92vw" />
               </div>
-            </div>
-          </Link>
+              <p className="text-mono mt-5 text-[var(--cyan-300)]">{c.client}</p>
+              <h3 className="mt-2 text-pretty text-[1.2rem] font-bold leading-snug tracking-[-0.01em] text-white transition-colors duration-[var(--dur-ds-fast)] group-hover:text-[var(--cyan-300)]">
+                {tr(c.title, locale)}
+              </h3>
+              <p className="mt-2 line-clamp-3 text-pretty text-[0.95rem] leading-[1.6] text-[var(--navy-100)]/75">
+                {tr(c.summary, locale)}
+              </p>
+            </Link>
+          </li>
         ))}
       </StaggerList>
     </section>
-  );
-}
-
-function ShiftIn({ children }: { children: string }) {
-  return (
-    <span className="relative inline-block overflow-hidden align-baseline">
-      <span className="inline-block transition-transform duration-500 ease-[var(--ease-out-expo)] group-hover:-translate-y-full">
-        {children}
-      </span>
-      <span
-        aria-hidden
-        className="absolute left-0 top-full inline-block w-full transition-transform duration-500 ease-[var(--ease-out-expo)] group-hover:-translate-y-full"
-      >
-        {children}
-      </span>
-    </span>
   );
 }

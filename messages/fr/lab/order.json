@@ -1,0 +1,26 @@
+{
+  "title": "Une commande, tout suit",
+  "desc": "Passez une commande : stock, facture, WhatsApp et livraison se mettent à jour d'un coup.",
+  "link": "Voir l'ERP",
+  "place": "Passer une commande",
+  "restock": "Réapprovisionner",
+  "soldOut": "Rupture de stock",
+  "lowStock": "Stock bas · réappro proposée",
+  "orders": "Commandes : {count}",
+  "nodes": {
+    "shop": "Boutique",
+    "stock": "Stock",
+    "invoice": "Facture",
+    "whatsapp": "WhatsApp",
+    "delivery": "Livraison",
+    "accounting": "Compta"
+  },
+  "values": {
+    "stock": "En stock : {count}",
+    "waiting": "En attente",
+    "whatsapp": "Commande confirmée ✓",
+    "delivery": "Colis prêts : {count}",
+    "total": "Total : {amount}"
+  },
+  "announce": "Commande enregistrée : stock, facture {invoice}, WhatsApp, livraison et compta sont à jour."
+}

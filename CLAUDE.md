@@ -63,30 +63,131 @@ Color palette and motion variables exactly per BRIEF Section 3. All in `:root` i
 | 5. Polish, i18n, perf, a11y, SEO | ✅ done | OG route, sitemap, robots, JSON-LD, View Transitions CSS, type-check clean |
 | 6. Deploy | ✅ ready | git committed; `vercel --prod` is a user step (needs auth) |
 | 7. Brand realignment | ✅ done | Rebuilt against `Coshift_Brand_Identity_Brief.md`; typecheck + build clean |
+| 8. Refresh — founder's 6-point list | ✅ done (review pending) | 1 perf · 2 preloader · 3 IA + copy · 4 DS rollout · 5 client references · 6 portfolio — plus Arabic locale and online-payment service |
 
-### Phase 7 log — realignment to the Brand Identity Brief
-The site was originally built from `BRIEF.md` (a "premium creative studio" framing). The
-newer `Coshift_Brand_Identity_Brief.md` is now the source of truth for **content, positioning,
-colours and hard publishing rules**. Changes made:
-- **Colours:** cyan `#1FB6F0`→`#33C5F3`, indigo `#1A1B5C`→`#211852` across `globals.css`,
-  all hardcoded component hex, favicon, OG route, manifest. `--coshift-glow` (`#4DD0FF`) kept.
-- **Positioning:** shifted from "Odoo + Web studio" to **"one connected system, one team — we run
-  what we build"** (tagline *Powering Your Next Shift*). New hero (four-providers pain), manifesto
-  ("We don't just build your systems. We run them."), and expanded Services with 8 service-line
-  cards + email lead-magnet highlight.
-- **New home sections:** `ProofPoints.tsx` (own infra / working demo / bespoke modules / self-hosted
-  AI — honesty-noted) and `Sectors.tsx` (12-sector coverage band). Order: Hero → Manifesto →
-  Services → ProofPoints → Process → SelectedWork → Numbers → Sectors → Trust → CTA.
-- **Hard-rule fixes (brief §11):** deleted fabricated case studies (Atlas Textiles, Neon Coastal
-  Bank) and rebuilt `content/work/index.ts` with 6 cleared ✅ clients (AVZ, Renoh, OSCAR PRO,
-  Savoir/Glow, FastPlast, Kompen) — no invented metrics, no client business data, no infra detail,
-  honesty notes inline. Removed fabricated "Ozea" from Trust strip. Reframed Numbers to brief-only
-  defensible facts (14 clients / 10 email domains / 12 sectors / 3 languages). Scrubbed cloud-provider
-  names (SAP/Sage/Dolibarr/Odoo.sh/OVH/AWS) from service FAQs. Contact budget ranges removed;
-  project types → ERP / Web / Email & hosting / Other. Footer social GitHub→Facebook.
-- **Contact facts confirmed by founder (2026-08-25):** address *Lido, Mohammadia, Alger — Algeria*,
-  phone *+213 560 50 18 45*, email *contact@coshift.agency* — now shown in footer/contact/JSON-LD.
-  Still to confirm: social handles (`src/lib/site.ts`) before launching accounts.
+### Phase 8 log — founder's refresh list (2026-10-06 → 07)
+Founder supplied a design system (`Coshift Design System/` — its `readme.md` is the reference)
+and a six-point list. Decisions:
+- **Slogan:** "We power your next shift." (FR « Nous propulsons votre prochain shift. ») — hero H1,
+  footer signature, meta. "Everything under control." from the DS is NOT used as the tagline.
+- **Hero (3rd iteration):** the founder rejected the 3D glyphs and then the "control room" strip
+  (coordinates, clock, live-ops KPIs) as hard to understand. Current hero = slogan + plain subhead +
+  free-audit CTA on the left, and `ShiftBoard` on the right: an interactive Avant/Après switch —
+  five everyday tools (stock on Excel, orders on WhatsApp, a separate website, hand-made invoices,
+  @gmail) scattered around "Vous", which snap into one system around the Coshift hub. Autoplays once
+  (visible countdown), then the visitor drives it. Client logos sit at the hero's foot. Never use
+  invented KPIs (DS + brief §11), even if a reference image shows them.
+- **IA (approved):** nav by need — Solutions (ERP & gestion · Sites & e-commerce · Apps & intégrations
+  · Email pro & hébergement, routes `/solutions/[slug]`, slugs in `src/lib/solutions.ts`) ·
+  Réalisations · Méthode (`/method`) · À propos · CTA "Diagnostic gratuit". Lab moved to the footer.
+  Old `/services/odoo|web` 308-redirect to `/solutions/erp|web`. Home = Hero → Manifesto (kept, the
+  founder loves its reveal) → Solutions (light) → Réalisations → Process (kept, loved) → Pourquoi
+  Coshift (light) → FAQ objections (light) → CTA band.
+- **Primary CTA everywhere:** « Réserver un diagnostic gratuit » / "Book a free audit" (30 min, sans
+  engagement) — from the brief's §9 offers. Secondary: WhatsApp.
+- **Copy:** rewritten for SME owners (plain words, pains from brief §7, objections from §8). FR in
+  `messages/fr.json`; solution/method pages in `messages/{fr,en}/solution-pages.json` and
+  `method.json` (merged in `src/i18n/request.ts`) so pages can be edited independently.
+- **DS rollout:** fonts = Gabarito + Caveat (Latin), Cairo + Lemonada (Arabic, `[lang="ar"]` stack
+  "Gabarito", Cairo — Latin runs stay Gabarito; Arabic faces never load on FR/EN pages). Colours =
+  DS navy-950 base, cyan for actions/status only, **Coral `#FF6B54` warm accent** (founder's pick)
+  for personality only (Caveat asides, "start here" badges). Light sections use `.surface-light`
+  + surface roles (`--fg`, `--fg-body`, `--line`, `--card`, `--eyebrow`) so components work on both.
+  Buttons `ButtonLink` (8px radius, no bounce). Icons = Phosphor Fill (`@phosphor-icons/react/dist/ssr`).
+  Grain overlay, magnetic header items, footer glyph and the R3F hero removed (DS: no textures).
+  Preloader = DS Shift-pass logo animation, pure CSS, first visit only.
+- **Shared UI:** `ui/PageHero`, `ui/SectionHeader` (word reveal; `size="md"` for sentence titles),
+  `ui/CtaBand`, `ui/ButtonLink`, surface-aware `ui/Accordion`.
+- **Fixes found on the way:** `StaggerList` wrapped children in `display:contents` divs (invalid
+  `<ul><div><li>` and the animation never played) → now CSS on direct children; tailwind-merge was
+  stripping `.text-mono` when combined with a colour class → registered as its own group in `cn.ts`;
+  perf loops (cursor, magnetic, case covers) sleep when idle; a visitor-visible dev note on /work removed.
+- **Still to confirm with the founder:** the free 30-min audit offer; « indépendants, pas revendeurs »
+  (ERP page); « formation et guide d'administration » as a standard web deliverable; whether clients
+  own their custom code (would strengthen the Apps FAQ).
+
+### Phase 8 log, continued (2026-10-07) — founder answers, portfolio, Arabic
+- **Slogan FR** is « Nous alimentons votre prochain shift. » (founder disliked « propulsons »);
+  AR « نحن نُحرّك تحوّلكم القادم. ». The free 30-min diagnostic stays a CTA, never a catalogue item.
+  Never mention who owns client code. Keep « indépendants, pas revendeurs » and the admin guide.
+- **OSCAR PRO removed from every reference** (logos, case studies, examples) at the founder's request.
+- **Profit Zone** added as a reference (logo → white knock-out silhouette in `public/logos`) and a case.
+  Scope is ONLY the online-payment integration + a landing page — we did not build their website or
+  platform and don't host it (founder, 2026-10-07). No screenshot/live link for it.
+- **New service: online payment** — CIB / Edahabia, Visa, Mastercard (web page deliverable + FAQ,
+  apps page example, home + menu copy). Evidence: Profit Zone (payment-gateway integration).
+- **Portfolio (`/work`)**: live sites with real screenshots (`public/work/*.jpg`, captured
+  2026-10-07) in a browser frame + "visit" links — AVZ, Formex, Kompen (= groupe-ourahmoune.com),
+  Broderie Royale, ISTA (sarlista.com) — then ERP/integration work (Profit Zone, Renoh, FastPlast,
+  Savoir). `src/content/work/index.ts` is now trilingual (`tr(value, locale)`), `kind: site|system`.
+  Project years removed (never sourced). Attestations de bonne exécution exist for AVZ/Formex but are
+  NOT cleared to publish — copy only says "available on request".
+- **Arabic locale `/ar`** (RTL): `dir` on <html> via `src/lib/locale.ts`, 3-way language switcher,
+  `messages/ar.json` + `messages/ar/*.json` (key parity checked), Cairo/Lemonada via the
+  `[lang="ar"]` stack, arrows mirror via `.arrow-fwd/.arrow-back`, logical start/end classes,
+  horizontal-scroll tracks (Process, CaseNarrative) reverse in RTL, logo marquee and phone numbers
+  forced LTR, OG image text stays English for /ar (renderer has no Arabic font). Arabic typography
+  rule: a space between و/ب/ل and a following Latin word (« Excel و WhatsApp »).
+- **Savoir Glow** is a live site too (savoirglow.com, screenshot 2026-10-07) → 6 live sites in /work.
+- **Process (pinned horizontal scroll)** was cropped on laptop-height screens (fixed 520px cards +
+  2-line heading). Now every part scales with `svh`, and windows under 640px tall get the stacked
+  layout instead (`md:[@media(min-height:640px)]:…`).
+- **More motion + the hand font (founder, 2026-10-07):** "use the wavy font" and "more animations like
+  Quatre phases". Added `SolutionArt` — scroll-driven line art on the 4 home Solutions cards, same
+  technique as ProcessCardArt (erp: modules lock into one window · web: shop wired to stock · apps:
+  connectors plug together · email: envelope skips spam, lands in inbox). `HandNote` (Caveat /
+  Lemonada, coral, self-drawing arrow, mirrors in RTL) used once per section: hero hint at the board
+  switch, manifesto (waits for the scroll reveal), work, CTA. `CountUp` on the Why facts,
+  `ScrollPan` on site screenshots. Keep hand notes sparing — one per section max.
+- **Dev-server note:** on this machine the dev server leaks memory (~1 GB+) and its render workers
+  crash ("Jest worker … child process exceptions") when free RAM drops; restart it — never kill
+  node processes by pattern (other projects run here).
+- **Hand pen, used more (founder liked the coral Caveat):** `HandNote` now "writes" itself (clip
+  wipe in the pen direction, then the arrow draws); `HandMark` scribbles a coral underline under the
+  brand word "shift." (home hero, after the preloader; footer slogan). Every inner page hero gets one
+  short note via `PageHero hand=` (keys `*.hand` / `hero.hand`); copy stays factual (no promises
+  that contradict "réponse sous 2 jours ouvrés").
+- **Solution page heroes** show their `SolutionArt` drawing in a right-hand panel (`PageHero aside=`),
+  with `autoplay` (plays once when in view; the home cards stay scroll-driven). `--art-muted`
+  recolours the grey details for the dark panel. Header logo enlarged (cropped viewBox, 22/27px).
+- **Gotcha:** `cn()` (tailwind-merge) drops a `leading-*` that comes *before* a font-size class →
+  put `leading-*` after the size.
+- **New services (founder, 2026-10-07: "add them all, organised, no jargon, no filler").** Placed by
+  where an owner would look, not as a list:
+  - **5th solution `/solutions/automation` — « Automatisation & IA »**: WhatsApp order confirmation,
+    reminders + alerts, the Monday report, the AI assistant in the ERP, a customer assistant (site +
+    WhatsApp, hands over to a person), supplier invoices read into the ERP. Its own block « Vous gardez
+    la main » answers the AI objection (your rules · a person takes over · you approve). Proof =
+    FastPlast, Renoh, Savoir (work that already removes manual steps). Drawing: order → WhatsApp
+    question → client confirms → truck leaves.
+  - **ERP page**: + owner dashboard on the phone (evidence: Renoh retail dashboard), + till & hardware
+    (POS is in the brief), + « Votre Odoo actuel, remis d'aplomb » (rescue; the FAQ now explains how).
+  - **Sites page**: + delivery companies (Yalidine, ZR Express…). **Apps page**: the dashboard card
+    moved to ERP, replaced by WhatsApp for field teams (answers an existing pain); the AI FAQ now
+    points to the new page.
+  - **AI assistant is delivered (founder, 2026-10-07)** — for a client in Odoo: analysis, invoice
+    scanning, forecasting. This supersedes the brief's "demo database only" rule. The client
+    ("Master Trade") is NOT in brief §4.1, so it stays unnamed ("Déjà livré" tags on the AI and
+    invoice-scanning cards) until the founder clears the name. Self-hosting is offered as an option
+    ("we can run it on our own infrastructure"), not claimed for that client. The Renoh case no longer
+    mentions its demo-only AI module (the visitor-facing "honesty note" is gone). ERP module chips
+    gained « Assistant IA ».
+  - Home grid is 3 + 2 on desktop (automation + email wide); the menu's 5th item spans its row.
+  - **Bug fixed:** the Solutions menu opened on hover and the click then closed it (touch too) → a
+    pointer click now only opens; keyboard still toggles.
+- **Footer (founder: "minimalist"):** slogan + HandMark → contact line + social icons → one row with
+  wordmark, page links and © · location. No CTA (every page ends with CtaBand), no solutions list.
+- **Lab rebuilt (founder: "creative, wow"):** the 3 generic canvases and their dead GitHub links are
+  gone. Six playable experiments in `src/components/lab/`, each acting out a real offer and linking
+  to it: ShiftParticles (dots → the real wordmark), OrderRipple (one order updates stock, invoice,
+  WhatsApp, delivery and accounting; low-stock reorder), InvoiceScan (AI reading → draft to check),
+  ForecastSketch (draw sales, Holt forecast with an 80% band), InboxTest (SPF/DKIM/DMARC → inbox
+  or spam), RtlFlip (one shop screen flips FR/EN/AR). Copy in `messages/{locale}/lab/<key>.json`,
+  merged as `lab.items` in request.ts. Loops gated by `useVisible`; all respect reduced motion.
+- **Dev-server gotcha:** after editing `messages/{locale}.json` the dev server can keep serving the old
+  copy (MISSING_MESSAGE for new keys) → restart it.
+- **Bug fixed:** StaggerList used an intersection *ratio*, so lists taller than the screen never
+  revealed (the portfolio stayed blank) → now triggers on the list's top edge (rootMargin).
 
 ### Phase 1 log
 - Next.js 15.1.3 scaffolded by hand (no `create-next-app` interactive). React 19, TypeScript strict, Tailwind v4 with `@theme` token bridge.

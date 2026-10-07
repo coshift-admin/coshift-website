@@ -3,7 +3,7 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { CalendlyEmbed } from "@/components/contact/CalendlyEmbed";
 import { LocationMap } from "@/components/contact/LocationMap";
 import { site } from "@/lib/site";
-import { Reveal, RevealWords } from "@/components/motion/Reveal";
+import { PageHero } from "@/components/ui/PageHero";
 
 export async function generateMetadata({
   params,
@@ -25,37 +25,23 @@ export default async function ContactPage({
   const t = await getTranslations("contact");
 
   return (
-    <div className="container-x mx-auto max-w-[1600px] pt-32 md:pt-44">
-      <header className="border-b border-white/10 pb-20 md:pb-28">
-        <Reveal>
-          <div className="text-mono mb-6 flex items-center gap-3 text-[var(--coshift-bone)]/60">
-            <span aria-hidden className="h-px w-8 bg-[var(--coshift-cyan)]" />
-            {t("kicker")}
-          </div>
-        </Reveal>
-        <h1 className="max-w-[20ch] text-[length:var(--fs-h1)] font-extrabold leading-[0.95] tracking-[-0.02em]">
-          <RevealWords text={t("heading")} />
-        </h1>
-        <Reveal delay={0.2}>
-          <p className="mt-8 max-w-[60ch] text-[length:var(--fs-lead)] text-[var(--coshift-bone)]/70">
-            {t("intro")}
-          </p>
-        </Reveal>
-      </header>
-
-      <section className="grid grid-cols-1 gap-16 border-b border-white/10 py-20 md:grid-cols-12 md:gap-x-16 md:py-28">
+    <>
+      <PageHero eyebrow={t("kicker")} title={t("heading")} hand={t("hand")} intro={t("intro")} />
+      <div className="container-x mx-auto max-w-[1320px]">
+      <section className="grid grid-cols-1 gap-16 border-b border-white/10 py-16 md:grid-cols-12 md:gap-x-16 md:py-24">
         <div className="md:col-span-7">
           <ContactForm />
         </div>
         <aside className="md:col-span-5">
-          <h2 className="text-mono mb-4 text-[var(--coshift-bone)]/60">
+          <h2 className="text-mono mb-4 text-[var(--navy-300)]">
             {t("details.heading")}
           </h2>
-          <ul className="space-y-3 text-base text-[var(--coshift-bone)]/85">
+          <ul className="space-y-3 text-base text-[var(--navy-100)]/85">
             <li>{t("details.address")}</li>
             <li>
               <span className="opacity-60">{t("details.emailLabel")}: </span>
               <a
+                dir="ltr"
                 href={`mailto:${site.email}`}
                 className="text-[var(--coshift-cyan)] hover:underline"
               >
@@ -65,6 +51,7 @@ export default async function ContactPage({
             <li>
               <span className="opacity-60">{t("details.phoneLabel")}: </span>
               <a
+                dir="ltr"
                 href={`tel:${site.phone.replace(/\s+/g, "")}`}
                 className="hover:text-[var(--coshift-cyan)]"
               >
@@ -74,6 +61,7 @@ export default async function ContactPage({
             <li>
               <span className="opacity-60">{t("details.whatsappLabel")}: </span>
               <a
+                dir="ltr"
                 href={`https://wa.me/${site.whatsapp.replace(/\D+/g, "")}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -88,7 +76,7 @@ export default async function ContactPage({
             href={site.address.mapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-mono mt-3 inline-flex items-center gap-2 text-[var(--coshift-bone)]/60 hover:text-[var(--coshift-cyan)]"
+            className="text-mono mt-3 inline-flex items-center gap-2 text-[var(--navy-300)] hover:text-[var(--coshift-cyan)]"
           >
             {site.address.municipality}, {site.address.city} ↗
           </a>
@@ -96,11 +84,12 @@ export default async function ContactPage({
       </section>
 
       <section className="py-20 md:py-28">
-        <h2 className="text-mono mb-6 text-[var(--coshift-bone)]/60">
+        <h2 className="text-mono mb-6 text-[var(--navy-300)]">
           {t("calendly")}
         </h2>
         <CalendlyEmbed />
       </section>
-    </div>
+      </div>
+    </>
   );
 }
