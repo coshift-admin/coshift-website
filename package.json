@@ -23,7 +23,7 @@
     "gsap": "^3.12.5",
     "lenis": "^1.1.18",
     "lucide-react": "^0.469.0",
-    "next": "15.1.3",
+    "next": "15.5.29",
     "next-intl": "^3.26.0",
     "postprocessing": "^6.36.4",
     "react": "^19.0.0",
@@ -44,7 +44,7 @@
     "@types/react-dom": "^19.0.2",
     "@types/three": "^0.171.0",
     "eslint": "^9.17.0",
-    "eslint-config-next": "15.1.3",
+    "eslint-config-next": "15.5.29",
     "postcss": "^8.4.49",
     "tailwindcss": "^4.0.0-beta.8",
     "typescript": "^5.7.2"
