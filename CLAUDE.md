@@ -189,6 +189,16 @@ and a six-point list. Decisions:
 - **Bug fixed:** StaggerList used an intersection *ratio*, so lists taller than the screen never
   revealed (the portfolio stayed blank) → now triggers on the list's top edge (rootMargin).
 
+### Security incident (2026-11-04)
+- The live site served an injected loader (fake "I'm not a robot" / ClickFix page via an on-chain
+  payload) just before `</head>` on prerendered pages. Source, git history, lockfile and
+  node_modules were clean — the injection happened on the running server. Likely entry: Next.js
+  15.1.3 (CVE-2025-66478, React Server Components RCE).
+- **Next.js pinned to the maintained 15.x line (`backport` dist-tag), now 15.5.29.** 15.1.12 is not
+  enough: the 15.1 line stopped receiving fixes in Jan 2026 and later critical image-optimizer RCEs
+  are only fixed on 15.5.x. Before each deploy, check the Next.js security advisories and bump
+  `next` + `eslint-config-next` together. Never roll back to an image built before this fix.
+
 ### Phase 1 log
 - Next.js 15.1.3 scaffolded by hand (no `create-next-app` interactive). React 19, TypeScript strict, Tailwind v4 with `@theme` token bridge.
 - Dependencies installed via pnpm 11. `onlyBuiltDependencies` whitelist added because pnpm 11 errors hard when build scripts (`sharp`, `unrs-resolver`) need approval. Ran `pnpm approve-builds --all` once; this writes to lockfile and is sticky.
